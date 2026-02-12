@@ -1,69 +1,47 @@
 ---
-id: product-example-001
-title: "Example Product Information"
-category: products
-tags: [example, template, product]
-platforms: [gpt, gemini, custom-ai]
-priority: high
-version: 1.0.0
-last_updated: 2026-02-12
+title: Example Product
+type: product
+created: 2026-02-12 18:00
+updated: 2026-02-12 18:00
+status: active
+platform: web
+tags:
+  - product
+  - example
+  - knowledge-base
 ---
 
-# Example Product Name
+# Example Product
 
 ## Overview
 
-This is an example product information file. Replace this content with your actual product details.
+This is an example product to demonstrate the knowledge base structure.
 
 ## Features
 
-- Feature 1: Description of feature 1
-- Feature 2: Description of feature 2
-- Feature 3: Description of feature 3
+- Feature 1: Easy to use
+- Feature 2: Powerful automation
+- Feature 3: Seamless integration
 
 ## Pricing
 
 | Plan | Price | Features |
 |------|-------|----------|
-| Basic | $10/month | Feature A, B |
-| Pro | $25/month | Feature A, B, C |
-| Enterprise | Custom | All features + support |
+| Basic | $10/mo | - Feature 1 |
+| Pro | $25/mo | - Feature 1<br>- Feature 2 |
+| Enterprise | Custom | - All features |
 
 ## Target Audience
 
-- Small businesses
-- Startups
-- Enterprise companies
+Small to medium businesses looking for automation solutions.
 
 ## Use Cases
 
-### Use Case 1
-Description of how customers use this product...
-
-### Use Case 2
-Another common use case...
-
-## Technical Specifications
-
-- Platform: Web, Mobile
-- Integration: API, Webhook
-- Support: 24/7
-
-## FAQs
-
-### How do I get started?
-Answer here...
-
-### What's included in the free trial?
-Answer here...
-
-## Related Products
-
-- [Product A](./product-a.md)
-- [Product B](./product-b.md)
+1. **Automation**: Automate repetitive tasks
+2. **Integration**: Connect with existing tools
+3. **Reporting**: Generate insights from data
 
 ---
 
-**Last Updated**: 2026-02-12
-**Maintained by**: Product Team
-**Contact**: product@example.com
+**Last Updated**: 2026-02-12 18:00
+**Status**: Active

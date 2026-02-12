@@ -1,8 +1,14 @@
-# 🚀 AI Knowledge Management Dashboard
+---
+title: Dashboard
+type: dashboard
+tags:
+  - dashboard
+  - system
+---
+
+# � AI Knowledge Management Dashboard
 
 > Central hub untuk semua AI bots dan knowledge base
-
-**Last Updated**: `= date(now)`
 
 ---
 
@@ -10,7 +16,7 @@
 
 ```dataview
 TABLE WITHOUT ID
-  "📁 " + file.folder as "Folder",
+  file.folder as "Folder",
   length(rows) as "Files"
 FROM ""
 WHERE file.name != "DASHBOARD"
@@ -36,7 +42,7 @@ sort by priority
 ```dataview
 TABLE WITHOUT ID
   file.link as "File",
-  file.mtime as "Last Modified"
+  dateformat(file.mtime, "yyyy-MM-dd HH:mm") as "Last Modified"
 FROM "01-knowledge-base"
 SORT file.mtime DESC
 LIMIT 10
@@ -51,9 +57,9 @@ TABLE WITHOUT ID
   file.link as "Bot",
   platform as "Platform",
   status as "Status",
-  file.mtime as "Last Updated"
+  dateformat(file.mtime, "yyyy-MM-dd") as "Last Updated"
 FROM "02-ai-bots"
-WHERE type = "custom-gpt"
+WHERE type = "custom-gpt" OR type = "gemini-gem" OR type = "custom-ai"
 SORT file.mtime DESC
 ```
 
@@ -67,28 +73,47 @@ TABLE WITHOUT ID
   date as "Date",
   status as "Status"
 FROM "00-system/conversations"
+WHERE type = "conversation"
 SORT date DESC
 LIMIT 5
 ```
 
 ---
 
-## 📋 Quick Actions
+## 📋 Quick Links
 
+### System
+- [[00-system/internal/KIRO-SYSTEM-INSTRUCTION|📖 System Instructions]]
+- [[00-system/docs/FOLDER-STRUCTURE|📁 Folder Structure]]
+- [[00-system/docs/OBSIDIAN-OPTIMIZATION-GUIDE|⚙️ Obsidian Guide]]
+
+### Setup
 - [[00-inbox/SETUP-PROGRESS|📊 Setup Progress]]
-- [[00-inbox/SETUP-STEPS-SIMPLE|📖 Setup Guide]]
+- [[00-inbox/SETUP-STEPS-SIMPLE|📝 Setup Steps]]
+- [[00-inbox/QUICK-REFERENCE-CARD|🎯 Quick Reference]]
+
+### Knowledge Base
+- [[01-knowledge-base/products/|📦 Products]]
+- [[01-knowledge-base/faqs/|❓ FAQs]]
+- [[01-knowledge-base/procedures/|📋 Procedures]]
+- [[01-knowledge-base/marketing/|📢 Marketing]]
+
+### AI Bots
+- [[02-ai-bots/custom-gpts/|🤖 Custom GPTs]]
+- [[02-ai-bots/gemini-gems/|💎 Gemini Gems]]
+- [[02-ai-bots/custom-ai/|🔧 Custom AI]]
+- [[02-ai-bots/bot-registry.csv|📊 Bot Registry]]
 - [[02-ai-bots/UNIVERSAL-CONFIG|⚙️ Universal Config]]
-- [[02-ai-bots/bot-registry.csv|🤖 Bot Registry]]
 
 ---
 
-## 🔥 Hot Topics
+## 🔥 Most Referenced Files
 
 ```dataview
 TABLE WITHOUT ID
-  file.link as "Topic",
+  file.link as "File",
   length(file.inlinks) as "References",
-  file.mtime as "Updated"
+  dateformat(file.mtime, "yyyy-MM-dd") as "Updated"
 FROM "01-knowledge-base"
 SORT length(file.inlinks) DESC
 LIMIT 5
@@ -110,42 +135,58 @@ LIMIT 6
 
 ---
 
-## 🎯 Focus Areas
+## 🎯 Folder Summary
 
-### Products
-- Total: `= length(filter(file.lists, (f) => contains(f.path, "01-knowledge-base/products")))`
-- [[01-knowledge-base/products/|View All →]]
+### 📚 Knowledge Base
+**Total Files**: 
+```dataview
+LIST length(file.lists)
+FROM "01-knowledge-base"
+FLATTEN file.lists
+```
 
-### FAQs
-- Total: `= length(filter(file.lists, (f) => contains(f.path, "01-knowledge-base/faqs")))`
-- [[01-knowledge-base/faqs/|View All →]]
+### 🤖 AI Bots
+**Total Bots**: 
+```dataview
+LIST length(file.lists)
+FROM "02-ai-bots"
+WHERE type = "custom-gpt" OR type = "gemini-gem" OR type = "custom-ai"
+FLATTEN file.lists
+```
 
-### Procedures
-- Total: `= length(filter(file.lists, (f) => contains(f.path, "01-knowledge-base/procedures")))`
-- [[01-knowledge-base/procedures/|View All →]]
-
----
-
-## 🔗 Quick Links
-
-### System
-- [[00-system/internal/KIRO-SYSTEM-INSTRUCTION|System Instructions]]
-- [[00-system/architecture/|Architecture Docs]]
-- [[00-system/scripts/|Scripts]]
-
-### Knowledge Base
-- [[01-knowledge-base/products/|Products]]
-- [[01-knowledge-base/faqs/|FAQs]]
-- [[01-knowledge-base/procedures/|Procedures]]
-- [[01-knowledge-base/marketing/|Marketing]]
-
-### AI Bots
-- [[02-ai-bots/custom-gpts/|Custom GPTs]]
-- [[02-ai-bots/gemini-gems/|Gemini Gems]]
-- [[02-ai-bots/custom-ai/|Custom AI]]
+### 🎨 Media Files
+**Total Media**: 
+```dataview
+LIST length(file.lists)
+FROM "03-media"
+FLATTEN file.lists
+```
 
 ---
 
-**🎉 System Status**: Operational
-**📊 Total Files**: `= length(file.lists)`
-**🤖 Active Bots**: `= length(filter(file.lists, (f) => contains(f.path, "02-ai-bots") AND f.status = "active"))`
+## 🚀 Quick Actions
+
+### Create New
+- `Ctrl+N` → New note in inbox
+- `Ctrl+Shift+T` → Insert template
+
+### Git Operations
+- `Ctrl+Shift+G` → Commit & push
+- `Ctrl+Shift+P` → Pull changes
+
+### View Operations
+- `Ctrl+\` → Split vertical
+- `Ctrl+Shift+R` → Refresh dataview
+
+---
+
+## 📊 System Status
+
+**Repository**: [GitHub](https://github.com/raymaizing-id/llm-custom)
+**Google Drive**: [AI Knowledge Base](https://drive.google.com/drive/folders/1ds2xM4Qjy0CRKKSoEebmL8ijYCSChDpO)
+**n8n**: [Dashboard](https://n8n.raycorpgroup.com)
+
+---
+
+**Last Updated**: 2026-02-12
+**Status**: 🟢 Operational
