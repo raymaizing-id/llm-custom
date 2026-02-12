@@ -1,0 +1,117 @@
+/* Custom Layout - Full Width & Better Spacing */
+
+/* Force full width for all views */
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-preview-view {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Remove readable line length restriction */
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Better padding for content */
+.markdown-source-view.mod-cm6 .cm-scroller {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+.markdown-preview-view {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+/* Hide properties in document */
+.metadata-container {
+  display: none !important;
+}
+
+/* Better dataview table styling */
+.dataview.table-view-table {
+  width: 100% !important;
+  margin: 20px 0 !important;
+}
+
+.dataview.table-view-table th {
+  background-color: var(--background-secondary) !important;
+  padding: 10px !important;
+  font-weight: 600 !important;
+}
+
+.dataview.table-view-table td {
+  padding: 8px 10px !important;
+}
+
+/* Better spacing for headers */
+.markdown-preview-view h1,
+.cm-header-1 {
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.markdown-preview-view h2,
+.cm-header-2 {
+  margin-top: 1.2em !important;
+  margin-bottom: 0.4em !important;
+}
+
+/* Better code block styling */
+.markdown-preview-view pre,
+.cm-s-obsidian pre.HyperMD-codeblock {
+  padding: 15px !important;
+  margin: 15px 0 !important;
+}
+
+/* Better list spacing */
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+  padding-left: 25px !important;
+  margin: 10px 0 !important;
+}
+
+/* Better link styling */
+.markdown-preview-view a.internal-link,
+.cm-hmd-internal-link {
+  text-decoration: none !important;
+  border-bottom: 1px solid var(--text-accent) !important;
+}
+
+.markdown-preview-view a.internal-link:hover,
+.cm-hmd-internal-link:hover {
+  border-bottom: 2px solid var(--text-accent) !important;
+}
+
+/* Better horizontal rule */
+.markdown-preview-view hr {
+  margin: 30px 0 !important;
+  border-color: var(--background-modifier-border) !important;
+}
+
+/* Responsive sidebar width */
+.workspace-split.mod-left-split {
+  min-width: 200px !important;
+}
+
+.workspace-split.mod-right-split {
+  min-width: 300px !important;
+}
+
+/* Better table styling */
+.markdown-preview-view table {
+  width: 100% !important;
+  margin: 20px 0 !important;
+}
+
+.markdown-preview-view th {
+  background-color: var(--background-secondary) !important;
+  padding: 10px !important;
+  font-weight: 600 !important;
+}
+
+.markdown-preview-view td {
+  padding: 8px 10px !important;
+}

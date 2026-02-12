@@ -3,5 +3,8 @@
   "nativeMenus": false,
   "accentColor": "#ffffff",
   "theme": "obsidian",
-  "baseFontSize": 14
+  "baseFontSize": 14,
+  "enabledCssSnippets": [
+    "custom-layout"
+  ]
 }
