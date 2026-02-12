@@ -1,0 +1,726 @@
+/*
+Theme: Haze Futuristic AI
+Version: 1.0.0
+Author: Raymaizing AI Team
+Description: Dark modern futuristic minimalist theme for coders, programmers, AI engineers
+*/
+
+/* ============================================
+   COLOR PALETTE - Futuristic Dark
+   ============================================ */
+
+.theme-dark {
+  /* Background Colors - Deep Space */
+  --background-primary: #0a0e14;
+  --background-primary-alt: #0d1117;
+  --background-secondary: #161b22;
+  --background-secondary-alt: #1c2128;
+  --background-modifier-border: #21262d;
+  --background-modifier-form-field: #0d1117;
+  --background-modifier-form-field-highlighted: #161b22;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.5);
+  --background-modifier-success: #238636;
+  --background-modifier-error: #da3633;
+  --background-modifier-error-hover: #f85149;
+  --background-modifier-cover: rgba(10, 14, 20, 0.8);
+  
+  /* Text Colors - Crisp & Clear */
+  --text-normal: #c9d1d9;
+  --text-muted: #8b949e;
+  --text-faint: #6e7681;
+  --text-on-accent: #ffffff;
+  --text-error: #f85149;
+  --text-success: #3fb950;
+  --text-warning: #d29922;
+  
+  /* Accent Colors - Cyan Futuristic */
+  --text-accent: #58a6ff;
+  --text-accent-hover: #79c0ff;
+  --interactive-accent: #1f6feb;
+  --interactive-accent-hover: #388bfd;
+  --interactive-accent-rgb: 88, 166, 255;
+  
+  /* Code Colors - Syntax Highlighting */
+  --code-normal: #79c0ff;
+  --code-background: #161b22;
+  --code-comment: #8b949e;
+  --code-function: #d2a8ff;
+  --code-keyword: #ff7b72;
+  --code-string: #a5d6ff;
+  --code-tag: #7ee787;
+  --code-operator: #ff7b72;
+  --code-property: #79c0ff;
+  
+  /* UI Colors */
+  --interactive-normal: #21262d;
+  --interactive-hover: #30363d;
+  --interactive-success: #238636;
+  
+  /* Scrollbar */
+  --scrollbar-bg: #0d1117;
+  --scrollbar-thumb-bg: #30363d;
+  --scrollbar-active-thumb-bg: #484f58;
+  
+  /* Borders & Dividers */
+  --divider-color: #21262d;
+  --divider-color-hover: #30363d;
+  
+  /* Shadows - Subtle Glow */
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0 4px 8px rgba(0, 0, 0, 0.4);
+  
+  /* Fonts */
+  --font-text: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-monospace: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  --font-interface: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Sizes */
+  --font-text-size: 16px;
+  --font-small: 14px;
+  --font-smaller: 12px;
+  --font-smallest: 11px;
+  
+  /* Line Heights */
+  --line-height-normal: 1.6;
+  --line-height-tight: 1.4;
+  
+  /* Radius */
+  --radius-s: 4px;
+  --radius-m: 6px;
+  --radius-l: 8px;
+  --radius-xl: 12px;
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--font-text-size);
+  line-height: var(--line-height-normal);
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+}
+
+/* Smooth Scrolling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: var(--radius-m);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-active-thumb-bg);
+}
+
+/* ============================================
+   WORKSPACE
+   ============================================ */
+
+.workspace {
+  background-color: var(--background-primary);
+}
+
+.workspace-split.mod-root {
+  background-color: var(--background-primary);
+}
+
+.workspace-leaf {
+  background-color: var(--background-primary-alt);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+/* Tabs */
+.workspace-tab-header-container {
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.workspace-tab-header {
+  background-color: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
+  transition: all 0.2s ease;
+}
+
+.workspace-tab-header:hover {
+  background-color: var(--interactive-hover);
+  color: var(--text-normal);
+}
+
+.workspace-tab-header.is-active {
+  background-color: var(--background-primary-alt);
+  color: var(--text-accent);
+  border-bottom: 2px solid var(--text-accent);
+}
+
+/* ============================================
+   SIDEBARS
+   ============================================ */
+
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  background-color: var(--background-secondary);
+}
+
+.workspace-leaf-content {
+  background-color: transparent;
+}
+
+/* Sidebar Headers */
+.workspace-leaf-header {
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--divider-color);
+  padding: 8px 12px;
+}
+
+.workspace-leaf-header-title {
+  color: var(--text-normal);
+  font-weight: 600;
+  font-size: var(--font-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   FILE EXPLORER
+   ============================================ */
+
+.nav-folder-title,
+.nav-file-title {
+  color: var(--text-normal);
+  padding: 4px 8px;
+  border-radius: var(--radius-s);
+  transition: all 0.2s ease;
+}
+
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  background-color: var(--interactive-hover);
+  color: var(--text-accent);
+}
+
+.nav-file-title.is-active {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 600;
+}
+
+.nav-folder-collapse-indicator {
+  color: var(--text-muted);
+}
+
+/* ============================================
+   EDITOR - MARKDOWN
+   ============================================ */
+
+.markdown-source-view,
+.markdown-preview-view {
+  font-family: var(--font-text);
+  color: var(--text-normal);
+  padding: 30px 40px;
+}
+
+/* Full Width */
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-preview-view {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Headers */
+.cm-header-1,
+.markdown-preview-view h1 {
+  color: var(--text-accent);
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid var(--divider-color);
+  padding-bottom: 0.3em;
+}
+
+.cm-header-2,
+.markdown-preview-view h2 {
+  color: var(--text-accent-hover);
+  font-size: 1.6em;
+  font-weight: 600;
+  margin-top: 1.3em;
+  margin-bottom: 0.4em;
+  border-bottom: 1px solid var(--divider-color);
+  padding-bottom: 0.2em;
+}
+
+.cm-header-3,
+.markdown-preview-view h3 {
+  color: var(--code-function);
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.cm-header-4,
+.markdown-preview-view h4 {
+  color: var(--code-tag);
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}
+
+.cm-header-5,
+.markdown-preview-view h5,
+.cm-header-6,
+.markdown-preview-view h6 {
+  color: var(--text-normal);
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 0.8em;
+  margin-bottom: 0.3em;
+}
+
+/* Links */
+.cm-link,
+.cm-hmd-internal-link,
+.markdown-preview-view a {
+  color: var(--text-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.cm-link:hover,
+.cm-hmd-internal-link:hover,
+.markdown-preview-view a:hover {
+  color: var(--text-accent-hover);
+  border-bottom: 1px solid var(--text-accent-hover);
+}
+
+/* Code Inline */
+.cm-inline-code,
+.markdown-preview-view code {
+  font-family: var(--font-monospace);
+  font-size: 0.9em;
+  background-color: var(--code-background);
+  color: var(--code-normal);
+  padding: 2px 6px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--divider-color);
+}
+
+/* Code Blocks */
+.cm-s-obsidian pre.HyperMD-codeblock,
+.markdown-preview-view pre {
+  font-family: var(--font-monospace);
+  font-size: 0.9em;
+  background-color: var(--code-background);
+  color: var(--code-normal);
+  padding: 16px;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--divider-color);
+  margin: 16px 0;
+  overflow-x: auto;
+  line-height: var(--line-height-tight);
+}
+
+.markdown-preview-view pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Lists */
+.cm-formatting-list,
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+  color: var(--text-normal);
+}
+
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+  padding-left: 25px;
+  margin: 12px 0;
+}
+
+.markdown-preview-view li {
+  margin: 6px 0;
+}
+
+/* Blockquotes */
+.cm-quote,
+.markdown-preview-view blockquote {
+  color: var(--text-muted);
+  border-left: 3px solid var(--text-accent);
+  padding-left: 16px;
+  margin: 16px 0;
+  font-style: italic;
+}
+
+/* Horizontal Rule */
+.markdown-preview-view hr {
+  border: none;
+  border-top: 2px solid var(--divider-color);
+  margin: 30px 0;
+}
+
+/* Tables */
+.markdown-preview-view table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.markdown-preview-view th {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--divider-color);
+}
+
+.markdown-preview-view td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.markdown-preview-view tr:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ============================================
+   DATAVIEW PLUGIN
+   ============================================ */
+
+.dataview.table-view-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.dataview.table-view-table thead {
+  background-color: var(--interactive-accent);
+}
+
+.dataview.table-view-table th {
+  color: var(--text-on-accent);
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--divider-color);
+}
+
+.dataview.table-view-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--divider-color);
+  color: var(--text-normal);
+}
+
+.dataview.table-view-table tr:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* Dataview Inline Fields */
+.dataview.inline-field-key {
+  color: var(--code-property);
+  font-weight: 600;
+}
+
+.dataview.inline-field-value {
+  color: var(--code-string);
+}
+
+/* ============================================
+   TASKS PLUGIN
+   ============================================ */
+
+.task-list-item-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--text-accent);
+  border-radius: var(--radius-s);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-list-item-checkbox:hover {
+  background-color: var(--interactive-hover);
+  border-color: var(--text-accent-hover);
+}
+
+.task-list-item-checkbox:checked {
+  background-color: var(--text-accent);
+  border-color: var(--text-accent);
+}
+
+.task-list-item-checkbox:checked::after {
+  content: '✓';
+  color: var(--text-on-accent);
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   PROPERTIES / FRONTMATTER
+   ============================================ */
+
+.metadata-container {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--divider-color);
+  border-radius: var(--radius-m);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.metadata-property {
+  color: var(--text-normal);
+  padding: 6px 0;
+}
+
+.metadata-property-key {
+  color: var(--code-property);
+  font-weight: 600;
+}
+
+.metadata-property-value {
+  color: var(--code-string);
+}
+
+/* ============================================
+   SEARCH
+   ============================================ */
+
+.search-result-file-title {
+  color: var(--text-accent);
+  font-weight: 600;
+}
+
+.search-result-file-match {
+  background-color: var(--background-secondary);
+  border-left: 3px solid var(--text-accent);
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: var(--radius-s);
+}
+
+.search-result-file-matched-text {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  padding: 2px 4px;
+  border-radius: var(--radius-s);
+}
+
+/* ============================================
+   GRAPH VIEW
+   ============================================ */
+
+.graph-view.color-fill {
+  color: var(--text-accent);
+}
+
+.graph-view.color-line {
+  color: var(--divider-color);
+}
+
+.graph-view.color-text {
+  color: var(--text-normal);
+}
+
+.graph-view.color-fill-highlight {
+  color: var(--text-accent-hover);
+}
+
+.graph-view.color-line-highlight {
+  color: var(--text-accent);
+}
+
+/* ============================================
+   MODALS & PROMPTS
+   ============================================ */
+
+.modal {
+  background-color: var(--background-primary-alt);
+  border: 1px solid var(--divider-color);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-l);
+}
+
+.modal-title {
+  color: var(--text-accent);
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.prompt {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--divider-color);
+  border-radius: var(--radius-m);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+button,
+.clickable-icon {
+  color: var(--text-normal);
+  background-color: var(--interactive-normal);
+  border: 1px solid var(--divider-color);
+  border-radius: var(--radius-s);
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover,
+.clickable-icon:hover {
+  background-color: var(--interactive-hover);
+  color: var(--text-accent);
+  border-color: var(--text-accent);
+}
+
+.mod-cta {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+}
+
+.mod-cta:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* ============================================
+   STATUS BAR
+   ============================================ */
+
+.status-bar {
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--divider-color);
+  color: var(--text-muted);
+  font-size: var(--font-smaller);
+  padding: 4px 12px;
+}
+
+.status-bar-item {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.status-bar-item:hover {
+  color: var(--text-accent);
+}
+
+/* ============================================
+   TAGS
+   ============================================ */
+
+.cm-hashtag,
+.tag {
+  color: var(--code-tag);
+  background-color: var(--code-background);
+  padding: 2px 8px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--divider-color);
+  font-size: var(--font-smaller);
+  transition: all 0.2s ease;
+}
+
+.cm-hashtag:hover,
+.tag:hover {
+  background-color: var(--interactive-hover);
+  border-color: var(--code-tag);
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* GPU Acceleration */
+.workspace-leaf,
+.markdown-preview-view,
+.markdown-source-view {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Smooth Transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus Indicators */
+*:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-s);
+}
+
+/* High Contrast for Important Elements */
+.workspace-tab-header.is-active,
+.nav-file-title.is-active,
+button.mod-cta {
+  font-weight: 600;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .markdown-source-view,
+  .markdown-preview-view {
+    padding: 20px;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  .workspace-split.mod-left-split,
+  .workspace-split.mod-right-split,
+  .status-bar {
+    display: none;
+  }
+}

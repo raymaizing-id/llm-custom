@@ -2,6 +2,25 @@
 
 > Print atau save ini untuk reference cepat
 
+**Last Updated**: 2026-02-12
+
+---
+
+## 🎨 THEME: HAZE FUTURISTIC AI ✅
+
+**Status**: ACTIVE & OPTIMIZED
+
+### Features
+- **Style**: Dark modern futuristic minimalist
+- **Colors**: Deep space (#0a0e14) + Cyan accents (#58a6ff)
+- **Layout**: Full width, no restrictions
+- **Optimized for**: Coders, programmers, AI engineers
+
+### Quick Access
+- Theme guide: `00-system/docs/HAZE-THEME-GUIDE.md`
+- Settings: Obsidian → Appearance → Theme: "Haze Futuristic AI"
+- Font size: 16px (adjustable)
+
 ---
 
 ## ✅ STEP 1: GIT (5 mins)

@@ -1,7 +1,7 @@
 {
-  "cssTheme": "",
+  "cssTheme": "haze-futuristic-ai",
   "nativeMenus": false,
-  "accentColor": "",
+  "accentColor": "#58a6ff",
   "theme": "obsidian",
   "baseFontSize": 16,
   "enabledCssSnippets": []
