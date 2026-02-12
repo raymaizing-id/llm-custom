@@ -5,7 +5,6 @@ tags:
   - dashboard
   - system
 ---
-
 # 🚀 AI Knowledge Management Dashboard
 
 > Central hub untuk semua AI bots dan knowledge base
@@ -15,6 +14,8 @@ tags:
 ---
 
 ## 📊 Quick Stats
+
+Total files per folder:
 
 ```dataview
 TABLE WITHOUT ID
@@ -31,6 +32,8 @@ LIMIT 10
 
 ## 📝 Recent Knowledge Base Updates
 
+Latest 10 files from knowledge base:
+
 ```dataview
 TABLE WITHOUT ID
   file.link as "📄 File",
@@ -45,6 +48,8 @@ LIMIT 10
 
 ## 🤖 AI Bots Status
 
+All registered AI bots:
+
 ```dataview
 TABLE WITHOUT ID
   file.link as "🤖 Bot",
@@ -54,21 +59,6 @@ TABLE WITHOUT ID
 FROM "02-ai-bots"
 WHERE type = "custom-gpt" OR type = "gemini-gem" OR type = "custom-ai"
 SORT file.mtime DESC
-```
-
----
-
-## 💬 Recent Conversations
-
-```dataview
-TABLE WITHOUT ID
-  file.link as "💬 Conversation",
-  date as "📅 Date",
-  status as "📊 Status"
-FROM "00-system/conversations"
-WHERE type = "conversation"
-SORT date DESC
-LIMIT 5
 ```
 
 ---
@@ -103,6 +93,8 @@ LIMIT 5
 
 ## 🔥 Most Referenced Files
 
+Top 5 most linked files:
+
 ```dataview
 TABLE WITHOUT ID
   file.link as "📄 File",
@@ -118,6 +110,8 @@ LIMIT 5
 
 ## 📈 Knowledge Base Growth
 
+Files created per month:
+
 ```dataview
 TABLE WITHOUT ID
   dateformat(file.ctime, "yyyy-MM") as "📅 Month",
@@ -127,6 +121,23 @@ WHERE file.name != "README"
 GROUP BY dateformat(file.ctime, "yyyy-MM")
 SORT dateformat(file.ctime, "yyyy-MM") DESC
 LIMIT 6
+```
+
+---
+
+## 💬 Recent Conversations
+
+Latest conversations with Kiro:
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "💬 Conversation",
+  date as "📅 Date",
+  status as "📊 Status"
+FROM "00-system/conversations"
+WHERE type = "conversation"
+SORT date DESC
+LIMIT 5
 ```
 
 ---
@@ -158,13 +169,46 @@ LIMIT 6
 
 ---
 
+## 🔧 Troubleshooting
+
+### If you see "xxxxx" instead of data:
+
+1. **Reload Dataview Plugin**:
+   - Settings → Community Plugins
+   - Find "Dataview"
+   - Toggle OFF → Wait 2 seconds → Toggle ON
+   - Return to this dashboard
+   - Press `Ctrl+Shift+R` to refresh
+
+2. **Check Plugin Status**:
+   - Look at status bar (bottom)
+   - Should see "Dataview" indicator
+   - If not, plugin might not be loaded
+
+3. **Restart Obsidian**:
+   - Close Obsidian completely
+   - Open again
+   - Wait for all plugins to load (check status bar)
+   - Open this dashboard again
+
+4. **Verify Plugin Settings**:
+   - Settings → Dataview
+   - Check "Enable JavaScript Queries": Should be ON
+   - Check "Enable Inline Queries": Should be ON
+   - Check "Enable Inline JavaScript Queries": Should be ON
+
+---
+
 ## 📌 Notes
 
 - Properties are hidden in document (visible in sidebar)
 - Full width mode enabled for better readability
-- Dataview queries refresh automatically
+- Dataview queries refresh automatically every 2.5 seconds
 - Use `Ctrl+Shift+R` to force refresh
+- If queries don't load, wait 10 seconds after opening file
 
 ---
 
 **Status**: 🟢 Operational | **Progress**: 50% Complete
+
+**Need Help?** Check [[00-system/docs/QUICK-START|Quick Start Guide]]
