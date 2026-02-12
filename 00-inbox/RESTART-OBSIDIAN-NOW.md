@@ -1,67 +1,69 @@
 ---
-title: RESTART OBSIDIAN NOW
+title: RELOAD OBSIDIAN NOW - XXXXX FIX
 created: 2026-02-12
-priority: urgent
+priority: URGENT
 status: action-required
 ---
 
-# ⚠️ RESTART OBSIDIAN SEKARANG
+# ⚠️ RELOAD OBSIDIAN SEKARANG - FIX XXXXX DI FILE EXPLORER
 
-> Untuk melihat perubahan GitHub Theme improvements
-
----
-
-## 🎯 Yang Sudah Diperbaiki
-
-### ✅ GitHub Theme Improvements
-1. **"xxxxx" issue FIXED** - Code blocks sekarang render dengan benar
-2. **Full width layout** - Content menggunakan seluruh lebar layar
-3. **Better tables** - Hover effects dan styling yang lebih baik
-4. **Custom checkboxes** - Task checkboxes lebih menarik
-5. **Performance optimizations** - GPU acceleration dan smooth transitions
-
-### ✅ Files Created/Modified
-- `.obsidian/snippets/github-theme-fix.css` (NEW)
-- `.obsidian/appearance.json` (UPDATED - CSS snippet enabled)
-- `.obsidian/app.json` (UPDATED - defaultViewMode: source)
-- `00-system/docs/GITHUB-THEME-IMPROVEMENTS.md` (NEW - documentation)
+> Fix terbaru untuk menghilangkan "xxxxx" di file explorer sidebar
 
 ---
 
-## 🔄 LANGKAH RESTART
+## 🎯 Yang Baru Diperbaiki
 
-### Option 1: Close & Reopen (RECOMMENDED)
-1. **Close Obsidian completely** (X button atau Alt+F4)
-2. **Wait 3 seconds**
-3. **Reopen Obsidian**
-4. **Check code blocks** - "xxxxx" should be gone!
+### ✅ XXXXX di File Explorer - FIXED
+**Masalah**: File names di sidebar kiri menampilkan "xxxxx" atau "0/0/0/0/0/0"
+**Penyebab**: Font ligatures dan rendering issues
+**Solusi**: 
+- Force disable font ligatures globally
+- Override font-family untuk semua UI elements
+- Fix text rendering di sidebar dan file explorer
 
-### Option 2: Reload (Quick)
+---
+
+## 🔄 CARA RELOAD (PILIH SALAH SATU)
+
+### Option 1: Quick Reload (RECOMMENDED) ⚡
 1. Press `Ctrl+Shift+I` (Open Developer Tools)
-2. Press `Ctrl+R` (Reload)
-3. Close Developer Tools
-4. Check if changes applied
+2. Press `Ctrl+R` (Reload Obsidian)
+3. Close Developer Tools (Ctrl+Shift+I lagi)
+4. **Check file explorer** - "xxxxx" should be GONE!
+
+### Option 2: Full Restart 🔄
+1. Close Obsidian completely (Alt+F4)
+2. Wait 3 seconds
+3. Reopen Obsidian
+4. Check file explorer
 
 ---
 
 ## ✅ Verification Checklist
 
-Setelah restart, check ini:
+Setelah reload, check ini:
 
-### 1. Code Blocks
+### 1. File Explorer (Sidebar Kiri)
+**Expected**: 
+- ✅ File names terlihat jelas
+- ✅ Folder names terlihat jelas
+- ✅ NO "xxxxx" or "0/0/0/0/0/0"
+
+**Check these files**:
+- [ ] DASHBOARD
+- [ ] TEST-DATAVIEW
+- [ ] custom-gpts
+- [ ] System files di 00-system
+
+### 2. Code Blocks (Editor)
 ```javascript
-// This should render properly, NOT "xxxxx"
+// This should also render properly
 function test() {
   console.log("Hello World");
 }
 ```
 
 **Expected**: Code terlihat jelas dengan syntax highlighting
-**NOT**: "xxxxx" atau garbled text
-
-### 2. Full Width
-- Content menggunakan seluruh lebar layar
-- Tidak ada batasan width artificial
 
 ### 3. Tables
 | Column 1 | Column 2 |
@@ -70,15 +72,61 @@ function test() {
 
 **Expected**: Hover effect saat mouse over row
 
-### 4. Checkboxes
-- [ ] Unchecked task
-- [x] Checked task
+---
 
-**Expected**: Custom styled checkboxes dengan smooth animation
+## 🔧 Jika Masih Ada "xxxxx"
+
+### Step 1: Verify CSS Snippet Enabled
+1. Settings → Appearance → CSS Snippets
+2. Check "github-theme-fix" is enabled ✅
+3. If not enabled, enable it and reload
+
+### Step 2: Clear Cache
+1. Settings → About
+2. Click "Clear cache"
+3. Reload Obsidian (Ctrl+Shift+I → Ctrl+R)
+
+### Step 3: Check Theme
+1. Settings → Appearance → Themes
+2. Verify "GitHub Theme" is selected
+3. If not, select it and reload
+
+### Step 4: Nuclear Option (Last Resort)
+```powershell
+# Close Obsidian first, then run:
+Remove-Item -Path ".obsidian/workspace.json" -Force
+# Then reopen Obsidian
+```
 
 ---
 
-## 🎨 Current Theme Settings
+## 📦 What Was Fixed
+
+### Updated Files:
+1. `.obsidian/snippets/github-theme-fix.css`
+   - Added global font ligatures disable
+   - Force standard fonts everywhere
+   - Override font-family for all UI elements
+   - Fix text rendering in sidebar
+
+### CSS Changes:
+```css
+/* Force disable ligatures globally */
+* {
+  font-variant-ligatures: none !important;
+}
+
+/* Override fonts */
+body {
+  --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  --font-interface: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  --font-monospace: "Consolas", "Monaco", "Courier New", monospace !important;
+}
+```
+
+---
+
+## 🎨 Current Settings
 
 ```json
 {
@@ -91,48 +139,50 @@ function test() {
 
 ---
 
-## 🆘 Jika Masih Ada Masalah
+## 📸 Before vs After
 
-### "xxxxx" Masih Muncul?
-1. Verify CSS snippet enabled:
-   - Settings → Appearance → CSS Snippets
-   - "github-theme-fix" should be checked ✅
-2. Restart Obsidian again
-3. Check `00-system/docs/GITHUB-THEME-IMPROVEMENTS.md` untuk troubleshooting
+### Before:
+```
+📁 00-system
+  📄 xxxxx
+  📄 xxxxx
+  📄 0/0/0/0/0/0
+```
 
-### Tables Tidak Styled?
-1. Restart Obsidian
-2. Check if CSS snippet enabled
-3. Try reload (Ctrl+Shift+I → Ctrl+R)
-
-### Layout Tidak Full Width?
-1. Check Settings → Editor → Readable line length: OFF
-2. Restart Obsidian
-
----
-
-## 📚 Documentation
-
-- **Full guide**: `00-system/docs/GITHUB-THEME-IMPROVEMENTS.md`
-- **Original fix**: `00-system/docs/FIX-XXXXX-ISSUE.md`
-- **Setup progress**: `00-inbox/SETUP-PROGRESS.md`
+### After:
+```
+📁 00-system
+  📄 DASHBOARD
+  📄 TEST-DATAVIEW
+  📁 conversations
+```
 
 ---
 
-## 🎯 Next Steps After Restart
+## 🆘 Still Having Issues?
 
-1. ✅ Verify all improvements working
-2. ✅ Delete this file (action completed)
-3. ✅ Continue with Google Drive Service Account setup
-4. ✅ Check `00-inbox/SETUP-PROGRESS.md` for next steps
+**Contact**:
+- Check: `00-system/docs/GITHUB-THEME-IMPROVEMENTS.md`
+- GitHub: https://github.com/raymaizing-id/llm-custom
+- Email: raymaizing@gmail.com
 
 ---
 
-**ACTION REQUIRED**: RESTART OBSIDIAN NOW! 🔄
+## 🎯 Next Steps After Reload
 
-**Status**: ⏳ WAITING FOR RESTART
+1. ✅ Verify "xxxxx" is gone from file explorer
+2. ✅ Verify code blocks render properly
+3. ✅ Delete this file (action completed)
+4. ✅ Continue with setup (check SETUP-PROGRESS.md)
+
+---
+
+**ACTION REQUIRED**: RELOAD OBSIDIAN NOW! ⚡
+
+**Method**: Press `Ctrl+Shift+I` then `Ctrl+R`
+**Status**: ⏳ WAITING FOR RELOAD
 **Priority**: 🔴 URGENT
 
 ---
 
-*Setelah restart dan verify, kamu bisa delete file ini.*
+*Setelah reload dan verify, kamu bisa delete file ini.*
