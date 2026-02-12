@@ -2,6 +2,30 @@
    GitHub Theme Improvements & Fixes
    ============================================ */
 
+/* Global font fix - prevent "xxxxx" everywhere */
+body,
+.app-container,
+.workspace,
+.workspace-leaf,
+.view-content {
+  font-variant-ligatures: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Force standard fonts everywhere to prevent rendering issues */
+body {
+  --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  --font-interface: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  --font-monospace: "Consolas", "Monaco", "Courier New", monospace !important;
+}
+
+/* Ensure all text elements use proper fonts */
+* {
+  font-variant-ligatures: none !important;
+}
+
 /* Fix "xxxxx" issue in code blocks */
 .markdown-source-view.mod-cm6 .cm-line {
   font-family: var(--font-monospace-default, 'Consolas', 'Monaco', monospace) !important;
@@ -9,6 +33,36 @@
 
 .markdown-source-view.mod-cm6 .HyperMD-codeblock {
   font-family: var(--font-monospace-default, 'Consolas', 'Monaco', monospace) !important;
+}
+
+/* Fix "xxxxx" in file explorer and sidebar */
+.nav-file-title-content,
+.nav-folder-title-content,
+.tree-item-inner,
+.workspace-leaf-header-title {
+  font-family: var(--font-interface, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+  font-variant-ligatures: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Ensure proper text rendering in all UI elements */
+.workspace-leaf-content,
+.workspace-tab-header-inner-title,
+.view-header-title {
+  font-family: var(--font-interface, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+  font-variant-ligatures: none !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+/* Fix for long file names */
+.nav-file-title-content,
+.nav-folder-title-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 /* Ensure code blocks render properly */
@@ -257,6 +311,8 @@
   padding: 4px 8px;
   border-radius: 4px;
   transition: all 0.2s ease;
+  font-family: var(--font-interface, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+  font-variant-ligatures: none !important;
 }
 
 .nav-folder-title:hover,
