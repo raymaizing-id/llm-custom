@@ -5,7 +5,7 @@
   "theme": "obsidian",
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "github-theme-fix"
+    "universal-font-fix"
   ],
   "baseFontSizeAction": true
 }

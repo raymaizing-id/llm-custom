@@ -1,0 +1,237 @@
+/* ============================================
+   UNIVERSAL FONT FIX - Fix "xxxxx" Issue
+   Works with ALL themes including Wasp
+   ============================================ */
+
+/* CRITICAL: Force standard Windows fonts everywhere */
+:root,
+body,
+.app-container,
+* {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", sans-serif !important;
+  font-variant-ligatures: none !important;
+  font-feature-settings: normal !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Override ALL theme font variables */
+body {
+  --font-text: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  --font-text-theme: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  --font-interface: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  --font-interface-theme: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  --font-monospace: "Consolas", "Courier New", monospace !important;
+  --font-monospace-theme: "Consolas", "Courier New", monospace !important;
+  --default-font: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+}
+
+/* File Explorer - CRITICAL FIX */
+.nav-file-title,
+.nav-file-title-content,
+.nav-folder-title,
+.nav-folder-title-content,
+.tree-item,
+.tree-item-inner,
+.tree-item-self {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+  font-feature-settings: normal !important;
+}
+
+/* Workspace Headers */
+.workspace-leaf-header,
+.workspace-leaf-header-title,
+.view-header,
+.view-header-title,
+.view-header-title-container {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Tabs */
+.workspace-tab-header,
+.workspace-tab-header-inner,
+.workspace-tab-header-inner-title {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Sidebar */
+.sidebar,
+.sidebar-toggle-button,
+.mod-left-split,
+.mod-right-split {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+}
+
+/* Status Bar */
+.status-bar,
+.status-bar-item {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Markdown Editor */
+.markdown-source-view,
+.markdown-source-view.mod-cm6,
+.cm-editor,
+.cm-content,
+.cm-line {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+}
+
+/* Code blocks - use monospace */
+.markdown-source-view.mod-cm6 .HyperMD-codeblock,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-bg,
+.markdown-source-view.mod-cm6 .cm-inline-code,
+.markdown-preview-view code,
+.markdown-preview-view pre,
+.markdown-preview-view pre code {
+  font-family: "Consolas", "Courier New", monospace !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Markdown Preview */
+.markdown-preview-view,
+.markdown-preview-view * {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+}
+
+/* Headings */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.cm-header {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Lists */
+.markdown-preview-view ul,
+.markdown-preview-view ol,
+.markdown-preview-view li {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+}
+
+/* Tables */
+.markdown-preview-view table,
+.markdown-preview-view th,
+.markdown-preview-view td {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+}
+
+/* Dataview Plugin */
+.dataview,
+.dataview *,
+.dataview.table-view-table,
+.dataview.table-view-table th,
+.dataview.table-view-table td {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Modals and Prompts */
+.modal,
+.modal-container,
+.modal-content,
+.prompt,
+.suggestion-container,
+.suggestion-item {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Settings */
+.vertical-tab-header,
+.vertical-tab-header-group-title,
+.setting-item,
+.setting-item-name,
+.setting-item-description {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Buttons */
+button,
+.clickable-icon,
+.mod-cta {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Input Fields */
+input,
+textarea,
+select {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Graph View */
+.graph-view,
+.graph-view * {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+}
+
+/* Search */
+.search-result,
+.search-result-file-title,
+.search-result-file-match {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Backlinks */
+.backlink,
+.backlink-pane {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+}
+
+/* Tags */
+.tag,
+.cm-hashtag,
+.cm-hashtag-begin,
+.cm-hashtag-end {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Properties/Frontmatter */
+.metadata-container,
+.metadata-property,
+.metadata-property-key,
+.metadata-property-value {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* CRITICAL: Disable ALL font features that might cause issues */
+* {
+  font-variant: normal !important;
+  font-variant-ligatures: none !important;
+  font-variant-caps: normal !important;
+  font-variant-numeric: normal !important;
+  font-variant-east-asian: normal !important;
+  font-feature-settings: normal !important;
+  -webkit-font-feature-settings: normal !important;
+  -moz-font-feature-settings: normal !important;
+}
+
+/* Windows-specific fixes */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  * {
+    font-family: "Segoe UI", Arial, sans-serif !important;
+  }
+}
+
+/* Ensure text is always visible */
+* {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
