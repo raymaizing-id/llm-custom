@@ -1,219 +1,302 @@
 /* ============================================
-   Wasp Theme - Green Terminal Override
-   Change yellow colors to programmer green
+   Wasp Theme - Professional Green Override
+   Elegant forest green for professional coders
    ============================================ */
 
-/* Terminal Green Color Palette */
+/* Professional Green Color Palette */
 :root {
-  --terminal-green: #00ff00;        /* Bright terminal green */
-  --terminal-green-dark: #00cc00;   /* Darker green */
-  --terminal-green-light: #33ff33;  /* Lighter green */
-  --matrix-green: #00ff41;          /* Matrix green */
-  --hacker-green: #0f0;             /* Classic hacker green */
+  --forest-green: #2d5016;          /* Dark forest green */
+  --emerald-green: #50C878;         /* Elegant emerald */
+  --sage-green: #87AE73;            /* Soft sage green */
+  --hunter-green: #355E3B;          /* Professional hunter green */
+  --olive-green: #6B8E23;           /* Olive drab green */
+  --moss-green: #8A9A5B;            /* Moss green */
+  --pine-green: #01796F;            /* Pine green */
 }
 
-/* Override Wasp Theme Yellow Colors with Green */
+/* Override Wasp Theme Yellow Colors with Professional Green */
 .theme-dark {
   /* Buttons */
-  --button-hover-bg-color: #00cc00 !important;      /* Green hover */
-  --button-bg-color: #00aa00 !important;            /* Green background */
+  --button-hover-bg-color: #50C878 !important;      /* Emerald hover */
+  --button-bg-color: #355E3B !important;            /* Hunter green background */
   
   /* Accent Colors */
-  --text-a: #00ff41 !important;                     /* Matrix green for links */
-  --interactive-accent: #00ff41 !important;         /* Matrix green */
-  --text-accent: #00ff41 !important;                /* Matrix green */
-  --interactive-accent-rgb: 0, 255, 65 !important;  /* Matrix green RGB */
-  --vim-cursor: #00ff41 !important;                 /* Matrix green cursor */
+  --text-a: #50C878 !important;                     /* Emerald for links */
+  --interactive-accent: #50C878 !important;         /* Emerald */
+  --text-accent: #50C878 !important;                /* Emerald */
+  --interactive-accent-rgb: 80, 200, 120 !important;/* Emerald RGB */
+  --vim-cursor: #50C878 !important;                 /* Emerald cursor */
   
   /* Borders & Selection */
-  --background-modifier-border: #00ff41 !important; /* Matrix green border */
-  --text-selection: #00ff41 !important;             /* Matrix green selection */
+  --background-modifier-border: #50C878 !important; /* Emerald border */
+  --text-selection: rgba(80, 200, 120, 0.3) !important; /* Emerald selection with transparency */
   
   /* Hover States */
-  --text-accent-hover: #00aa00 !important;          /* Darker green hover */
+  --text-accent-hover: #6B8E23 !important;          /* Olive hover */
 }
 
-/* File Explorer - Active/Hover with Green */
+/* File Explorer - Active/Hover with Professional Green */
 .nav-file-title.is-active,
 .nav-folder-title.is-active,
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
-  background-color: #00ff41 !important;
-  color: #000000 !important;
+  background-color: #355E3B !important;
+  color: #ffffff !important;
 }
 
-/* Links - Matrix Green */
+/* Links - Emerald Green */
 a,
 .cm-link,
 .cm-hmd-internal-link,
 .markdown-preview-view a {
-  color: #00ff41 !important;
+  color: #50C878 !important;
 }
 
 a:hover,
 .cm-link:hover,
 .cm-hmd-internal-link:hover,
 .markdown-preview-view a:hover {
-  color: #33ff33 !important;
+  color: #87AE73 !important;
 }
 
-/* Active Tab - Green */
+/* Active Tab - Professional Green */
 .workspace-tab-header.is-active {
-  border-bottom-color: #00ff41 !important;
+  border-bottom-color: #50C878 !important;
 }
 
-/* Buttons - Green */
+/* Buttons - Hunter Green */
 button.mod-cta,
 .button-default {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
   color: #ffffff !important;
 }
 
 button.mod-cta:hover,
 .button-default:hover {
-  background-color: #00cc00 !important;
+  background-color: #50C878 !important;
 }
 
-/* Checkboxes - Green */
+/* Checkboxes - Emerald Green */
 .task-list-item-checkbox:checked {
-  background-color: #00ff41 !important;
-  border-color: #00ff41 !important;
+  background-color: #50C878 !important;
+  border-color: #50C878 !important;
 }
 
-/* Progress Bars - Green */
+/* Progress Bars - Emerald Green */
 progress::-webkit-progress-value {
-  background-color: #00ff41 !important;
+  background-color: #50C878 !important;
 }
 
 progress::-moz-progress-bar {
-  background-color: #00ff41 !important;
+  background-color: #50C878 !important;
 }
 
-/* Scrollbar Thumb - Green */
+/* Scrollbar Thumb - Hunter Green */
 ::-webkit-scrollbar-thumb {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #00cc00 !important;
+  background-color: #50C878 !important;
 }
 
-/* Status Bar - Green Accents */
+/* Status Bar - Professional Green Accents */
 .status-bar-item.mod-clickable:hover {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
 }
 
-/* Graph View - Green Nodes */
+/* Graph View - Emerald Nodes */
 .graph-view.color-fill-highlight {
-  color: #00ff41 !important;
+  color: #50C878 !important;
 }
 
 .graph-view.color-line-highlight {
-  color: #00ff41 !important;
+  color: #50C878 !important;
 }
 
-/* Search Results - Green Highlight */
+/* Search Results - Hunter Green Highlight */
 .search-result-file-matched-text {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
   color: #ffffff !important;
 }
 
-/* Tags - Green */
+/* Tags - Hunter Green */
 .tag {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
   color: #ffffff !important;
 }
 
 .tag:hover {
-  background-color: #00cc00 !important;
+  background-color: #50C878 !important;
 }
 
-/* Inline Code - Terminal Green */
+/* Inline Code - Emerald Green */
 .cm-inline-code,
 .markdown-preview-view code {
-  color: #00ff41 !important;
+  color: #50C878 !important;
 }
 
-/* Headings - Green Accent */
+/* Headings - Emerald Accent */
 .cm-header,
 .markdown-preview-view h1,
 .markdown-preview-view h2,
 .markdown-preview-view h3 {
-  color: #00ff41 !important;
+  color: #50C878 !important;
 }
 
-/* Blockquote Border - Green */
+/* Blockquote Border - Emerald */
 .markdown-preview-view blockquote {
-  border-left-color: #00ff41 !important;
+  border-left-color: #50C878 !important;
 }
 
-/* Table Headers - Green */
+/* Table Headers - Hunter Green */
 .markdown-preview-view th {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
   color: #ffffff !important;
 }
 
-/* Dataview Tables - Green Headers */
+/* Dataview Tables - Hunter Green Headers */
 .dataview.table-view-table thead {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
 }
 
 .dataview.table-view-table th {
   color: #ffffff !important;
 }
 
-/* Modal Buttons - Green */
+/* Modal Buttons - Hunter Green */
 .modal button.mod-cta {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
 }
 
 .modal button.mod-cta:hover {
-  background-color: #00cc00 !important;
+  background-color: #50C878 !important;
 }
 
-/* Settings - Active Item Green */
+/* Settings - Active Item Emerald */
 .vertical-tab-header-group-title {
-  color: #00ff41 !important;
+  color: #50C878 !important;
 }
 
 .vertical-tab-nav-item.is-active {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
   color: #ffffff !important;
 }
 
-/* Suggestion Container - Green Highlight */
+/* Suggestion Container - Hunter Green Highlight */
 .suggestion-item.is-selected {
-  background-color: #00aa00 !important;
+  background-color: #355E3B !important;
 }
 
-/* Ribbon - Green Active */
+/* Ribbon - Emerald Active */
 .side-dock-ribbon-action.is-active {
-  color: #00ff41 !important;
+  color: #50C878 !important;
 }
 
-/* Callouts - Green Accent */
+/* Callouts - Emerald Accent */
 .callout[data-callout="tip"],
 .callout[data-callout="success"] {
-  border-color: #00ff41 !important;
+  border-color: #50C878 !important;
 }
 
-/* Terminal/Console Style Text */
+/* Comments - Sage Green */
 .cm-s-obsidian span.cm-comment {
-  color: #00aa00 !important;
+  color: #87AE73 !important;
 }
 
-/* Cursor - Bright Green */
+/* Cursor - Emerald */
 .cm-cursor {
-  border-left-color: #00ff00 !important;
+  border-left-color: #50C878 !important;
 }
 
-/* Selection - Green with Transparency */
+/* Selection - Emerald with Transparency */
 .cm-s-obsidian .CodeMirror-selected {
-  background-color: rgba(0, 255, 65, 0.2) !important;
+  background-color: rgba(80, 200, 120, 0.2) !important;
 }
 
-/* Matching Brackets - Green */
+/* Matching Brackets - Emerald */
 .cm-s-obsidian .CodeMirror-matchingbracket {
-  color: #00ff41 !important;
-  background-color: rgba(0, 255, 65, 0.2) !important;
+  color: #50C878 !important;
+  background-color: rgba(80, 200, 120, 0.2) !important;
 }
+
+/* Additional Professional Touches */
+
+/* Folder Icons - Subtle Green Tint */
+.nav-folder-collapse-indicator {
+  color: #87AE73 !important;
+}
+
+/* File Icons - Subtle Green */
+.nav-file-icon {
+  color: #87AE73 !important;
+}
+
+/* Dividers - Subtle Green */
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+  background-color: #2d5016 !important;
+}
+
+/* Hover on Dividers */
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:hover,
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle:hover {
+  background-color: #355E3B !important;
+}
+
+/* Muted Text with Green Tint */
+.text-muted {
+  color: #8A9A5B !important;
+}
+
+/* Success Messages - Emerald */
+.notice.mod-success {
+  background-color: #355E3B !important;
+  border-color: #50C878 !important;
+}
+
+/* Active Line Highlight - Very Subtle Green */
+.cm-active-line {
+  background-color: rgba(45, 80, 22, 0.1) !important;
+}
+
+/* Gutter Line Numbers - Sage Green */
+.cm-gutters {
+  background-color: #1a1a1a !important;
+  border-right-color: #2d5016 !important;
+}
+
+.cm-lineNumbers .cm-gutterElement {
+  color: #87AE73 !important;
+}
+
+/* Active Line Number - Emerald */
+.cm-lineNumbers .cm-gutterElement.cm-active {
+  color: #50C878 !important;
+}
+
+/* Syntax Highlighting Adjustments */
+.cm-s-obsidian span.cm-keyword {
+  color: #50C878 !important;
+}
+
+.cm-s-obsidian span.cm-string {
+  color: #87AE73 !important;
+}
+
+.cm-s-obsidian span.cm-variable-2 {
+  color: #6B8E23 !important;
+}
+
+.cm-s-obsidian span.cm-def {
+  color: #50C878 !important;
+}
+
+/* Professional Gradient for Headers */
+.markdown-preview-view h1 {
+  background: linear-gradient(90deg, #50C878 0%, #355E3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
