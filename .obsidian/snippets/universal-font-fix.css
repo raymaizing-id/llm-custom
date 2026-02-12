@@ -222,6 +222,26 @@ select {
   -moz-font-feature-settings: normal !important;
 }
 
+/* Fix Git Blame Gutter - Hide "%%%%%" */
+.cm-gutter.line-author-gutter-container,
+.obs-git-blame-gutter,
+.cm-gutterElement.obs-git-blame-gutter {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Hide git blame gutter if showing %%%%% */
+.obs-git-blame-gutter div[data-commit*="waiting-for-result"] {
+  display: none !important;
+}
+
+/* Alternative: Fix git blame gutter text rendering */
+.line-author-gutter-container * {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif !important;
+  font-variant-ligatures: none !important;
+  text-rendering: optimizeLegibility !important;
+}
+
 /* Windows-specific fixes */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   * {
