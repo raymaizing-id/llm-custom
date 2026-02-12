@@ -1,0 +1,341 @@
+/* ============================================
+   GitHub Theme Improvements & Fixes
+   ============================================ */
+
+/* Fix "xxxxx" issue in code blocks */
+.markdown-source-view.mod-cm6 .cm-line {
+  font-family: var(--font-monospace-default, 'Consolas', 'Monaco', monospace) !important;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  font-family: var(--font-monospace-default, 'Consolas', 'Monaco', monospace) !important;
+}
+
+/* Ensure code blocks render properly */
+.markdown-preview-view pre code,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-end,
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-bg {
+  font-family: var(--font-monospace-default, 'Consolas', 'Monaco', monospace) !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Fix inline code */
+.markdown-source-view.mod-cm6 .cm-inline-code,
+.markdown-preview-view code {
+  font-family: var(--font-monospace-default, 'Consolas', 'Monaco', monospace) !important;
+  font-variant-ligatures: none !important;
+}
+
+/* Improve code block styling */
+.markdown-preview-view pre {
+  background-color: var(--code-background);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+/* Better syntax highlighting visibility */
+.cm-s-obsidian span.cm-comment {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.cm-s-obsidian span.cm-keyword {
+  color: var(--color-red);
+  font-weight: 600;
+}
+
+.cm-s-obsidian span.cm-string {
+  color: var(--color-blue);
+}
+
+.cm-s-obsidian span.cm-variable {
+  color: var(--text-normal);
+}
+
+.cm-s-obsidian span.cm-number {
+  color: var(--color-orange);
+}
+
+/* Full width layout */
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-preview-view {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Better table styling */
+.markdown-preview-view table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.markdown-preview-view th {
+  background-color: var(--background-secondary);
+  font-weight: 600;
+  padding: 8px 12px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.markdown-preview-view td {
+  padding: 8px 12px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.markdown-preview-view tr:hover {
+  background-color: var(--background-secondary-alt);
+}
+
+/* Dataview table improvements */
+.dataview.table-view-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dataview.table-view-table thead {
+  background-color: var(--background-secondary);
+}
+
+.dataview.table-view-table th {
+  font-weight: 600;
+  padding: 8px 12px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.dataview.table-view-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.dataview.table-view-table tr:hover {
+  background-color: var(--background-secondary-alt);
+}
+
+/* Better task checkboxes */
+.task-list-item-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--interactive-accent);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-list-item-checkbox:hover {
+  background-color: var(--interactive-hover);
+}
+
+.task-list-item-checkbox:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+/* Improve heading visibility */
+.markdown-preview-view h1,
+.cm-header-1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid var(--background-modifier-border);
+  padding-bottom: 0.3em;
+}
+
+.markdown-preview-view h2,
+.cm-header-2 {
+  font-size: 1.6em;
+  font-weight: 600;
+  margin-top: 1.3em;
+  margin-bottom: 0.4em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.2em;
+}
+
+.markdown-preview-view h3,
+.cm-header-3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+/* Better link styling */
+.markdown-preview-view a,
+.cm-link,
+.cm-hmd-internal-link {
+  color: var(--text-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.markdown-preview-view a:hover,
+.cm-link:hover,
+.cm-hmd-internal-link:hover {
+  border-bottom: 1px solid var(--text-accent);
+}
+
+/* Improve blockquote styling */
+.markdown-preview-view blockquote,
+.cm-quote {
+  border-left: 3px solid var(--text-accent);
+  padding-left: 16px;
+  margin: 16px 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Better tag styling */
+.cm-hashtag,
+.tag {
+  background-color: var(--background-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.cm-hashtag:hover,
+.tag:hover {
+  background-color: var(--interactive-hover);
+  border-color: var(--text-accent);
+}
+
+/* Smooth scrolling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Performance optimizations */
+.workspace-leaf,
+.markdown-preview-view,
+.markdown-source-view {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fix properties display */
+.metadata-container {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+/* Better file explorer */
+.nav-folder-title,
+.nav-file-title {
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  background-color: var(--interactive-hover);
+}
+
+.nav-file-title.is-active {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 600;
+}
+
+/* Improve status bar */
+.status-bar {
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 12px;
+  padding: 4px 12px;
+}
+
+/* Better modal styling */
+.modal {
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-bottom: 12px;
+}
+
+/* Improve button styling */
+button,
+.clickable-icon {
+  border-radius: 6px;
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover,
+.clickable-icon:hover {
+  background-color: var(--interactive-hover);
+}
+
+.mod-cta {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  font-weight: 600;
+}
+
+.mod-cta:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* Fix workspace tabs */
+.workspace-tab-header {
+  background-color: transparent;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.2s ease;
+}
+
+.workspace-tab-header:hover {
+  background-color: var(--interactive-hover);
+}
+
+.workspace-tab-header.is-active {
+  background-color: var(--background-primary);
+  border-bottom: 2px solid var(--interactive-accent);
+}
+
+/* Accessibility improvements */
+*:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

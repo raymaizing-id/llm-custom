@@ -4,6 +4,8 @@
   "accentColor": "#04070c",
   "theme": "obsidian",
   "baseFontSize": 16,
-  "enabledCssSnippets": [],
+  "enabledCssSnippets": [
+    "github-theme-fix"
+  ],
   "baseFontSizeAction": true
 }

@@ -24,7 +24,7 @@
   "tabSize": 2,
   "readableLineLength": false,
   "vimMode": false,
-  "defaultViewMode": "preview",
+  "defaultViewMode": "source",
   "livePreview": true,
   "autoPairBrackets": true,
   "autoPairMarkdown": true,
