@@ -5,7 +5,8 @@
   "theme": "obsidian",
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "universal-font-fix"
+    "universal-font-fix",
+    "wasp-green-override"
   ],
   "baseFontSizeAction": true
 }
