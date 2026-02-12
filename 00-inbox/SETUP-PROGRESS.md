@@ -316,8 +316,9 @@ const CONFIG = {
 - [x] Google Drive folder created
 
 ### In Progress 🔄
-- [ ] Git initialized & pushed
-- [ ] Obsidian Git configured
+- [x] Git initialized & pushed ✅
+- [x] Obsidian Git configured ✅
+- [ ] Service account created
 - [ ] Service account created
 - [ ] GitHub secrets added
 - [ ] GitHub Actions tested
