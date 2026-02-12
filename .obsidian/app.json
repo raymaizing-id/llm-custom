@@ -1,0 +1,17 @@
+{
+  "promptDelete": false,
+  "propertiesInDocument": "hidden",
+  "showInlineTitle": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00-inbox",
+  "attachmentFolderPath": "99-area/all-media",
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 90
+  },
+  "alwaysUpdateLinks": true,
+  "showLineNumber": false
+}

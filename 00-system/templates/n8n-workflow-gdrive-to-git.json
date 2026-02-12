@@ -1,0 +1,163 @@
+{
+  "name": "GDrive to Git Sync (Event-Driven)",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "gdrive-sync",
+        "options": {
+          "rawBody": true
+        },
+        "responseMode": "responseNode"
+      },
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "gdrive-sync"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.headers['x-webhook-secret']}}",
+              "operation": "equals",
+              "value2": "={{$env.N8N_WEBHOOK_SECRET}}"
+            }
+          ]
+        }
+      },
+      "name": "Verify Secret",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract data from webhook\nconst body = JSON.parse($json.body);\n\nreturn {\n  json: {\n    fileId: body.fileId,\n    fileName: body.fileName,\n    content: body.content,\n    folderPath: body.folderPath,\n    lastModified: body.lastModified,\n    timestamp: body.timestamp,\n    trigger: body.trigger || 'manual'\n  }\n};"
+      },
+      "name": "Parse Payload",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [650, 200]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Determine file path in Git repo\nconst fileName = $json.fileName;\nconst folderPath = $json.folderPath;\n\n// Map Google Drive path to Git path\n// Example: \"AI Knowledge Base/Products\" -> \"01-knowledge-base/products\"\nconst pathMapping = {\n  'Products': '01-knowledge-base/products',\n  'Marketing': '01-knowledge-base/marketing',\n  'Procedures': '01-knowledge-base/procedures',\n  'FAQs': '01-knowledge-base/faqs'\n};\n\n// Extract category from folder path\nconst category = folderPath.split('/').pop();\nconst gitPath = pathMapping[category] || '01-knowledge-base/misc';\n\n// Ensure .md extension\nconst safeFileName = fileName.endsWith('.md') ? fileName : `${fileName}.md`;\n\nreturn {\n  json: {\n    ...item.json,\n    gitPath: `${gitPath}/${safeFileName}`,\n    category: category\n  }\n};"
+      },
+      "name": "Map to Git Path",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [850, 200]
+    },
+    {
+      "parameters": {
+        "command": "cd /path/to/repo && git pull origin main"
+      },
+      "name": "Git Pull",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Write content to file\nconst fs = require('fs');\nconst path = require('path');\n\nconst repoPath = '/path/to/repo';\nconst filePath = path.join(repoPath, $json.gitPath);\nconst content = $json.content;\n\n// Ensure directory exists\nconst dir = path.dirname(filePath);\nif (!fs.existsSync(dir)) {\n  fs.mkdirSync(dir, { recursive: true });\n}\n\n// Write file\nfs.writeFileSync(filePath, content, 'utf8');\n\nreturn {\n  json: {\n    ...item.json,\n    fullPath: filePath,\n    written: true\n  }\n};"
+      },
+      "name": "Write File",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1250, 200]
+    },
+    {
+      "parameters": {
+        "command": "cd /path/to/repo && git add {{$json.gitPath}} && git commit -m 'Update from GDrive: {{$json.fileName}}' && git push origin main"
+      },
+      "name": "Git Commit & Push",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1450, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.AI_UPDATE_WEBHOOK_URL}}",
+        "options": {
+          "bodyParametersJson": "={\n  \"trigger\": \"gdrive_sync\",\n  \"file\": \"{{$json.gitPath}}\",\n  \"category\": \"{{$json.category}}\",\n  \"timestamp\": \"{{$json.timestamp}}\"\n}"
+        }
+      },
+      "name": "Trigger AI Update",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1650, 200]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Log sync activity\nconst logEntry = {\n  timestamp: new Date().toISOString(),\n  file: $json.fileName,\n  gitPath: $json.gitPath,\n  trigger: $json.trigger,\n  status: 'success'\n};\n\nconsole.log('Sync completed:', logEntry);\n\nreturn { json: logEntry };"
+      },
+      "name": "Log Activity",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1850, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"File synced successfully\",\n  \"file\": \"{{$json.fileName}}\",\n  \"gitPath\": \"{{$json.gitPath}}\",\n  \"timestamp\": \"{{$json.timestamp}}\"\n}"
+      },
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2050, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseCode": 401,
+        "responseBody": "={\n  \"success\": false,\n  \"error\": \"Unauthorized\",\n  \"message\": \"Invalid webhook secret\"\n}"
+      },
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [650, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [[{ "node": "Verify Secret", "type": "main", "index": 0 }]]
+    },
+    "Verify Secret": {
+      "main": [
+        [{ "node": "Parse Payload", "type": "main", "index": 0 }],
+        [{ "node": "Error Response", "type": "main", "index": 0 }]
+      ]
+    },
+    "Parse Payload": {
+      "main": [[{ "node": "Map to Git Path", "type": "main", "index": 0 }]]
+    },
+    "Map to Git Path": {
+      "main": [[{ "node": "Git Pull", "type": "main", "index": 0 }]]
+    },
+    "Git Pull": {
+      "main": [[{ "node": "Write File", "type": "main", "index": 0 }]]
+    },
+    "Write File": {
+      "main": [[{ "node": "Git Commit & Push", "type": "main", "index": 0 }]]
+    },
+    "Git Commit & Push": {
+      "main": [[{ "node": "Trigger AI Update", "type": "main", "index": 0 }]]
+    },
+    "Trigger AI Update": {
+      "main": [[{ "node": "Log Activity", "type": "main", "index": 0 }]]
+    },
+    "Log Activity": {
+      "main": [[{ "node": "Success Response", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2026-02-12T00:00:00.000Z",
+  "versionId": "1"
+}

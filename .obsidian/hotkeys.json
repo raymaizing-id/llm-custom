@@ -1,0 +1,27 @@
+{
+  "properties:open-local": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "1"
+    }
+  ],
+  "editor:cycle-list-checklist": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Q"
+    }
+  ],
+  "editor:insert-wikilink": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "K"
+    }
+  ]
+}

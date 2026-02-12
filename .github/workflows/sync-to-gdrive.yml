@@ -1,0 +1,62 @@
+# GitHub Actions: Auto-sync to Google Drive & Trigger AI Update
+
+name: Sync to Google Drive and Update AI Bots
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '01-knowledge-base/**'  # Only trigger on knowledge base changes
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  sync-to-gdrive:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # Get last 2 commits to compare
+      
+      - name: Get changed files
+        id: changed-files
+        run: |
+          echo "files=$(git diff --name-only HEAD~1 HEAD | grep '^01-knowledge-base/' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+      
+      - name: Sync to Google Drive
+        env:
+          GDRIVE_CREDENTIALS: ${{ secrets.GDRIVE_CREDENTIALS }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: |
+          python 00-system/scripts/sync-to-gdrive.py
+      
+      - name: Trigger n8n AI Update
+        env:
+          N8N_WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
+          N8N_WEBHOOK_SECRET: ${{ secrets.N8N_WEBHOOK_SECRET }}
+        run: |
+          curl -X POST "$N8N_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -H "X-Webhook-Secret: $N8N_WEBHOOK_SECRET" \
+            -d "{
+              \"trigger\": \"github_push\",
+              \"files\": ${{ steps.changed-files.outputs.files }},
+              \"commit\": \"${{ github.sha }}\",
+              \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
+            }"
+      
+      - name: Notify completion
+        if: success()
+        run: |
+          echo "✅ Sync completed successfully"
+          echo "Files synced: ${{ steps.changed-files.outputs.files }}"

@@ -1,0 +1,229 @@
+{
+  "name": "Universal AI Bot Update (All Platforms)",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "ai-update",
+        "options": {}
+      },
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "filePath": "={{$json.file_path}}"
+      },
+      "name": "Read Knowledge File",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse YAML front matter and markdown content\nconst content = $json.data.toString();\nconst yamlMatch = content.match(/^---\\n([\\s\\S]*?)\\n---\\n([\\s\\S]*)$/);\n\nif (!yamlMatch) {\n  return {\n    json: {\n      metadata: {},\n      content: content,\n      platforms: ['gpt', 'gemini', 'custom-ai']\n    }\n  };\n}\n\nconst yamlText = yamlMatch[1];\nconst markdown = yamlMatch[2];\n\n// Simple YAML parser\nconst metadata = {};\nyamlText.split('\\n').forEach(line => {\n  const colonIndex = line.indexOf(':');\n  if (colonIndex > 0) {\n    const key = line.substring(0, colonIndex).trim();\n    let value = line.substring(colonIndex + 1).trim();\n    \n    // Handle arrays [item1, item2]\n    if (value.startsWith('[') && value.endsWith(']')) {\n      value = value.slice(1, -1).split(',').map(v => v.trim());\n    }\n    \n    metadata[key] = value;\n  }\n});\n\nreturn {\n  json: {\n    metadata: metadata,\n    content: markdown.trim(),\n    platforms: metadata.platforms || ['gpt', 'gemini', 'custom-ai'],\n    category: metadata.category || 'general',\n    priority: metadata.priority || 'medium'\n  }\n};"
+      },
+      "name": "Parse Metadata",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "filePath": "02-ai-bots/bot-registry.csv"
+      },
+      "name": "Read Bot Registry",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse CSV and filter bots\nconst csv = $input.first().json.data.toString();\nconst lines = csv.split('\\n');\nconst headers = lines[0].split(',').map(h => h.trim());\n\nconst bots = [];\nfor (let i = 1; i < lines.length; i++) {\n  if (!lines[i].trim()) continue;\n  \n  const values = lines[i].split(',').map(v => v.trim());\n  const bot = {};\n  headers.forEach((header, index) => {\n    bot[header] = values[index] || '';\n  });\n  \n  // Only active bots\n  if (bot.status === 'active') {\n    bots.push(bot);\n  }\n}\n\n// Get knowledge data from previous node\nconst knowledge = $input.all()[0].json;\n\n// Filter bots by platform and category\nconst platforms = Array.isArray(knowledge.platforms) \n  ? knowledge.platforms \n  : [knowledge.platforms];\n\nconst filteredBots = bots.filter(bot => {\n  // Check platform match\n  const platformMatch = platforms.includes(bot.platform);\n  \n  // Check category match (if bot has specialty)\n  const categoryMatch = !bot.specialty || bot.specialty === knowledge.category;\n  \n  return platformMatch && categoryMatch;\n});\n\nreturn filteredBots.map(bot => ({\n  json: {\n    ...bot,\n    knowledge_content: knowledge.content,\n    knowledge_metadata: knowledge.metadata\n  }\n}));"
+      },
+      "name": "Filter Bots",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.platform}}",
+              "operation": "equals"
+            }
+          ]
+        }
+      },
+      "name": "Switch by Platform",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [1250, 300],
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{$json.platform}}",
+                    "value2": "gpt"
+                  }
+                ]
+              }
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{$json.platform}}",
+                    "value2": "gemini"
+                  }
+                ]
+              }
+            },
+            {
+              "conditions": {
+                "string": [
+                  {
+                    "value1": "={{$json.platform}}",
+                    "value2": "custom-ai"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.openai.com/v1/assistants/={{$json.bot_id}}/files",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer ={{$env.OPENAI_API_KEY}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "file_id",
+              "value": "={{$json.file_id}}"
+            }
+          ]
+        }
+      },
+      "name": "Update GPT",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1450, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://generativelanguage.googleapis.com/v1beta/cachedContents",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-goog-api-key",
+              "value": "={{$env.GEMINI_API_KEY}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "bodyParametersJson": "={\n  \"model\": \"models/gemini-1.5-pro-001\",\n  \"contents\": [{\n    \"role\": \"user\",\n    \"parts\": [{\n      \"text\": {{$json.knowledge_content}}\n    }]\n  }],\n  \"ttl\": \"3600s\"\n}"
+      },
+      "name": "Update Gemini",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$json.webhook_url}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer ={{$json.api_key}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "bodyParametersJson": "={\n  \"knowledge\": {{$json.knowledge_content}},\n  \"metadata\": {{$json.knowledge_metadata}},\n  \"bot_id\": \"{{$json.bot_id}}\",\n  \"timestamp\": \"{{$now.toISO()}}\"\n}"
+      },
+      "name": "Update Custom AI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1450, 400]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Log success\nconst bot = $json;\nconsole.log(`✅ Updated bot: ${bot.bot_name} (${bot.platform})`);\n\nreturn {\n  json: {\n    success: true,\n    bot_id: bot.bot_id,\n    bot_name: bot.bot_name,\n    platform: bot.platform,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "name": "Log Success",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1650, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"AI bots updated successfully\",\n  \"bots_updated\": {{$json.length}},\n  \"timestamp\": \"{{$now.toISO()}}\"\n}"
+      },
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1850, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [[{ "node": "Read Knowledge File", "type": "main", "index": 0 }]]
+    },
+    "Read Knowledge File": {
+      "main": [[{ "node": "Parse Metadata", "type": "main", "index": 0 }]]
+    },
+    "Parse Metadata": {
+      "main": [[{ "node": "Read Bot Registry", "type": "main", "index": 0 }]]
+    },
+    "Read Bot Registry": {
+      "main": [[{ "node": "Filter Bots", "type": "main", "index": 0 }]]
+    },
+    "Filter Bots": {
+      "main": [[{ "node": "Switch by Platform", "type": "main", "index": 0 }]]
+    },
+    "Switch by Platform": {
+      "main": [
+        [{ "node": "Update GPT", "type": "main", "index": 0 }],
+        [{ "node": "Update Gemini", "type": "main", "index": 0 }],
+        [{ "node": "Update Custom AI", "type": "main", "index": 0 }]
+      ]
+    },
+    "Update GPT": {
+      "main": [[{ "node": "Log Success", "type": "main", "index": 0 }]]
+    },
+    "Update Gemini": {
+      "main": [[{ "node": "Log Success", "type": "main", "index": 0 }]]
+    },
+    "Update Custom AI": {
+      "main": [[{ "node": "Log Success", "type": "main", "index": 0 }]]
+    },
+    "Log Success": {
+      "main": [[{ "node": "Success Response", "type": "main", "index": 0 }]]
+    }
+  }
+}

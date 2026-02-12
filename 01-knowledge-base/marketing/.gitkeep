@@ -1,0 +1,35 @@
+# Marketing Content
+
+Place marketing campaigns, copy, and strategies here.
+
+## File Naming Convention
+
+- `campaign-name.md` - Campaign details
+- `copy-platform-date.md` - Marketing copy
+- `strategy-topic.md` - Marketing strategies
+
+## Example Structure
+
+```markdown
+# Campaign Name
+
+## Objective
+What we want to achieve
+
+## Target Audience
+Who we're targeting
+
+## Channels
+- Social media
+- Email
+- Ads
+
+## Timeline
+Start and end dates
+
+## Budget
+Budget allocation
+
+## KPIs
+Success metrics
+```

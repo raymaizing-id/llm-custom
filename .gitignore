@@ -1,0 +1,71 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+
+# Credentials & Secrets
+05-integrations/credentials/
+*.key
+*.pem
+*.env
+.env.*
+secrets.json
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+
+# Node modules (if any)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# Archives
+99-archive/temp/
+*.zip
+*.tar.gz
+*.rar
+
+# Large files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.iso
+
+# Build outputs
+dist/
+build/
+*.exe
+*.dll
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.Trash-*
+.fuse_hidden*
+
+# Custom
+_drafts/
+_private/
