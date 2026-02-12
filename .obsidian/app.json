@@ -1,17 +1,33 @@
 {
   "promptDelete": false,
-  "propertiesInDocument": "hidden",
-  "showInlineTitle": false,
+  "propertiesInDocument": "visible",
+  "showInlineTitle": true,
   "newFileLocation": "folder",
   "newFileFolderPath": "00-inbox",
-  "attachmentFolderPath": "99-area/all-media",
+  "attachmentFolderPath": "03-media/files",
   "pdfExportSettings": {
     "includeName": true,
     "pageSize": "A4",
     "landscape": false,
     "margin": "0",
-    "downscalePercent": 90
+    "downscalePercent": 100
   },
   "alwaysUpdateLinks": true,
-  "showLineNumber": false
+  "showLineNumber": true,
+  "spellcheck": true,
+  "spellcheckLanguages": ["en-US", "id-ID"],
+  "strictLineBreaks": false,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showFrontmatter": true,
+  "showUnsupportedFiles": true,
+  "useTab": false,
+  "tabSize": 2,
+  "readableLineLength": true,
+  "vimMode": false,
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "autoPairBrackets": true,
+  "autoPairMarkdown": true,
+  "smartIndentList": true
 }

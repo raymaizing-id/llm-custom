@@ -1,27 +1,116 @@
 {
   "properties:open-local": [
     {
-      "modifiers": [
-        "Alt"
-      ],
+      "modifiers": ["Alt"],
       "key": "1"
     }
   ],
   "editor:cycle-list-checklist": [
     {
-      "modifiers": [
-        "Alt"
-      ],
+      "modifiers": ["Alt"],
       "key": "Q"
     }
   ],
   "editor:insert-wikilink": [
     {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
+      "modifiers": ["Alt", "Mod"],
       "key": "K"
+    }
+  ],
+  "obsidian-git:commit-push-specified-message": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "G"
+    }
+  ],
+  "obsidian-git:pull": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "P"
+    }
+  ],
+  "templater-obsidian:insert-templater": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "T"
+    }
+  ],
+  "dataview:dataview-force-refresh-views": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "R"
+    }
+  ],
+  "editor:toggle-fold": [
+    {
+      "modifiers": ["Mod"],
+      "key": "["
+    }
+  ],
+  "editor:fold-all": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "["
+    }
+  ],
+  "editor:unfold-all": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "]"
+    }
+  ],
+  "command-palette:open": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "A"
+    }
+  ],
+  "editor:toggle-checklist-status": [
+    {
+      "modifiers": ["Mod"],
+      "key": "Enter"
+    }
+  ],
+  "workspace:split-vertical": [
+    {
+      "modifiers": ["Mod"],
+      "key": "\\"
+    }
+  ],
+  "workspace:split-horizontal": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "\\"
+    }
+  ],
+  "editor:insert-tag": [
+    {
+      "modifiers": ["Mod"],
+      "key": "#"
+    }
+  ],
+  "editor:toggle-bold": [
+    {
+      "modifiers": ["Mod"],
+      "key": "B"
+    }
+  ],
+  "editor:toggle-italics": [
+    {
+      "modifiers": ["Mod"],
+      "key": "I"
+    }
+  ],
+  "editor:toggle-highlight": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "H"
+    }
+  ],
+  "editor:toggle-code": [
+    {
+      "modifiers": ["Mod"],
+      "key": "`"
     }
   ]
 }
