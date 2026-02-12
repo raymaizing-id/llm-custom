@@ -1,10 +1,8 @@
 {
-  "cssTheme": "GitHub Theme",
+  "cssTheme": "",
   "nativeMenus": false,
-  "accentColor": "#ffffff",
+  "accentColor": "",
   "theme": "obsidian",
-  "baseFontSize": 14,
-  "enabledCssSnippets": [
-    "custom-layout"
-  ]
+  "baseFontSize": 16,
+  "enabledCssSnippets": []
 }
