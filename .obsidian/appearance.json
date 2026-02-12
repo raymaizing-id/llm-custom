@@ -1,8 +1,9 @@
 {
-  "cssTheme": "Wasp",
+  "cssTheme": "Dark Moss",
   "nativeMenus": false,
-  "accentColor": "#58a6ff",
+  "accentColor": "#04070c",
   "theme": "obsidian",
   "baseFontSize": 16,
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [],
+  "baseFontSizeAction": true
 }
