@@ -4,7 +4,7 @@
 
 ## 🎯 Philosophy
 
-**Zero Friction** - Users just edit and save, everything else is automatic
+**Zero Friction** - Users just edit and save, everything else is automatic--
 **Smart Organization** - Files auto-organized by type and category
 **Portable** - All paths relative, move anywhere
 **Lightweight** - Event-driven, no polling, minimal overhead
