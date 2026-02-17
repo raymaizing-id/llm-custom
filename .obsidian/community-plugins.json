@@ -2,7 +2,6 @@
   "dataview",
   "obsidian-tasks-plugin",
   "templater-obsidian",
-  "obsidian-git",
   "recent-files-obsidian",
   "settings-search",
   "file-explorer-note-count",
@@ -23,5 +22,8 @@
   "marker-api",
   "obsidian-shellcommands",
   "mxmind",
-  "obsidian-enhancing-mindmap"
+  "obsidian-enhancing-mindmap",
+  "convert-url-to-iframe",
+  "obsidian-link-embed",
+  "auto-card-link"
 ]

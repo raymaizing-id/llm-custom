@@ -14,57 +14,87 @@
 ## 📁 Folder Structure
 
 ```
-llm-custom/
+brain-raymaizing/
 ├── .github/                # GitHub Actions
 │   └── workflows/
 │       └── sync-to-gdrive.yml
 │
+├── 00-inbox/               # Inbox untuk notes sementara
+│   ├── 00-Notes/
+│   ├── 01-Clipping/
+│   └── [quick reference docs]
+│
 ├── 00-system/              # System files & configurations
 │   ├── docs/               # User documentation
-│   │   ├── QUICK-START.md
-│   │   ├── FINAL-SUMMARY.md
-│   │   ├── CLEANUP-GUIDE.md
-│   │   └── SYSTEM-SUMMARY.md
 │   ├── conversations/      # Conversation history
 │   ├── internal/           # Internal system files
 │   ├── architecture/       # Architecture documentation
 │   ├── scripts/            # Automation scripts
-│   └── templates/          # n8n workflows
+│   └── templates/          # Templates (n8n, obsidian)
+│
+├── 01-assets/              # Assets management
+│   ├── account/            # Email, social media, platform accounts
+│   ├── integrations/       # API keys, credentials (gitignored)
+│   └── storage/            # Documents, contracts, certificates
 │
 ├── 01-knowledge-base/      # Main knowledge repository
 │   ├── products/           # Product information
 │   ├── marketing/          # Marketing content
 │   ├── procedures/         # SOPs & procedures
-│   ├── faqs/              # FAQs
-│   └── _index.md          # Knowledge index
+│   ├── faqs/               # FAQs
+│   ├── raymaizing/         # Fundamental docs
+│   └── perusahaan/         # Company structure & AI ecosystem
+│       ├── MASTER-STRUKTUR-RAYCORP.md  # Master structure doc
+│       ├── lunaranger/     # PT Lunaray (14 divisi complete)
+│       ├── dianranger/     # CV Dian Indah Abadi
+│       ├── raycademy/      # Ray Academy
+│       ├── agroranger/     # RayAgro
+│       └── cosranger/      # LabCos
 │
-├── 02-ai-bots/            # AI bot configurations
-│   ├── custom-gpts/       # Custom GPT configs
-│   ├── gemini-gems/       # Gemini Gem configs
-│   ├── custom-ai/         # Other AI configs
-│   └── bot-registry.csv   # Master bot registry
+├── 02-ai-bots/             # AI bot configurations
+│   ├── custom-gpts/        # OpenAI Custom GPTs
+│   ├── gemini-gems/        # Google Gemini Gems
+│   ├── custom-ai/          # Other AI platforms
+│   ├── bot-registry.csv    # Master bot registry
+│   └── UNIVERSAL-CONFIG.md # Global AI config
 │
-├── 03-media/              # Media assets
-│   ├── images/            # Images
-│   ├── videos/            # Videos
-│   └── files/             # Other files
+├── 02-automation/          # Automation workflows & scripts
+│   ├── n8n-workflows/      # n8n automation workflows
+│   ├── scripts/            # Python, JS, Bash scripts
+│   └── integrations/       # API integrations & webhooks
 │
-├── 04-database/           # Database schemas & migrations
-│   ├── schemas/           # SQL schemas
-│   ├── migrations/        # DB migrations
-│   └── seeds/             # Seed data
+├── 02-platform/            # Platform development docs
+│   └── [platform-name]/    # PRD, BRD, FLOW, ARCHITECTURE
+│       ├── PRD.md
+│       ├── BRD.md
+│       ├── FLOW.md
+│       └── ARCHITECTURE.md
 │
-├── 05-integrations/       # Integration configurations
-│   ├── apis/              # API configs
-│   ├── webhooks/          # Webhook configs
-│   └── credentials/       # Credentials (gitignored)
+├── 04-database/            # Database schemas & migrations
+│   ├── schemas/            # SQL schemas
+│   ├── migrations/         # DB migrations
+│   └── seeds/              # Seed data
 │
-├── 99-archive/            # Archived content
+├── 06-ideation/            # Ideas, research, briefs
+│   ├── ideas/              # Product, business, innovation ideas
+│   ├── research/           # Market, competitor, trend research
+│   ├── briefs/             # Project, campaign, product briefs
+│   ├── brainstorm/         # Brainstorming sessions
+│   └── TRANSFER-DEPLOY.md  # Knowledge transfer docs
 │
-├── .obsidian/             # Obsidian configuration
-├── .github/               # GitHub Actions
-├── .gitignore
-└── README.md              # This file
+├── 99-area/                # Working area
+│   ├── media/              # All media files (auto-organized)
+│   │   ├── all-media/      # Auto-collect from Obsidian
+│   │   ├── images/
+│   │   ├── videos/
+│   │   └── files/
+│   ├── template/           # Dataview & template files
+│   └── [working files]
+│
+├── .obsidian/              # Obsidian configuration
+├── DASHBOARD.md            # Main dashboard
+├── README.md               # This file
+└── .gitignore
 ```
 
 ---

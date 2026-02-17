@@ -227,14 +227,36 @@ SORT length(rows) DESC
 ## 🔗 Quick Links
 
 ### 📖 Documentation
-- [[GUIDE|📘 Complete System Guide]]
+- [[01-knowledge-base/perusahaan/MASTER-STRUKTUR-RAYCORP|🏢 Master Struktur RayCorp]]
+- [[01-knowledge-base/perusahaan/ECOSYSTEM-GUIDE|📖 Ecosystem Guide]]
+- [[01-knowledge-base/perusahaan/QUICK-REFERENCE|⚡ Quick Reference]]
 - [[00-system/docs/QUICK-START|🚀 Quick Start (5 min)]]
-- [[00-system/docs/FOLDER-STRUCTURE|📁 Folder Structure]]
 - [[00-system/docs/OBSIDIAN-OPTIMIZATION-GUIDE|⚙️ Obsidian Optimization]]
-- [[00-system/docs/GITHUB-THEME-IMPROVEMENTS|🎨 Theme Guide]]
+
+### 🏢 Company Structure
+- [[01-knowledge-base/perusahaan/lunaranger/|🌙 Lunaranger]] (PT Lunaray Cahya Abadi)
+- [[01-knowledge-base/perusahaan/dianranger/|🏭 Dianranger]] (CV Dian Indah Abadi)
+- [[01-knowledge-base/perusahaan/raycademy/|🎓 Raycademy]] (Ray Academy)
+- [[01-knowledge-base/perusahaan/agroranger/|🌾 AgroRanger]] (RayAgro)
+- [[01-knowledge-base/perusahaan/cosranger/|🔬 CosRanger]] (LabCos)
+
+### 🤖 AI & Automation
+- [[02-ai-bots/|🤖 AI Bots Hub]]
+- [[02-automation/|⚙️ Automation Hub]]
+- [[02-ai-bots/UNIVERSAL-CONFIG|🌐 Universal AI Config]]
+
+### 🚀 Platform & Development
+- [[02-platform/|🚀 Platform Development]]
+- [[06-ideation/|💡 Ideation Hub]]
+- [[01-assets/|📦 Assets Management]]
+
+### Workspace
+- [storage raymaizing drive](https://drive.google.com/drive/folders/15d-VU5WGv4ipzCIDcLcGF73lydlHLYsf?usp=drive_link)
+- [gpt-bookmark builder](https://chatgpt.com/c/6993d4be-b870-8322-a37c-1fa1111fdf2a)
+- [gpt-brief jadi knowledge](https://chatgpt.com/c/6993dbc3-1d68-8320-b004-c6427e970475)
 
 ### 📊 Setup & Progress
-- [[00-inbox/SETUP-PROGRESS|📊 Setup Progress (60%)]]
+- [[00-inbox/SETUP-PROGRESS|📊 Setup Progress]]
 - [[00-inbox/SETUP-STEPS-SIMPLE|📝 Setup Steps]]
 - [[00-inbox/QUICK-REFERENCE-CARD|🎯 Quick Reference Card]]
 
