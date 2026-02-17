@@ -13,7 +13,11 @@ templates/
 │   ├── faq-template.md
 │   ├── procedure-template.md
 │   ├── custom-gpt-template.md
-│   └── conversation-template.md
+│   ├── conversation-template.md
+│   ├── business-unit-template.md      # NEW: Template unit bisnis
+│   ├── division-template.md           # NEW: Template divisi (14 divisi)
+│   ├── brand-template.md              # NEW: Template brand
+│   └── otobot-template.md             # NEW: Template Otobot (Level 4 AI)
 │
 └── n8n/               # n8n workflow templates (.json)
     ├── n8n-universal-ai-update.json
@@ -35,6 +39,14 @@ Digunakan oleh Templater plugin untuk auto-insert template saat buat file baru.
 - `procedure-template.md` → Folder `01-knowledge-base/procedures/`
 - `custom-gpt-template.md` → Folder `02-ai-bots/custom-gpts/`
 - `conversation-template.md` → Folder `00-system/conversations/`
+
+**AI Ecosystem Templates** (Manual use):
+- `business-unit-template.md` → Untuk membuat unit bisnis baru
+- `division-template.md` → Untuk membuat divisi baru (14 divisi standar)
+- `brand-template.md` → Untuk membuat brand baru
+- `otobot-template.md` → Untuk membuat Otobot (Level 4 AI)
+
+📖 **Panduan lengkap:** `01-knowledge-base/perusahaan/ECOSYSTEM-GUIDE.md`
 
 ### n8n Templates
 Workflow templates untuk import ke n8n.

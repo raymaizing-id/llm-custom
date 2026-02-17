@@ -26,6 +26,33 @@ updated: 2026-02-12
 
 ## 📚 Knowledge Base
 
+### 🏢 Company & AI Ecosystem
+
+**RayCorp AI Ecosystem** - 4-Level AI Hierarchy
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "📄 Document",
+  dateformat(file.mtime, "yyyy-MM-dd") as "Last Updated"
+FROM "01-knowledge-base/perusahaan"
+WHERE file.name = "README" OR file.name = "ECOSYSTEM-GUIDE" OR file.name = "QUICK-REFERENCE" OR contains(file.name, "Struktur")
+SORT file.name ASC
+```
+
+**Quick Navigation**:
+- [[01-knowledge-base/perusahaan/README|🏛️ Company Structure Overview]]
+- [[01-knowledge-base/perusahaan/ECOSYSTEM-GUIDE|📖 Complete Ecosystem Guide]]
+- [[01-knowledge-base/perusahaan/QUICK-REFERENCE|⚡ Quick Reference Card]]
+
+**Business Units**:
+- [[01-knowledge-base/perusahaan/lunaranger/|🌙 Lunaranger]] - PT Lunaray Cahya Abadi (Kosmetik)
+- [[01-knowledge-base/perusahaan/dianranger/|🏭 Dianranger]] - CV Dian Indah Abadi (OEM/Maklon)
+- [[01-knowledge-base/perusahaan/raycademy/|🎓 Raycademy]] - Ray Academy (Edukasi)
+- [[01-knowledge-base/perusahaan/agroranger/|🌾 AgroRanger]] - RayAgro (Pertanian)
+- [[01-knowledge-base/perusahaan/cosranger/|🔬 CosRanger]] - LabCos (Laboratorium)
+
+---
+
 ### 📦 Products
 
 ```dataview
