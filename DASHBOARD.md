@@ -2,14 +2,32 @@
 title: Dashboard
 type: dashboard
 created: 2026-02-12
-updated: 2026-02-12
+updated: 2026-02-17
 ---
 
 # 🚀 AI Knowledge Management Dashboard
 
 > **Central Hub** - All your content in one place, automatically updated
 
-**Status**: 🟢 Active | **Progress**: 60% | **Last Updated**: 2026-02-12
+**Status**: 🟢 Active | **Progress**: 75% | **Last Updated**: 2026-02-17
+
+---
+
+## 🎉 Latest Update: Knowledge Base Restructure Complete!
+
+**Date**: February 17, 2026 ✅
+
+The knowledge base has been completely restructured to an IDEAL structure:
+- ✅ Consolidated all fundamental docs in `_fundamental/`
+- ✅ Created `_cross-company/` for shared resources
+- ✅ Centralized brands in `_brands/` (B2C, B2B, B2B2C)
+- ✅ Centralized products in `_products/`
+- ✅ Centralized marketing in `_marketing/`
+- ✅ Organized all business units under `unit-bisnis/`
+- ✅ 18 comprehensive README files created
+- ✅ Complete migration log documented
+
+See: [[00-system/docs/KNOWLEDGE-BASE-MIGRATION-LOG|📋 Migration Log]] | [[01-knowledge-base/README|📚 New Structure]]
 
 ---
 
@@ -26,64 +44,146 @@ updated: 2026-02-12
 
 ## 📚 Knowledge Base
 
-### 🏢 Company & AI Ecosystem
+### 🏛️ Fundamental Knowledge
 
-**RayCorp AI Ecosystem** - 4-Level AI Hierarchy
+**Core organizational knowledge and frameworks**
 
 ```dataview
 TABLE WITHOUT ID
   file.link as "📄 Document",
   dateformat(file.mtime, "yyyy-MM-dd") as "Last Updated"
-FROM "01-knowledge-base/perusahaan"
-WHERE file.name = "README" OR file.name = "ECOSYSTEM-GUIDE" OR file.name = "QUICK-REFERENCE" OR contains(file.name, "Struktur")
+FROM "01-knowledge-base/_fundamental"
+WHERE file.name = "README" OR contains(file.name, "Struktur") OR contains(file.name, "VCORETEX")
 SORT file.name ASC
+LIMIT 10
 ```
 
 **Quick Navigation**:
-- [[01-knowledge-base/perusahaan/README|🏛️ Company Structure Overview]]
-- [[01-knowledge-base/perusahaan/ECOSYSTEM-GUIDE|📖 Complete Ecosystem Guide]]
-- [[01-knowledge-base/perusahaan/QUICK-REFERENCE|⚡ Quick Reference Card]]
+- [[01-knowledge-base/_fundamental/README|🏛️ Fundamental Knowledge Overview]]
+- [[01-knowledge-base/_fundamental/organizational-structure/|📊 Organizational Structure]]
+- [[01-knowledge-base/_fundamental/ai-hierarchy/|🤖 AI Hierarchy (4-Level)]]
+- [[01-knowledge-base/_fundamental/frameworks/|📐 Frameworks (VCORETEX)]]
+
+---
+
+### 🏢 Business Units
+
+**RayCorp Ecosystem - 5 Business Units**
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "📄 Document",
+  dateformat(file.mtime, "yyyy-MM-dd") as "Last Updated"
+FROM "01-knowledge-base/unit-bisnis"
+WHERE file.name = "README" OR file.name = "MASTER-STRUKTUR-RAYCORP" OR file.name = "ECOSYSTEM-GUIDE" OR file.name = "QUICK-REFERENCE"
+SORT file.name ASC
+```
 
 **Business Units**:
-- [[01-knowledge-base/perusahaan/lunaranger/|🌙 Lunaranger]] - PT Lunaray Cahya Abadi (Kosmetik)
-- [[01-knowledge-base/perusahaan/dianranger/|🏭 Dianranger]] - CV Dian Indah Abadi (OEM/Maklon)
-- [[01-knowledge-base/perusahaan/raycademy/|🎓 Raycademy]] - Ray Academy (Edukasi)
-- [[01-knowledge-base/perusahaan/agroranger/|🌾 AgroRanger]] - RayAgro (Pertanian)
-- [[01-knowledge-base/perusahaan/cosranger/|🔬 CosRanger]] - LabCos (Laboratorium)
+- [[01-knowledge-base/unit-bisnis/lunaranger/|🌙 Lunaranger]] - PT Lunaray Cahya Abadi (Kosmetik & Skincare) - 14 divisions ✅
+- [[01-knowledge-base/unit-bisnis/dianranger/|🏭 Dianranger]] - Digital Services
+- [[01-knowledge-base/unit-bisnis/raycademy/|🎓 Raycademy]] - Education & Training
+- [[01-knowledge-base/unit-bisnis/agroranger/|🌾 AgroRanger]] - Agriculture
+- [[01-knowledge-base/unit-bisnis/cosranger/|🔬 CosRanger]] - Consulting
+
+**Master Documents**:
+- [[01-knowledge-base/unit-bisnis/MASTER-STRUKTUR-RAYCORP|🏢 Master Struktur RayCorp]]
+- [[01-knowledge-base/unit-bisnis/ECOSYSTEM-GUIDE|📖 Complete Ecosystem Guide]]
+- [[01-knowledge-base/unit-bisnis/QUICK-REFERENCE|⚡ Quick Reference Card]]
+- [[01-knowledge-base/unit-bisnis/IMPLEMENTATION-STATUS|📊 Implementation Status]]
+
+---
+
+### 🎨 Brands
+
+**Centralized brand portfolio across all business models**
+
+```dataview
+TABLE WITHOUT ID
+  file.folder as "📁 Category",
+  length(rows) as "📄 Count"
+FROM "01-knowledge-base/_brands"
+WHERE file.name != "README"
+GROUP BY file.folder
+SORT file.folder ASC
+```
+
+**Quick Navigation**:
+- [[01-knowledge-base/_brands/b2c/|🛍️ B2C Brands]] - Consumer-facing brands
+- [[01-knowledge-base/_brands/b2b/|🏢 B2B Brands]] - Business-facing brands
+- [[01-knowledge-base/_brands/b2b2c/|🔄 B2B2C Brands]] - Hybrid model brands
 
 ---
 
 ### 📦 Products
+
+**Product catalog across all business units**
 
 ```dataview
 TABLE WITHOUT ID
   file.link as "Product",
   status as "Status",
   dateformat(file.mtime, "yyyy-MM-dd") as "Last Updated"
-FROM "01-knowledge-base/products"
+FROM "01-knowledge-base/_products"
 WHERE file.name != "README"
 SORT file.mtime DESC
 LIMIT 10
 ```
 
-**Quick Actions**: Navigate to [[01-knowledge-base/products/|products folder]] → Press `Ctrl+N` to create new
+**Quick Navigation**:
+- [[01-knowledge-base/_products/cosmetics/|💄 Cosmetics]] - Makeup & color cosmetics
+- [[01-knowledge-base/_products/skincare/|🧴 Skincare]] - Facial & body care
+- [[01-knowledge-base/_products/agriculture/|🌾 Agriculture]] - Agricultural products
+- [[01-knowledge-base/_products/services/|🛠️ Services]] - Service offerings
+
+**Quick Actions**: Navigate to [[01-knowledge-base/_products/|products folder]] → Press `Ctrl+N` to create new
 
 ---
 
-### ❓ FAQs
+### 📢 Marketing
+
+**Marketing resources and campaigns**
 
 ```dataview
 TABLE WITHOUT ID
-  file.link as "Question",
-  category as "Category",
+  file.link as "Content",
+  type as "Type",
   dateformat(file.mtime, "yyyy-MM-dd") as "Last Updated"
-FROM "01-knowledge-base/faqs"
+FROM "01-knowledge-base/_marketing"
 WHERE file.name != "README"
 SORT file.mtime DESC
 LIMIT 10
 ```
 
-**Quick Actions**: Navigate to [[01-knowledge-base/faqs/|faqs folder]] → Press `Ctrl+N` to create new
+**Quick Navigation**:
+- [[01-knowledge-base/_marketing/campaigns/|📣 Campaigns]] - Marketing campaigns
+- [[01-knowledge-base/_marketing/content/|📝 Content]] - Marketing content & copy
+- [[01-knowledge-base/_marketing/strategies/|📊 Strategies]] - Marketing strategies
+- [[01-knowledge-base/_marketing/assets/|🎨 Assets]] - Marketing asset references
+
+**Quick Actions**: Navigate to [[01-knowledge-base/_marketing/|marketing folder]] → Press `Ctrl+N` to create new
+
+---
+
+### 🔗 Cross-Company Resources
+
+**Shared resources across all business units**
+
+```dataview
+TABLE WITHOUT ID
+  file.folder as "📁 Category",
+  length(rows) as "📄 Count"
+FROM "01-knowledge-base/_cross-company"
+WHERE file.name != "README"
+GROUP BY file.folder
+SORT file.folder ASC
+```
+
+**Quick Navigation**:
+- [[01-knowledge-base/_cross-company/faqs/|❓ FAQs]] - Cross-company FAQs
+- [[01-knowledge-base/_cross-company/procedures/|📋 Procedures]] - Standard Operating Procedures
+- [[01-knowledge-base/_cross-company/policies/|📜 Policies]] - Company-wide policies
+- [[01-knowledge-base/_cross-company/guidelines/|📐 Guidelines]] - Best practices
 
 ---
 
