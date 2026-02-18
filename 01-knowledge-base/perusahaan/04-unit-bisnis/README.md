@@ -1,16 +1,20 @@
 # 🏢 04-Unit-Bisnis - Business Units
 
 > **Level**: 3 - Business Units  
-> **Purpose**: Documentation untuk 9 business units RayCorp  
+> **Purpose**: Documentation untuk 7 business units RayCorp  
 > **Status**: Active
 
 ---
 
 ## 📋 Overview
 
-Folder ini berisi dokumentasi untuk 9 business units dalam ekosistem RayCorp:
-- **1 Manufacturing Unit** (dengan 14 divisions)
-- **8 Supporting Units** (tanpa divisions)
+Folder ini berisi dokumentasi untuk 7 business units di bawah Rayandra Corporation.  
+Semua unit bisnis ini adalah **SUPPORTING UNITS** tanpa divisions, yang melapor ke departments Rayandra Corporation.
+
+**IMPORTANT NOTE**:  
+- Lunaray Beauty Factory adalah **MANUFACTURING FACILITY** (bukan unit bisnis)
+- Lunaray Beauty Factory ada di `01-holding/lunaray-beauty-factory-holding/` dan `03-manufacturing/`
+- Lunaray Beauty Factory **TIDAK** ada di folder ini
 
 ---
 
@@ -19,70 +23,27 @@ Folder ini berisi dokumentasi untuk 9 business units dalam ekosistem RayCorp:
 ```
 04-unit-bisnis/
 ├── README.md (file ini)
-├── lunaray-beauty-factory/        # MANUFACTURING (has 14 divisions)
-│   ├── README.md
-│   ├── divisions/ (14 divisions)
-│   ├── brands/
-│   └── _legal-entity/
-├── baleide/                       # SUPPORTING
+├── baleide/                       # Creative & Design Studio
 │   └── README.md
-├── raypack/                       # SUPPORTING
+├── raypack/                       # Packaging Solutions
 │   └── README.md
-├── labcos/                        # SUPPORTING
+├── labcos/                        # Laboratory & Testing
 │   └── README.md
-├── ray-academy/                   # SUPPORTING
+├── ray-academy/                   # Education & Training
 │   └── README.md
-├── ebook/                         # SUPPORTING
+├── ebook/                         # Digital Publishing
 │   └── README.md
-├── raymaizing/                    # SUPPORTING
+├── raymaizing/                    # AI & IT Solutions
 │   └── README.md
-├── raymedia/                      # SUPPORTING
-│   └── README.md
-└── rayagro/                       # SUPPORTING
+└── raymedia/                      # Media Production
     └── README.md
 ```
 
----
-
-## 🏭 1. Lunaray Beauty Factory (MANUFACTURING)
-
-**Type**: Manufacturing Unit  
-**Has Divisions**: ✅ YES (14 divisions)  
-**Reports to**: CEO Manufacturing Operations  
-**AI Coordinator**: Lunaranger (Sub-Superbot)
-
-**Legal Entities**:
-- PT Lunaray Cahya Abadi (Main manufacturing)
-- CV Dian Indah Abadi (OEM/Maklon support)
-
-**Focus**: Kosmetik & skincare manufacturing
-
-**Capabilities**:
-- Product manufacturing
-- Quality assurance
-- R&D & formulation
-- Supply chain management
-- OEM/Maklon services
-
-**14 Divisions**:
-1. Rindu (R&D & Innovation)
-2. Marksy (Marketing & Sales)
-3. Teko (Production & Operations)
-4. Finny (Finance & Resource)
-5. Strato (Strategy & Top-Level)
-6. Lumina (Legal & Compliance)
-7. Nexus (Technology & IT)
-8. Aegis (Risk Management)
-9. Vero (Customer Service)
-10. Celestia (Corporate Comms & PR)
-11. Orbis (Supply Chain)
-12. Helios (Sustainability)
-13. Vera (Legal Affairs)
-14. Quanta (Data & Analytics)
+**Total**: 7 business units (all supporting, no divisions)
 
 ---
 
-## 🎨 2. Baleide (SUPPORTING)
+## 🎨 1. Baleide
 
 **Type**: Creative & Design Studio  
 **Has Divisions**: ❌ NO  
@@ -103,7 +64,7 @@ Folder ini berisi dokumentasi untuk 9 business units dalam ekosistem RayCorp:
 
 ---
 
-## 📦 3. Raypack (SUPPORTING)
+## 📦 2. Raypack
 
 **Type**: Packaging Solutions  
 **Has Divisions**: ❌ NO  
@@ -120,11 +81,11 @@ Folder ini berisi dokumentasi untuk 9 business units dalam ekosistem RayCorp:
 
 **Materials**: Plastic, glass, paper/cardboard, metal
 
-**Primary Client**: Lunaray Beauty Factory
+**Primary Client**: Lunaray Beauty Factory (manufacturing facility)
 
 ---
 
-## 🧪 4. LabCos (SUPPORTING)
+## 🧪 3. LabCos
 
 **Type**: Laboratory & Testing Services  
 **Has Divisions**: ❌ NO  
@@ -141,11 +102,11 @@ Folder ini berisi dokumentasi untuk 9 business units dalam ekosistem RayCorp:
 - Finished product testing
 - Certification support (BPOM, Halal, GMP, ISO)
 
-**Primary Client**: Lunaray Beauty Factory
+**Primary Client**: Lunaray Beauty Factory (manufacturing facility)
 
 ---
 
-## 🎓 5. Ray Academy (SUPPORTING)
+## 🎓 4. Ray Academy
 
 **Type**: Education & Training Platform  
 **Has Divisions**: ❌ NO  
@@ -164,7 +125,7 @@ Folder ini berisi dokumentasi untuk 9 business units dalam ekosistem RayCorp:
 
 ---
 
-## 📚 6. Ebook (SUPPORTING)
+## 📚 5. Ebook
 
 **Type**: Digital Publishing & Content  
 **Has Divisions**: ❌ NO  
@@ -182,30 +143,30 @@ Folder ini berisi dokumentasi untuk 9 business units dalam ekosistem RayCorp:
 
 ---
 
-## 🌽 7. Raymaizing (SUPPORTING)
+## 🤖 6. Raymaizing
 
-**Type**: Agriculture & Farming  
+**Type**: AI & IT Solutions  
 **Has Divisions**: ❌ NO  
-**Reports to**: Head of Business & Brand Development (Rayandra Corporation)  
+**Reports to**: Head of Technology & Digital (Rayandra Corporation)  
 **AI Coordinator**: Raymaizing (Sub-Superbot)
 
-**Focus**: Pertanian jagung dan agribusiness
-
-**Products**:
-- Corn (sweet corn, feed corn, specialty corn)
-- Corn derivatives (oil, starch, flour)
-- Organic products
-- Seeds
+**Focus**: AI solutions, automation, technology development, digital transformation
 
 **Services**:
-- Farming consultation
-- Contract farming
-- Training programs
-- Supply chain
+- AI Development & Integration
+- Process Automation
+- Software Development
+- System Integration
+- Cloud Solutions
+- DevOps & Monitoring
+
+**Technologies**: OpenAI, Google Gemini, Python, JavaScript, n8n, AWS, Docker
+
+**Clients**: All RayCorp departments and business units
 
 ---
 
-## 🎬 8. Raymedia (SUPPORTING)
+## 🎬 7. Raymedia
 
 **Type**: Media Production & Content Creation  
 **Has Divisions**: ❌ NO  
@@ -224,87 +185,61 @@ Folder ini berisi dokumentasi untuk 9 business units dalam ekosistem RayCorp:
 
 ---
 
-## 🌱 9. Rayagro (SUPPORTING)
-
-**Type**: Agricultural Support & Natural Ingredients  
-**Has Divisions**: ❌ NO  
-**Reports to**: Head of Business & Brand Development (Rayandra Corporation)  
-**AI Coordinator**: Rayagro (Sub-Superbot)
-
-**Focus**: Sourcing bahan baku natural dan agricultural support
-
-**Services**:
-- Natural ingredient sourcing (extracts, essential oils, botanicals)
-- Farmer partnerships
-- Quality control
-- Sustainable farming practices
-- Ingredient development
-- Traceability & documentation
-
-**Primary Client**: Lunaray Beauty Factory (R&D)
-
----
-
 ## 📊 Business Units Comparison
 
-| Unit | Type | Divisions | Reports To | Primary Function |
-|------|------|-----------|------------|------------------|
-| Lunaray Beauty Factory | Manufacturing | ✅ 14 | CEO Manufacturing | Production |
-| Baleide | Supporting | ❌ No | Head of Creative & Media | Design |
-| Raypack | Supporting | ❌ No | Head of Business & Brand Dev | Packaging |
-| LabCos | Supporting | ❌ No | Head of Business & Brand Dev | Testing |
-| Ray Academy | Supporting | ❌ No | Head of Business & Brand Dev | Education |
-| Ebook | Supporting | ❌ No | Head of Business & Brand Dev | Publishing |
-| Raymaizing | Supporting | ❌ No | Head of Business & Brand Dev | Agriculture |
-| Raymedia | Supporting | ❌ No | Head of Creative & Media | Media |
-| Rayagro | Supporting | ❌ No | Head of Business & Brand Dev | Ingredients |
+| Unit | Type | Reports To | Primary Function |
+|------|------|------------|------------------|
+| Baleide | Creative & Design | Head of Creative & Media | Design & Branding |
+| Raypack | Packaging | Head of Business & Brand Dev | Packaging Supply |
+| LabCos | Laboratory | Head of Business & Brand Dev | Testing & QA |
+| Ray Academy | Education | Head of Business & Brand Dev | Training & Education |
+| Ebook | Publishing | Head of Business & Brand Dev | Digital Content |
+| Raymaizing | AI & IT | Head of Technology & Digital | AI & Automation |
+| Raymedia | Media | Head of Creative & Media | Content Production |
+
+**Total**: 7 business units (all supporting, no divisions)
 
 ---
 
 ## 🔗 Business Unit Relationships
 
-### Manufacturing Hub
-**Lunaray Beauty Factory** is the core manufacturing unit that:
-- Produces all brand products
-- Coordinates with all supporting units
-- Has full operational divisions
-
 ### Supporting Units Ecosystem
-**8 Supporting Units** provide services to:
-- Lunaray Beauty Factory (primary client)
+**7 Supporting Units** provide services to:
+- Lunaray Beauty Factory (manufacturing facility - primary client)
 - All brands (secondary clients)
 - External clients (tertiary)
 
 ### Service Flow
 ```
-Brands → Requirements → Lunaray Beauty Factory
+Brands → Requirements → Lunaray Beauty Factory (Manufacturing)
                               ↓
                     Coordinates with:
                               ↓
     ┌─────────────────────────┼─────────────────────────┐
     ↓                         ↓                         ↓
-Raypack              LabCos & Rayagro           Baleide & Raymedia
-(Packaging)          (Testing & Ingredients)    (Design & Content)
+Raypack              LabCos                    Baleide & Raymedia
+(Packaging)          (Testing)                 (Design & Content)
+                              ↓
+                         Raymaizing
+                         (AI & IT)
 ```
 
 ---
 
 ## 🤖 AI Coordination
 
-### Level 2: Sub-Superbot (9 AI)
+### Level 2: Sub-Superbot (7 AI)
 Each business unit has dedicated Sub-Superbot:
-1. Lunaranger (Lunaray Beauty Factory)
-2. Baleide (Baleide)
-3. Raypack (Raypack)
-4. LabCos (LabCos)
-5. Raycademy (Ray Academy)
-6. Ebook (Ebook)
-7. Raymaizing (Raymaizing)
-8. Raymedia (Raymedia)
-9. Rayagro (Rayagro)
+1. Baleide (Baleide)
+2. Raypack (Raypack)
+3. LabCos (LabCos)
+4. Raycademy (Ray Academy)
+5. Ebook (Ebook)
+6. Raymaizing (Raymaizing)
+7. Raymedia (Raymedia)
 
-### Level 3: Superbot Divisi (14 AI)
-**ONLY Lunaray Beauty Factory** has 14 Superbot Divisi
+### Level 3: Superbot Divisi
+**NONE** - Supporting units do NOT have divisions
 
 ### Level 4: Otobot (Unlimited)
 All units can have operational Otobot as needed
@@ -313,17 +248,12 @@ All units can have operational Otobot as needed
 
 ## 📊 Key Performance Indicators
 
-### Manufacturing Unit (Lunaray Beauty Factory)
-- Production capacity
-- Quality metrics
-- On-time delivery
-- Customer satisfaction
-
 ### Supporting Units
 - Service quality
 - Response time
 - Client satisfaction
 - Revenue contribution
+- Innovation index
 
 ---
 
@@ -337,7 +267,7 @@ All units can have operational Otobot as needed
 - Performance monitoring
 
 ### Update Protocol
-1. Unit changes approved by respective Head/CEO
+1. Unit changes approved by respective Department Head
 2. Update unit documentation
 3. Update coordination matrix
 4. Communicate to stakeholders
@@ -347,13 +277,13 @@ All units can have operational Otobot as needed
 
 ## 📞 Coordination
 
-**For Manufacturing**: Contact Lunaranger or CEO Manufacturing  
-**For Supporting Units**: Contact respective Sub-Superbot or Department Head  
+**For Business Units**: Contact respective Sub-Superbot or Department Head  
+**For Manufacturing**: Contact Lunaray Beauty Factory (in 03-manufacturing/)  
 **For Cross-Unit Projects**: Coordinate through ARAY or DARA
 
 ---
 
 **Last Updated**: 2026-02-18  
 **Maintained by**: ARAY + All Sub-Superbot  
-**Version**: 1.0.0
+**Version**: 2.0.0 (Corrected)
 
