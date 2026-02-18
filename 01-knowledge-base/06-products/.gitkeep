@@ -1,0 +1,28 @@
+# Products Knowledge
+
+Place product information, catalogs, and specifications here.
+
+## File Naming Convention
+
+- `product-name.md` - Main product info
+- `product-name-specs.md` - Technical specifications
+- `product-name-faq.md` - Product-specific FAQs
+
+## Example Structure
+
+```markdown
+# Product Name
+
+## Overview
+Brief description
+
+## Features
+- Feature 1
+- Feature 2
+
+## Pricing
+Price information
+
+## Target Audience
+Who is this for?
+```
