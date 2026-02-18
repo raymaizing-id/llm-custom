@@ -1,88 +1,165 @@
-# 📚 Fundamental Documents
+# 🏢 Organizational Structure
 
-> **Dokumen fundamental yang berlaku untuk seluruh ekosistem RayCorp**
+> **Purpose**: Dokumentasi struktur organisasi RayCorp  
+> **Primary Reference**: `Strukturasi Peruasahaan.md`  
+> **Status**: Active
+
+---
 
 ## 📋 Overview
 
-Folder ini berisi dokumen-dokumen fundamental yang menjadi landasan untuk seluruh ekosistem RayCorp, termasuk:
-- Struktur organisasi
-- Hierarki AI RayRanger
-- Protokol komunikasi
-- Framework kerja
+Folder ini berisi dokumentasi lengkap tentang struktur organisasi RayCorp, termasuk struktur 3-tier, hierarchy, dan reporting structure.
 
 ---
 
-## 📁 Files
+## 🎯 Struktur Organisasi RayCorp
 
-### 1. **Struktur RAY RANGERS**
-**File:** `0. Fundamental Knowledge Base_Struktur RAY RANGERS.md`
+### Tier 1: CEO Level
+**Rayandra Corporation (Holding)**
+- CEO RayCorp Group
 
-**Content:**
-- Hierarki AI 4-level (RANGERRAY, Sub-Superbot, Superbot Divisi, Otobot)
-- Protokol VORTEX
-- Tujuan dan filosofi sistem
+### Tier 2: Head Level
 
----
+#### A. Rayandra Corporation (Office Operations)
+**7 Departments:**
+1. Head of Corporate Strategy & Legal
+2. Head of Business & Brand Development
+3. Head of People & Culture
+4. Head of Finance
+5. Head of Technology & Digital
+6. Head of Creative & Media
+7. Head of Marketing & Sales
 
-### 2. **Struktur Organisasi 3-Tier**
-**File:** `struktur organisasi 3-tier ramping gabungan antara RayCorp (Holding) dan PT Lunaray Cahya Abadi (Manufaktur Kosmetik).md`
+#### B. Lunaray Beauty Factory (Manufacturing Operations)
+**8 Departments:**
+1. Head of Production
+2. Head of Quality Assurance
+3. Head of Supply Chain
+4. Head of R&D / Formulator
+5. Head of Maintenance & Engineering
+6. Head of HSE & Compliance
+7. Head of PPIC
+8. Head of Admin & Legal Support
 
-**Content:**
-- Struktur organisasi Holding + Manufacturing
-- Tier 1: CEO Level
-- Tier 2: Head Level
-- Tier 3: Staff Level
-
----
-
-### 3. **Strukturasi Perusahaan**
-**File:** `Strukturasi Peruasahaan.md`
-
-**Content:**
-- Unit bisnis RayCorp
-- Brand portfolio (B2C, B2B, B2B2C)
-- Office structure
-
----
-
-### 4. **Mind Map**
-**File:** `Strukturasi perusahaan .xmind`
-
-**Content:**
-- Visual representation struktur perusahaan
-- Mind map format
+### Tier 3: Team Level
+- Individual team members under each Head
 
 ---
 
-## 🎯 Purpose
+## 📂 Files in This Folder
 
-Dokumen-dokumen ini adalah **single source of truth** untuk:
-- Struktur organisasi perusahaan
-- Hierarki AI dan protokol
-- Framework kerja dan komunikasi
-- Filosofi dan nilai perusahaan
+### Primary Reference
+**Strukturasi Peruasahaan.md**
+- Source of truth untuk struktur organisasi
+- Berisi unit bisnis, brands, dan departments
+- Format: Hierarchical outline
 
----
+### Supporting Documents
+**struktur organisasi 3-tier ramping gabungan.md**
+- Detailed 3-tier structure
+- Gabungan Holding + Manufacturing
 
-## 📝 Usage
-
-Dokumen-dokumen ini digunakan sebagai referensi untuk:
-1. **Onboarding** karyawan baru
-2. **Training** AI bots
-3. **Documentation** sistem
-4. **Decision making** strategis
-
----
-
-## 🔄 Updates
-
-Dokumen fundamental ini harus:
-- Di-review secara berkala (quarterly)
-- Di-update saat ada perubahan struktur
-- Di-sync ke semua AI bots
-- Di-communicate ke seluruh tim
+**Strukturasi perusahaan.xmind**
+- Visual mind map
+- Interactive organizational chart
 
 ---
 
-**Last Updated:** 2026-02-17  
-**Maintained by:** CEO & Strategic Team
+## 🏢 Unit Bisnis Structure
+
+### Under Rayandra Corporation (Office)
+7 Unit Bisnis Supporting:
+1. **Baleide** - Creative & Design Studio
+2. **Raypack** - Packaging Solutions
+3. **LabCos** - Laboratory & Testing
+4. **Ray Academy** - Education & Training
+5. **Ebook** - Digital Publishing
+6. **Raymaizing** - Agriculture & Farming
+7. **Raymedia** - Media Production
+
+### Manufacturing Operations
+1. **Lunaray Beauty Factory** - Kosmetik & Skincare Manufacturing
+   - Legal entities: PT Lunaray Cahya Abadi + CV Dian Indah Abadi
+   - Has 14 divisions (ONLY unit with divisions)
+
+### Supporting Unit (Agricultural)
+1. **Rayagro** - Agricultural Support & Natural Ingredients
+
+**Total**: 9 Business Units
+
+---
+
+## 🏷️ Brand Structure
+
+### B2C Brands (8)
+1. Beautylatory (with stores: Umaderm, Deaderm)
+2. Mommylatory
+3. Babylatory
+4. Dermond
+5. Adhwa
+6. Sheluna
+7. Fantastik
+8. Rayklin
+
+### B2B Brands (2)
+1. Myklon
+2. CKK
+
+### B2B2C Brands (4)
+1. Mazra
+2. Hailogy
+3. Inalovers Santripreneur
+4. Dermalink
+
+**Total**: 14 Brands
+
+---
+
+## 📊 Key Principles
+
+### Organizational Design
+1. **3-Tier Structure**: CEO → Head → Team
+2. **Separation**: Office vs Manufacturing operations
+3. **Clarity**: Clear reporting lines
+4. **Scalability**: Can grow without restructure
+
+### Reporting Structure
+- **Supporting Units** → Report to Rayandra Corporation Heads
+- **Manufacturing** → Reports to CEO Manufacturing Operations
+- **Departments** → Report to respective Heads
+- **Teams** → Report to Department Heads
+
+---
+
+## 🔗 Related Documentation
+
+- `01-holding/` - Holding company details
+- `02-office/` - Office departments details
+- `03-manufacturing/` - Manufacturing departments details
+- `04-unit-bisnis/` - Business units details
+- `05-brands/` - Brand portfolio details
+
+---
+
+## ✅ Usage Guidelines
+
+### When to Reference
+- Creating new departments
+- Understanding reporting structure
+- Onboarding new employees
+- Organizational planning
+- Budget allocation
+
+### Update Protocol
+1. Changes must be approved by CEO
+2. Update primary reference first
+3. Cascade changes to related docs
+4. Archive old versions
+5. Communicate changes company-wide
+
+---
+
+**Last Updated**: 2026-02-18  
+**Maintained by**: ARAY + User  
+**Version**: 1.0.0
+
