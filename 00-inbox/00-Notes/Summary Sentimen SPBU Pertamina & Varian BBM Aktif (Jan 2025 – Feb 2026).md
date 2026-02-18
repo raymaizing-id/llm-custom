@@ -119,7 +119,77 @@
 - **Bandung, Bekasi, dan Bogor** adalah hotspot keluhan, terutama terkait kualitas dan layanan.
 
 ---
+### C. **Sentiment Distribution by Variant**
+![Sentiment Distribution](https://ydcusercontenteast.blob.core.windows.net/user-content-youagent-output/ciplot20260218040437-0-e7a7ad485a08.png)
+**Chart ini menunjukkan proporsi sentimen negatif, netral, dan positif untuk setiap varian BBM aktif.**
 
+
+---
+
+### D. **Regional Heatmap & City Performance**
+![Regional Heatmap](https://ydcusercontenteast.blob.core.windows.net/user-content-youagent-output/ciplot20260218040750-0-ff426b13e2d5.png)
+**semakin merah = semakin negatif. Fokus pada West Java dan kota besar.**
+
+
+---
+
+### E. **COCO vs Franchise Performance**
+![COCO vs Franchise](https://ydcusercontenteast.blob.core.windows.net/user-content-youagent-output/ciplot20260218040532-0-d5a0dba5c6d2.png)
+**Dashboard perbandingan efisiensi, antrian, kepuasan, dan fasilitas antara COCO dan franchise.**
+
+
+---
+
+## 📝 Analisa, Keterangan, dan Report Setiap Indikator
+
+### 1. **Sentimen BBM & SPBU**
+- **Negatif mendominasi** (73% nasional), terutama di kota besar Jawa Barat.
+- **Penyebab utama:** Kualitas BBM (oplosan, engine rusak), digitalisasi (MyPertamina error), layanan (antrian, staff), harga (non-subsidi mahal).
+- **Implikasi:** Trust crisis, potensi migrasi pelanggan premium ke Shell/BP.
+
+### 2. **Aspect-Based Sentiment**
+- **Digitalisasi**: Error MyPertamina dan EDC menyebabkan frustrasi, terutama saat peak hour.
+- **Kualitas**: Viral isu oplosan dan engine rusak, terutama di Bandung dan Bekasi.
+- **Layanan**: Franchise sering dikeluhkan, COCO lebih baik namun jumlahnya minoritas.
+- **Harga**: Keluhan harga non-subsidi, namun Pertalite tetap dipilih karena subsidi.
+
+### 3. **Regional Hotspot**
+- **Bandung**: Sentimen terburuk, antrian terpanjang, error digitalisasi tertinggi.
+- **Bekasi, Depok, Bogor, Cirebon**: Masalah serupa, namun sedikit lebih baik dari Bandung.
+- **Jakarta & Surabaya**: Sentimen lebih baik, namun tetap di zona negatif.
+
+### 4. **COCO vs Franchise**
+- **COCO unggul** di semua aspek: antrian lebih pendek, kepuasan lebih tinggi, fasilitas lebih baik.
+- **Franchise**: Sering error EDC, antrian panjang, fasilitas kurang terawat.
+
+### 5. **Traffic & Operasional**
+- **Peak hour**: 07:00–09:00 & 17:00–20:00, antrian bisa 20+ menit di franchise.
+- **Utilisasi**: Rata-rata 94.5%, menandakan demand tinggi dan potensi bottleneck.
+
+### 6. **Payment & Digital**
+- **Digital payment adoption** naik (75.3%), namun error rate tinggi (17.9%).
+- **Cash** masih paling memuaskan, namun tren digitalisasi tidak bisa dihindari.
+
+### 7. **Demografi & Konsumsi**
+- **Urban**: 80% konsumsi BBM di kota besar, motor dominan.
+- **Konsumsi tertinggi**: Bandung, Bekasi, Depok.
+
+---
+
+## 🧭 Strategic Recommendations (Prescriptive & Predictive)
+
+### **Prescriptive (Solusi Rekomendasi)**
+- **Transparansi kualitas:** Audit independen, dashboard publik.
+- **Digitalisasi:** Perbaiki MyPertamina, real-time queue, edukasi digital.
+- **Standarisasi franchise:** SOP COCO, pelatihan, insentif.
+- **Customer engagement:** Kanal pengaduan cepat, kompensasi, edukasi publik.
+- **Facility upgrade:** Modernisasi toilet, air pump, minimarket.
+
+### **Predictive (Forecast 2026)**
+- **Tanpa intervensi:** Sentimen negatif tetap >65% hingga akhir 2026, terutama di Jawa Barat & kota besar.
+- **Dengan perbaikan digital & layanan:** Potensi penurunan sentimen negatif 10–15% dalam 12 bulan.
+
+---
 ### C. Radar Chart Aspect-Based Sentiment
 
 *Visualisasi radar chart membandingkan skor rata-rata tiap aspek (kualitas, harga, layanan, digital, ketersediaan, fasilitas, lingkungan).*
