@@ -271,90 +271,135 @@ CEO RayCorp Group (Rayandra Corporation)
 
 ## 🏢 UNIT BISNIS RAYCORP
 
-### 1. **BALEIDE**
-**Fokus:** [Deskripsi unit bisnis]
+### STRUKTUR ORGANISASI UNIT BISNIS
+
+**HANYA 2 entitas yang memiliki 14 divisi:**
+1. **Rayandra Corporation** (Office/Holding) - 7 departments
+2. **Lunaray Beauty Factory** (Manufacturing) - 8 departments + 14 divisions
+
+**8 unit bisnis supporting lainnya TIDAK memiliki divisi** dan melapor ke departemen Rayandra Corporation.
 
 ---
 
-### 2. **RAYPACK**
-**Fokus:** Packaging solutions & services
+### 1. **LUNARAY BEAUTY FACTORY** (Manufacturing)
+**Fokus:** Kosmetik & skincare manufaktur utama  
+**Legal Entities:** 
+- PT Lunaray Cahya Abadi (Manufaktur utama)
+- CV Dian Indah Abadi (OEM/Maklon pendukung)
 
----
-
-### 3. **LABCOS (CosRanger)**
-**Fokus:** Laboratorium & riset teknologi kosmetik
-**AI Leader:** CosRanger (Sub-Superbot)
-
-**Layanan:**
-- Testing & analysis
-- Product development support
-- Quality certification
-- Research & innovation
-
----
-
-### 4. **RAY ACADEMY (Raycademy)**
-**Fokus:** Platform edukasi & pelatihan AI-berbasis spiritualitas
-**AI Leader:** Raycademy (Sub-Superbot)
-
-**Program:**
-- AI & Technology training
-- Business & entrepreneurship
-- Spiritual development
-- Professional certification
-
----
-
-### 5. **EBOOK**
-**Fokus:** Digital publishing & content
-
----
-
-### 6. **RAYMAIZING**
-**Fokus:** [Deskripsi unit bisnis]
-
----
-
-### 7. **RAYMEDIA**
-**Fokus:** Media production & content creation
-
----
-
-### 8. **LUNARAY BEAUTY FACTORY (Lunaranger)**
-**Fokus:** Kosmetik & skincare manufaktur utama
-**AI Leader:** Lunaranger (Sub-Superbot)
-**Legal Entity:** PT Lunaray Cahya Abadi
+**Struktur:** 14 Divisions (Rindu, Marksy, Teko, Finny, Strato, Lumina, Nexus, Aegis, Vero, Celestia, Orbis, Helios, Vera, Quanta)
 
 **Capabilities:**
 - Product manufacturing
 - Quality assurance
 - R&D & formulation
 - Supply chain management
+- OEM/Maklon services
+
+**Laporan ke:** CEO Manufacturing Operations
 
 ---
 
-### 9. **DIAN INDAH ABADI (Dianranger)**
-**Fokus:** OEM/maklon rumahan pendukung Lunaray
-**AI Leader:** Dianranger (Sub-Superbot)
-**Legal Entity:** CV Dian Indah Abadi
+### 2. **BALEIDE** (Creative & Design Studio)
+**Fokus:** Desain grafis, branding visual, packaging design, creative content
 
 **Services:**
-- OEM/maklon production
-- Small batch manufacturing
-- Custom formulation
-- Private label support
+- Brand identity design
+- Packaging design
+- Marketing collateral
+- Photography & videography
+
+**Laporan ke:** Head of Creative & Media (Rayandra Corporation)
 
 ---
 
-### 10. **RAYAGRO (AgroRanger)**
-**Fokus:** Pertanian terpadu, maggot, herbal, bahan baku
-**AI Leader:** AgroRanger (Sub-Superbot)
+### 3. **RAYPACK** (Packaging Solutions)
+**Fokus:** Manufaktur kemasan produk dan packaging solutions
 
 **Products:**
-- Herbal ingredients
-- Natural raw materials
-- Maggot farming
-- Organic agriculture
+- Primary packaging (botol, tube, jar)
+- Secondary packaging (box, carton)
+- Custom packaging solutions
+
+**Laporan ke:** Head of Business & Brand Development (Rayandra Corporation)
+
+---
+
+### 4. **LABCOS** (Laboratory & Testing)
+**Fokus:** Testing laboratorium, quality assurance, sertifikasi produk
+
+**Services:**
+- Microbiological testing
+- Stability testing
+- Safety & efficacy testing
+- Certification support (BPOM, Halal, GMP)
+
+**Laporan ke:** Head of Business & Brand Development (Rayandra Corporation)
+
+---
+
+### 5. **RAY ACADEMY** (Education & Training)
+**Fokus:** Pendidikan, pelatihan, dan pengembangan skill
+
+**Programs:**
+- Beauty & cosmetics training
+- Business & entrepreneurship
+- Technology & AI training
+- Professional certification
+
+**Laporan ke:** Head of Business & Brand Development (Rayandra Corporation)
+
+---
+
+### 6. **EBOOK** (Digital Publishing)
+**Fokus:** Pembuatan dan distribusi ebook, digital content
+
+**Products:**
+- Beauty & skincare guides
+- Business & entrepreneurship ebooks
+- Educational materials
+- Industry white papers
+
+**Laporan ke:** Head of Business & Brand Development (Rayandra Corporation)
+
+---
+
+### 7. **RAYMAIZING** (Agriculture & Farming)
+**Fokus:** Pertanian jagung dan agribusiness
+
+**Products:**
+- Corn (sweet corn, feed corn)
+- Corn derivatives (oil, starch, flour)
+- Organic products
+- Seeds
+
+**Laporan ke:** Head of Business & Brand Development (Rayandra Corporation)
+
+---
+
+### 8. **RAYMEDIA** (Media Production)
+**Fokus:** Produksi konten video, fotografi, podcast, media digital
+
+**Services:**
+- Video production
+- Photography
+- Audio production & podcast
+- Live streaming
+
+**Laporan ke:** Head of Creative & Media (Rayandra Corporation)
+
+---
+
+### 9. **RAYAGRO** (Agricultural Support)
+**Fokus:** Sourcing bahan baku natural dan agricultural support
+
+**Services:**
+- Natural ingredient sourcing
+- Farmer partnerships
+- Quality control
+- Sustainable farming practices
+
+**Laporan ke:** Head of Business & Brand Development (Rayandra Corporation)
 
 ---
 
@@ -464,21 +509,32 @@ Pusat komando AI yang terdiri dari 5 Superbot:
 
 ### 🏢 Level 2: SUB-SUPERBOT (Rangerbot) - CEO AI per Unit Bisnis
 
-| Nama Sub-Superbot | Unit Bisnis | Legal Entity | Fungsi |
-|-------------------|-------------|--------------|--------|
-| **Lunaranger** | Lunaray Beauty Factory | PT Lunaray Cahya Abadi | Kosmetik & skincare manufaktur utama |
-| **Dianranger** | Dian Indah Abadi | CV Dian Indah Abadi | OEM/maklon rumahan pendukung Lunaray |
-| **Raycademy** | Ray Academy | - | Platform edukasi & pelatihan AI-berbasis spiritualitas |
-| **AgroRanger** | RayAgro | - | Pertanian terpadu, maggot, herbal, bahan baku |
-| **CosRanger** | LabCos | - | Laboratorium & riset teknologi kosmetik |
+**CATATAN PENTING:** Sub-Superbot adalah nama AI, BUKAN nama unit bisnis. Folder menggunakan nama unit bisnis.
 
-> Sub-Superbot adalah "CEO AI" tiap unit bisnis – dilatih khusus untuk data & SOP unitnya, namun tetap terhubung ke ARAY.
+| Nama Sub-Superbot (AI) | Unit Bisnis (Folder) | Legal Entity | Fungsi |
+|------------------------|---------------------|--------------|--------|
+| **Lunaranger** | Lunaray Beauty Factory | PT Lunaray Cahya Abadi + CV Dian Indah Abadi | Kosmetik & skincare manufaktur utama + OEM/maklon |
+| **Baleide** | Baleide | - | Creative & design studio |
+| **Raypack** | Raypack | - | Packaging solutions & manufacturing |
+| **LabCos** | LabCos | - | Laboratory testing & quality assurance |
+| **Raycademy** | Ray Academy | - | Education & training platform |
+| **Ebook** | Ebook | - | Digital publishing & content |
+| **Raymaizing** | Raymaizing | - | Agriculture & corn farming |
+| **Raymedia** | Raymedia | - | Media production & content creation |
+| **Rayagro** | Rayagro | - | Agricultural support & natural ingredients |
+
+> Sub-Superbot adalah "CEO AI" tiap unit bisnis – dilatih khusus untuk data & SOP unitnya, namun tetap terhubung ke ARAY.  
+> **HANYA Lunaray Beauty Factory yang memiliki 14 divisions.** Unit bisnis lainnya adalah supporting units tanpa divisions.
 
 ---
 
 ### 🧩 Level 3: SUPERBOT DIVISI INTERNAL
 
-Setiap Sub-Superbot memiliki 14 Superbot divisi:
+**HANYA Lunaray Beauty Factory yang memiliki 14 Superbot divisi.**
+
+Unit bisnis supporting lainnya (Baleide, Raypack, LabCos, Ray Academy, Ebook, Raymaizing, Raymedia, Rayagro) TIDAK memiliki divisi dan melapor langsung ke departemen Rayandra Corporation.
+
+**14 Superbot Divisi Lunaray Beauty Factory:**
 
 | Nama | Divisi | Fungsi Utama |
 |------|--------|--------------|
@@ -555,13 +611,74 @@ Seluruh komunikasi antar AI menggunakan protokol **VORTEX**:
 01-knowledge-base/perusahaan/
 │
 ├── MASTER-STRUKTUR-RAYCORP.md (file ini)
-├── ECOSYSTEM-GUIDE.md
-├── QUICK-REFERENCE.md
-├── IMPLEMENTATION-STATUS.md
+├── README-NEW-STRUCTURE.md
+├── ECOSYSTEM-GUIDE.md (to be created)
+├── QUICK-REFERENCE.md (to be created)
+├── IMPLEMENTATION-STATUS.md (to be created)
 │
-├── lunaranger/
-│   ├── README.md
-│   ├── brands/
+├── 00-fundamental/
+│   ├── organizational-structure/
+│   ├── ai-hierarchy/
+│   ├── frameworks/
+│   └── archives/
+│
+├── 01-holding/
+│   ├── rayandra-corporation/
+│   └── lunaray-beauty-factory-holding/
+│       ├── pt-lunaray-cahya-abadi/
+│       └── cv-dian-indah-abadi/
+│
+├── 02-office/
+│   ├── departments/
+│   ├── marketing/
+│   └── cross-office/
+│
+├── 03-manufacturing/
+│   ├── departments/
+│   └── facilities/
+│
+├── 04-unit-bisnis/
+│   ├── lunaray-beauty-factory/        # ONLY THIS HAS 14 DIVISIONS
+│   │   ├── README.md
+│   │   ├── brands/
+│   │   ├── divisions/                 # 14 divisions
+│   │   │   ├── rindu/
+│   │   │   ├── marksy/
+│   │   │   ├── teko/
+│   │   │   ├── finny/
+│   │   │   ├── strato/
+│   │   │   ├── lumina/
+│   │   │   ├── nexus/
+│   │   │   ├── aegis/
+│   │   │   ├── vero/
+│   │   │   ├── celestia/
+│   │   │   ├── orbis/
+│   │   │   ├── helios/
+│   │   │   ├── vera/
+│   │   │   └── quanta/
+│   │   └── _legal-entity/
+│   │       ├── pt-lunaray-cahya-abadi/
+│   │       └── cv-dian-indah-abadi/
+│   │
+│   ├── baleide/                       # Supporting units (NO divisions)
+│   │   └── README.md
+│   ├── raypack/
+│   │   └── README.md
+│   ├── labcos/
+│   │   └── README.md
+│   ├── ray-academy/
+│   │   └── README.md
+│   ├── ebook/
+│   │   └── README.md
+│   ├── raymaizing/
+│   │   └── README.md
+│   ├── raymedia/
+│   │   └── README.md
+│   └── rayagro/
+│       └── README.md
+│
+├── 05-brands/
+│   ├── b2c/
 │   │   ├── beautylatory/
 │   │   ├── mommylatory/
 │   │   ├── babylatory/
@@ -570,43 +687,22 @@ Seluruh komunikasi antar AI menggunakan protokol **VORTEX**:
 │   │   ├── sheluna/
 │   │   ├── fantastik/
 │   │   └── rayklin/
-│   └── divisions/ (14 divisi)
-│       ├── rindu/
-│       ├── marksy/
-│       ├── teko/
-│       ├── finny/
-│       ├── strato/
-│       ├── lumina/
-│       ├── nexus/
-│       ├── aegis/
-│       ├── vero/
-│       ├── celestia/
-│       ├── orbis/
-│       ├── helios/
-│       ├── vera/
-│       └── quanta/
-│
-├── dianranger/
-│   ├── README.md
-│   ├── brands/
+│   ├── b2b/
 │   │   ├── myklon/
 │   │   └── ckk/
-│   └── divisions/ (14 divisi)
+│   └── b2b2c/
+│       ├── mazra/
+│       ├── hailogy/
+│       ├── inalovers-santripreneur/
+│       └── dermalink/
 │
-├── raycademy/
-│   ├── README.md
-│   ├── programs/
-│   └── divisions/ (14 divisi)
-│
-├── agroranger/
-│   ├── README.md
-│   ├── products/
-│   └── divisions/ (14 divisi)
-│
-└── cosranger/
-    ├── README.md
-    ├── services/
-    └── divisions/ (14 divisi)
+└── 06-products/
+    ├── cosmetics/
+    ├── skincare/
+    ├── baby-care/
+    ├── mom-care/
+    ├── agriculture/
+    └── services/
 ```
 
 ---
@@ -630,17 +726,31 @@ Seluruh komunikasi antar AI menggunakan protokol **VORTEX**:
 │   │
 │   ├── LEVEL-2-SUB-SUPERBOT/
 │   │   ├── Lunaranger.md
-│   │   ├── Dianranger.md
+│   │   ├── Baleide.md
+│   │   ├── Raypack.md
+│   │   ├── LabCos.md
 │   │   ├── Raycademy.md
-│   │   ├── AgroRanger.md
-│   │   └── CosRanger.md
+│   │   ├── Ebook.md
+│   │   ├── Raymaizing.md
+│   │   ├── Raymedia.md
+│   │   └── Rayagro.md
 │   │
 │   └── LEVEL-3-SUPERBOT-DIVISI/
-│       ├── lunaranger/
-│       │   ├── rindu.md
-│       │   ├── marksy.md
-│       │   └── [12 divisi lainnya]
-│       └── [unit bisnis lainnya]
+│       └── lunaray-beauty-factory/    # ONLY THIS HAS 14 DIVISIONS
+│           ├── rindu.md
+│           ├── marksy.md
+│           ├── teko.md
+│           ├── finny.md
+│           ├── strato.md
+│           ├── lumina.md
+│           ├── nexus.md
+│           ├── aegis.md
+│           ├── vero.md
+│           ├── celestia.md
+│           ├── orbis.md
+│           ├── helios.md
+│           ├── vera.md
+│           └── quanta.md
 │
 ├── gemini-gems/ (Google Gemini Gems)
 │   └── [struktur sama dengan custom-gpts]
@@ -745,20 +855,20 @@ Seluruh komunikasi antar AI menggunakan protokol **VORTEX**:
 ## 📊 STATISTIK & METRICS
 
 ### Struktur Organisasi
-- **Total Departments (Holding):** 7 departments
-- **Total Departments (Manufacturing):** 8 departments
-- **Total Employees:** [To be filled]
+- **Total Departments (Holding):** 7 departments (Rayandra Corporation)
+- **Total Departments (Manufacturing):** 8 departments (Lunaray Beauty Factory)
+- **Total Business Units:** 9 units (1 manufacturing + 8 supporting)
 - **Total Brands:** 14 brands (8 B2C, 2 B2B, 4 B2B2C)
 
 ### Hierarki AI
 - **Level 1 (RANGERRAY):** 5 Superbot
-- **Level 2 (Sub-Superbot):** 5 Unit Bisnis
-- **Level 3 (Superbot Divisi):** 70 Superbot (14 × 5 units)
+- **Level 2 (Sub-Superbot):** 9 Unit Bisnis
+- **Level 3 (Superbot Divisi):** 14 Superbot (hanya Lunaray Beauty Factory)
 - **Level 4 (Otobot):** Unlimited (sesuai kebutuhan)
 
 ### Digital Structure
-- **Knowledge Base Folders:** 5 unit bisnis
-- **AI Bot Configurations:** 80+ configs (target)
+- **Knowledge Base Folders:** 9 business units
+- **AI Bot Configurations:** 28+ configs (5 RANGERRAY + 9 Sub-Superbot + 14 Divisions)
 - **Templates Available:** 9 templates
 - **Documentation Pages:** 10+ comprehensive docs
 
