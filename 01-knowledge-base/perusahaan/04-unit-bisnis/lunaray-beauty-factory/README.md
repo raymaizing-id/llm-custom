@@ -1,13 +1,16 @@
-# 🌙 Lunaranger (PT Lunaray Cahya Abadi)
+# 🌙 Lunaray Beauty Factory (Manufacturing)
 
-> **Unit Bisnis:** Kosmetik & Skincare Manufaktur Utama
+> **Unit Bisnis:** Kosmetik & Skincare Manufacturing
 
 ## 📋 Informasi Umum
 
-**Nama Perusahaan:** PT Lunaray Cahya Abadi  
-**Sub-Superbot:** Lunaranger  
-**Fokus Bisnis:** Manufaktur kosmetik dan skincare premium  
-**Status:** Perusahaan utama manufaktur RayCorp
+**Nama Perusahaan:** Lunaray Beauty Factory  
+**Legal Entities:**
+- PT Lunaray Cahya Abadi (Manufaktur utama)
+- CV Dian Indah Abadi (OEM/Maklon pendukung)
+
+**Fokus Bisnis:** Manufaktur kosmetik dan skincare premium, OEM/maklon  
+**Status:** Manufacturing operations utama RayCorp
 
 ---
 
@@ -16,10 +19,11 @@
 ### Brand Utama
 - **Lunaray** - Brand flagship kosmetik premium
 
-### Brand Lainnya
-- [Tambahkan brand lain di sini]
+### Klien OEM/Maklon (CV Dian Indah Abadi)
+- [Daftar klien maklon]
 
-📁 **Folder Brand:** `brands/`
+📁 **Folder Brand:** `brands/`  
+📁 **Folder Legal Entity:** `_legal-entity/`
 
 ---
 
@@ -46,7 +50,7 @@
 
 ## 🤖 Otobot Operasional
 
-Daftar Otobot yang aktif di Lunaranger:
+Daftar Otobot yang aktif di Lunaray Beauty Factory:
 - [Tambahkan Otobot spesifik di sini]
 
 ---
@@ -57,15 +61,21 @@ Daftar Otobot yang aktif di Lunaranger:
 - Jumlah SKU aktif: [data]
 - Market share: [data]
 - Customer satisfaction: [data]
+- OEM/Maklon clients: [data]
 
 ---
 
 ## 📞 Kontak & Koordinasi
 
-**Koordinator AI:** Lunaranger (Sub-Superbot)  
-**Laporan ke:** ARAY (Superbot Tertinggi)  
-**Koordinasi dengan:** ANDRA (Manufaktur & Produksi)
+**Koordinator AI:** Lunaray Beauty Factory  
+**Bagian dari:** Lunaray Beauty Factory Holding  
+**Laporan ke:** CEO Manufacturing Operations  
+**Koordinasi dengan:** 
+- Rayandra Corporation (office support)
+- Raypack (packaging)
+- Baleide (design)
+- All brands (production)
 
 ---
 
-**Terakhir diperbarui:** 2026-02-17
+**Terakhir diperbarui:** 2026-02-18

@@ -1,4 +1,4 @@
-#### Teliti profil lengkap PT. Pertamina dan SPBU Pertamina saat ini, termasuk jumlah SPBU nasional, distribusi geografis, dan semua varian bahan bakar yang masih aktif (Pertalite, Pertamax, dan varian lainnya). Fokus pada status terkini produk yang sudah dihentikan seperti Premium dan Pertamina Green. Gunakan sumber resmi seperti website Pertamina, laporan tahunan, dan database pemerintah. Expected output: Ringkasan komprehensif tentang infrastruktur SPBU Pertamina dan portofolio produk bahan bakar terkini. Context: Sebagai baseline untuk memahami scope analisis sentimen yang akan dilakukan oleh Raymaizing terhadap PT. Pertamina.
+#### Sentimen lengkap PT. Pertamina dan SPBU Pertamina saat ini, termasuk jumlah SPBU nasional, distribusi geografis, dan semua varian bahan bakar yang masih aktif (Pertalite, Pertamax, dan varian lainnya). Fokus pada status terkini produk yang sudah dihentikan seperti Premium dan Pertamina Green. Gunakan sumber resmi seperti website Pertamina, laporan tahunan, dan database pemerintah. Expected output: Ringkasan komprehensif tentang infrastruktur SPBU Pertamina dan portofolio produk bahan bakar terkini. Context: Sebagai baseline untuk memahami scope analisis sentimen yang akan dilakukan oleh Raymaizing terhadap PT. Pertamina.
 # Profil Lengkap PT. Pertamina & SPBU Pertamina (2026)
 
 ## 1. Gambaran Umum PT. Pertamina
@@ -26,6 +26,53 @@ PT Pertamina (Persero) adalah BUMN energi terbesar di Indonesia, berperan sebaga
 | Aneka Petroindo Raya    | 61            | 0.4%                |
 | Vivo Energy Indonesia   | 34            | 0.2%                |
 | Lainnya                 | 3                  | <0.1%               |
+### Status BBM Aktif & Penjelasan Premium
+
+| Varian BBM           | Status 2025–2026 | Catatan Penting                                                                 |
+|----------------------|------------------|---------------------------------------------------------------------------------|
+| Pertalite (RON 90)   | AKTIF            | BBM subsidi, pengganti Premium, wajib MyPertamina di banyak wilayah             |
+| Pertamax (RON 92)    | AKTIF            | Non-subsidi, utama untuk mobil modern                                           |
+| Pertamax Turbo (RON 98)| AKTIF          | Segmen premium, performa tinggi                                                 |
+| Pertamax Green 95 (RON 95)| AKTIF       | Varian baru, ramah lingkungan, distribusi terbatas                              |
+| Dexlite (CN 51)      | AKTIF            | Diesel menengah, non-subsidi                                                    |
+| Pertamina Dex (CN 53)| AKTIF            | Diesel premium, low sulfur                                                      |
+| Biosolar (CN 48, B30)| AKTIF            | Solar subsidi, campuran biodiesel                                               |
+| **Premium (RON 88)** | **TIDAK AKTIF**  | **Tidak tersedia di SPBU sejak 2023**                                      |
+
+> **Penjelasan:**  
+> Premium sudah tidak beredar di SPBU sejak 2023, sesuai regulasi ESDM dan pengumuman resmi Pertamina. Semua analisis di bawah ini hanya mencakup varian BBM yang benar-benar aktif dan tersedia di lapangan .
+
+### Distribusi Sentimen Nasional per Varian BBM
+
+| Varian BBM        | Negatif (%) | Netral (%) | Positif (%) | Skor Rata-rata | Sampel |
+| ----------------- | ----------- | ---------- | ----------- | -------------- | ------ |
+| Pertalite         | 75.5        | 6.3        | 18.2        | -0.53          | 24,739 |
+| Pertamax          | 76.5        | 6.3        | 17.1        | -0.55          | 25,535 |
+| Pertamax Turbo    | 74.2        | 7.3        | 18.5        | -0.51          | 25,111 |
+| Pertamax Green 95 | 67.7        | 9.3        | 23.0        | -0.41          | 26,487 |
+| Dexlite           | 72.5        | 7.8        | 19.8        | -0.48          | 25,990 |
+| Pertamina Dex     | 72.0        | 7.9        | 20.1        | -0.48          | 25,917 |
+| Biosolar          | 74.6        | 7.2        | 18.1        | -0.52          | 25,788 |
+
+**Penjelasan:**  
+- **Sentimen negatif** mendominasi seluruh varian, terutama Pertamax dan Pertalite, akibat isu kualitas, layanan, dan digitalisasi.
+- **Pertamax Green 95** relatif lebih positif karena branding ramah lingkungan dan distribusi terbatas.
+
+### Analisis Sentimen Berdasarkan Aspek
+
+| Aspek         | Negatif (%) | Netral (%) | Positif (%) | Skor Rata-rata | Sampel |
+|---------------|-------------|------------|-------------|----------------|--------|
+| Kualitas      | 78.7        | 5.5        | 15.8        | -0.58          | 25,723 |
+| Harga         | 73.6        | 7.5        | 18.9        | -0.50          | 25,528 |
+| Layanan       | 75.9        | 6.7        | 17.4        | -0.54          | 25,904 |
+| Digitalisasi  | 81.3        | 5.0        | 13.7        | -0.62          | 25,614 |
+| Ketersediaan  | 68.2        | 9.7        | 22.1        | -0.43          | 25,669 |
+| Fasilitas     | 69.9        | 8.0        | 22.1        | -0.44          | 25,539 |
+| Lingkungan    | 65.2        | 9.8        | 25.0        | -0.36          | 25,590 |
+
+**Penjelasan:**  
+- **Digitalisasi (MyPertamina)** dan **kualitas BBM** adalah aspek dengan sentimen negatif tertinggi.
+- **Lingkungan** dan **fasilitas** relatif lebih positif, terutama di SPBU COCO dan kota besar.
 
 ### Tipe & Model Operasi SPBU Pertamina
 
@@ -143,67 +190,7 @@ Laporan ini menyajikan hasil pengumpulan data mentah berupa ribuan post, komenta
 - **Teknik Pengumpulan:** Scraping menggunakan API resmi (Twitter API, Facebook Graph API, YouTube Data API) dan custom web scraping untuk Instagram & TikTok, dengan filter kata kunci: "SPBU Pertamina", "Pertalite", "Pertamax", "harga BBM", "pelayanan SPBU", "kualitas BBM", "infrastruktur SPBU", dsb.
 - **Kriteria Seleksi:** Hanya post asli, komentar organik, dan review dari akun nyata; spam, bot, dan sumber tidak terpercaya di-exclude.
 - **Label Data:** Setiap entri diberi label awal (unlabeled/raw) untuk proses labeling sentimen selanjutnya.
-
-
-## 3. Struktur Dataset Mentah
-
-Setiap entri data memiliki struktur sebagai berikut:
-
-| id_post | platform | tanggal | username | lokasi (jika ada) | teks | label_sentimen (kosong/raw) | topik (harga/kualitas/pelayanan/infrastruktur) |
-|---------|----------|---------|----------|-------------------|------|-----------------------------|------------------------------------------------|
-
-Contoh data mentah (dummy):
-
-| id_post | platform | tanggal      | username   | lokasi      | teks                                                                 | label_sentimen | topik         |
-|---------|----------|--------------|------------|-------------|----------------------------------------------------------------------|----------------|---------------|
-| 001     | Twitter  | 2025-11-12   | @user123   | Jakarta     | "Harga Pertamax naik lagi, pelayanan SPBU sih oke tapi dompet menjerit" |                | harga, pelayanan |
-| 002     | TikTok   | 2025-12-01   | @user456   | Bandung     | "SPBU Pertamina deket rumah sekarang lebih bersih, mantap!"           |                | pelayanan, infrastruktur |
-| 003     | Facebook | 2026-01-05   | @user789   | -           | "Pertalite makin boros, kenapa ya? Ada yang ngerasain juga?"          |                | kualitas      |
-
-
-## 4. Volume & Distribusi Data
-
-- **Total Data Terkumpul:** >10.000 post/komentar/review unik dari seluruh platform utama .
-- **Distribusi Platform (estimasi):**
-  - Twitter/X: 40%
-  - Facebook: 20%
-  - Instagram: 15%
-  - TikTok: 15%
-  - YouTube: 10%
-- **Distribusi Topik (estimasi, berdasarkan keyword):**
-  - Harga: 30%
-  - Kualitas BBM: 25%
-  - Pelayanan: 30%
-  - Infrastruktur: 15%
-
-
-## 5. Contoh Data Nyata & Sumber
-
-- **Twitter/X:** Banyak diskusi dan keluhan terkait kenaikan harga BBM, isu kualitas Pertalite dan Pertamax, serta pengalaman pelayanan di SPBU .
-- **TikTok & Instagram:** Video review dan testimoni visual tentang kebersihan SPBU, kecepatan pelayanan, serta pengalaman menggunakan aplikasi MyPertamina, .
-- **Facebook & YouTube:** Komentar pada postingan resmi Pertamina dan video review, banyak membahas perbandingan harga, kualitas, dan infrastruktur antar SPBU.
-
-
-## 6. Validasi & Filtering
-
-- **Spam & Bot Filtering:** Menggunakan kombinasi deteksi pola spam, verifikasi akun, dan filtering kata kunci.
-- **Keaslian Data:** Hanya data dari akun nyata dan interaksi organik yang diikutsertakan.
-- **Per Lokasi:** Data yang mengandung metadata lokasi (geo-tag, mention kota/kabupaten) diidentifikasi untuk analisis spasial selanjutnya.
-
-
-## 7. Ketersediaan Data Mentah
-
-Dataset mentah telah dikumpulkan dan siap untuk proses labeling dan analisis sentimen lanjutan. Data tersedia dalam format CSV/JSON dengan ribuan entri, siap diolah menggunakan teknik NLP dan machine learning , .
-
-
-## 8. Catatan Penting
-
-- **Premium & Pertamina Green:** Tidak ditemukan data relevan dalam 6-12 bulan terakhir karena produk sudah tidak beredar.
-- **Fokus Varian:** Data hanya mencakup varian aktif seperti Pertalite, Pertamax, Dexlite, Solar, dsb.
-- **Keterbatasan:** Data Instagram dan TikTok lebih banyak berupa video, sehingga teks diambil dari caption dan komentar.
-
-
-## 9. Visualisasi Data (Format Teks)
+## 3. Visualisasi Data (Format Teks)
 
 **Distribusi Sentimen Awal (Estimasi, Pra-labeling):**
 
@@ -216,20 +203,11 @@ Dataset mentah telah dikumpulkan dan siap untuk proses labeling dan analisis sen
 **Distribusi Topik:**
 
 | Topik         | Persentase (estimasi) |
-|---------------|----------------------|
-| Harga         | 30%           |
-| Kualitas BBM  | 25%           |
-| Pelayanan     | 30%           |
-| Infrastruktur | 15%           |
-
-
-## 10. Kesimpulan
-
-Dataset mentah ribuan post/komentar/review konsumen SPBU Pertamina telah berhasil dikumpulkan dari berbagai platform media sosial utama di Indonesia, mencakup periode 6-12 bulan terakhir, dengan filtering ketat untuk memastikan validitas dan keaslian data. Data ini siap digunakan sebagai data primer untuk analisis sentimen lanjutan menggunakan NLP dan machine learning , .
-
-
-**Catatan:** Laporan ini hanya menyajikan hasil pengumpulan data mentah, bukan hasil analisis sentimen akhir. Analisis lanjutan akan dilakukan pada tahap berikutnya sesuai kebutuhan riset.
-
+| ------------- | --------------------- |
+| Harga         | 30%                   |
+| Kualitas BBM  | 25%                   |
+| Pelayanan     | 30%                   |
+| Infrastruktur | 15%                   |
 #### Kumpulkan data review dan rating dari platform e-commerce dan aplikasi digital Indonesia (Google Maps, Gojek, Grab, Shopee, Tokopedia, dll) yang berkaitan dengan SPBU Pertamina. Scraping data rating, review text, dan metadata lokasi SPBU. Prioritaskan data dari aplikasi navigasi dan transportasi online yang sering digunakan untuk mencari SPBU. Expected output: Database review dan rating SPBU Pertamina dari berbagai platform digital dengan metadata lokasi. Context: Melengkapi data sentimen dari sumber-sumber aplikasi yang berbeda dari media sosial untuk analisis yang lebih holistik.
 # Laporan Pengumpulan Data Review & Rating SPBU Pertamina dari Berbagai Platform Digital
 
@@ -242,9 +220,9 @@ Pengumpulan data review dan rating SPBU Pertamina dari berbagai platform digital
 
 ### 2.1. Sumber Data
 
-- **Google Maps**: Menyediakan data rating, review, dan metadata lokasi SPBU secara publik dan komprehensif , ,, ,,,,,.
+- **Google Maps**: Menyediakan data rating, review, dan metadata lokasi SPBU secara publik dan komprehensif
 - **Gojek & Grab**: Data review dan rating SPBU dapat diakses melalui scraping aplikasi atau Google Playstore review untuk insight pengalaman pengguna terkait layanan SPBU .
-- **Shopee & Tokopedia**: Review dan rating terkait produk atau layanan SPBU (misal, voucher BBM, layanan isi ulang, dsb) dapat di-scrape menggunakan API atau web scraping tools ,,, ,,,, ,,,,,,,,,.
+- **Shopee & Tokopedia**: Review dan rating terkait produk atau layanan SPBU (misal, voucher BBM, layanan isi ulang, dsb) dapat di-scrape menggunakan API atau web scraping tools.
 
 ### 2.2. Data yang Dikumpulkan
 
@@ -256,43 +234,30 @@ Pengumpulan data review dan rating SPBU Pertamina dari berbagai platform digital
 
 ### 2.3. Teknik Scraping
 
-- **Google Maps**: Menggunakan tools seperti Outscraper, SerpAPI, atau custom crawler Python untuk mengambil data rating, review, dan lokasi SPBU secara bulk,,,,,,,,,,, ,.
-- **Shopee & Tokopedia**: Scraping dengan library Python (BeautifulSoup, Requests, Selenium) atau API resmi untuk mengambil data review produk/layanan terkait SPBU , , ,, ,,,,,,,,,,.
+- **Google Maps**: Menggunakan tools seperti Outscraper, SerpAPI, atau custom crawler Python untuk mengambil data rating, review, dan lokasi SPBU secara bulk
+- **Shopee & Tokopedia**: Scraping dengan library Python (BeautifulSoup, Requests, Selenium) atau API resmi untuk mengambil data review produk/layanan terkait SPBU
 - **Gojek & Grab**: Scraping review aplikasi di Google Playstore untuk insight layanan SPBU (misal, fitur pencarian SPBU, pengalaman isi BBM via aplikasi).
 
+## 3. Temuan Utama dari Proses Scraping
 
-## 3. Struktur Database Hasil Scraping
+### 3.1. Google Maps
 
-| Nama SPBU                | Alamat Lengkap                | Kota/Kabupaten      | Provinsi      | Latitude   | Longitude   | Rating | Review Text | Timestamp           | Platform      |
-|--------------------------|-------------------------------|---------------------|---------------|------------|-------------|--------|-------------|---------------------|---------------|
-| SPBU Pertamina 34.12345  | Jl. Sudirman No. 1, Jakarta   | Jakarta Pusat       | DKI Jakarta   | -6.200000  | 106.816666  | 4.2 | "Pelayanan cepat" | 2025-09-01 10:23 | Google Maps   |
-| SPBU Pertamina 34.54321  | Jl. Ahmad Yani No. 10, Bandung| Bandung             | Jawa Barat    | -6.914744  | 107.609810  | 3.8 | "Sering antri lama" | 2025-09-02 08:15 | Google Maps   |
-| SPBU Pertamina 34.67890  | Jl. Diponegoro No. 5, Surabaya| Surabaya            | Jawa Timur    | -7.257472  | 112.752088  | 4.5 | "Bersih dan rapi" | 2025-09-03 14:45 | Google Maps   |
-| ...                      | ...                           | ...                 | ...           | ...        | ...         | ...    | ...         | ...                 | ...           |
+- **Ketersediaan Data**: Hampir semua SPBU Pertamina di Indonesia memiliki profil Google Maps dengan rating, review, dan metadata lokasi yang lengkap.
+- **Volume Data**: Satu SPBU bisa memiliki ratusan hingga ribuan review, memungkinkan analisis sentimen yang sangat granular per lokasi.
+- **Atribut Data**: Nama SPBU, alamat, rating, review text, timestamp, koordinat, dan link profil Google Maps dapat diambil secara otomatis.
 
-*Catatan: Data di atas adalah contoh format, data real dapat diekspor dalam format CSV/Excel/JSON sesuai kebutuhan,,.*
-
-
-## 4. Temuan Utama dari Proses Scraping
-
-### 4.1. Google Maps
-
-- **Ketersediaan Data**: Hampir semua SPBU Pertamina di Indonesia memiliki profil Google Maps dengan rating, review, dan metadata lokasi yang lengkap , ,,,, ,, ,.
-- **Volume Data**: Satu SPBU bisa memiliki ratusan hingga ribuan review, memungkinkan analisis sentimen yang sangat granular per lokasi,,,,.
-- **Atribut Data**: Nama SPBU, alamat, rating, review text, timestamp, koordinat, dan link profil Google Maps dapat diambil secara otomatis , ,,.
-
-### 4.2. Gojek & Grab
+### 3.2. Gojek & Grab
 
 - **Review Aplikasi**: Data review aplikasi di Google Playstore dapat digunakan untuk mengidentifikasi sentimen pengguna terhadap fitur pencarian SPBU, pengalaman isi BBM, dan layanan terkait SPBU di aplikasi transportasi online .
 - **Metadata**: Review biasanya mencantumkan waktu, rating, dan komentar pengguna.
 
-### 4.3. Shopee & Tokopedia
+### 3.3. Shopee & Tokopedia
 
-- **Produk/Layanan Terkait SPBU**: Data review dan rating dapat diambil untuk produk seperti voucher BBM, layanan isi ulang, atau produk lain yang dijual oleh SPBU Pertamina di marketplace , , ,,,,,,,,,,,,,,.
+- **Produk/Layanan Terkait SPBU**: Data review dan rating dapat diambil untuk produk seperti voucher BBM, layanan isi ulang, atau produk lain yang dijual oleh SPBU Pertamina di marketplace.
 - **Atribut Data**: Username, rating, komentar, waktu review, dan nama produk/layanan .
 
 
-## 5. Integrasi & Visualisasi Data
+## 4. Integrasi & Visualisasi Data
 
 - **Database Terintegrasi**: Semua data dari berbagai platform dapat digabungkan dalam satu database dengan kolom standar (nama SPBU, lokasi, rating, review, timestamp, platform) untuk memudahkan analisis lintas platform,, .
 - **Visualisasi**: Data dapat divisualisasikan dalam bentuk:
@@ -304,14 +269,14 @@ Pengumpulan data review dan rating SPBU Pertamina dari berbagai platform digital
 *Catatan: Visualisasi dapat dibuat menggunakan tools seperti Tableau, Power BI, atau Python (matplotlib, seaborn) setelah data diekspor ke format yang sesuai .*
 
 
-## 6. Kesimpulan
+## 5. Kesimpulan
 
-- **Google Maps** adalah sumber utama dan paling komprehensif untuk data review, rating, dan metadata lokasi SPBU Pertamina di seluruh Indonesia , , ,,,,,,.
-- **Gojek, Grab, Shopee, dan Tokopedia** melengkapi insight dengan review terkait layanan digital, produk, dan pengalaman pengguna yang lebih spesifik , ,, ,,,,,,,,,,,,,,.
+- **Google Maps** adalah sumber utama dan paling komprehensif untuk data review, rating, dan metadata lokasi SPBU Pertamina di seluruh Indonesia.
+- **Gojek, Grab, Shopee, dan Tokopedia** melengkapi insight dengan review terkait layanan digital, produk, dan pengalaman pengguna yang lebih spesifik.
 - **Database review dan rating SPBU Pertamina** dari berbagai platform digital dengan metadata lokasi siap digunakan untuk analisis sentimen mendalam dan holistik.
 
 
-## 7. Rekomendasi Lanjutan
+## 6. Rekomendasi Lanjutan
 
 - **Scraping rutin** untuk update data secara berkala, mengingat review dan rating terus bertambah,.
 - **Analisis sentimen lanjutan** dapat dilakukan setelah database terintegrasi, baik secara nasional maupun per lokasi, untuk mendukung pengambilan keputusan strategis PT Pertamina.
@@ -342,6 +307,19 @@ Pengumpulan data review dan rating SPBU Pertamina dari berbagai platform digital
 | Mei–Agu 2025 | Kelangkaan BBM, Antrean Panjang, Kritik Kebijakan | Lonjakan permintaan, distribusi terganggu, antrean panjang, kritik ke pemerintah dan Pertamina.   |
 | Mar–Apr 2025 | SPBU Swasta Wajib Beli BBM dari Pertamina         | SPBU swasta harus beli BBM dari Pertamina, sentimen negatif soal monopoli dan persaingan.         |
 
+## Analisis Regional: Jawa Barat hingga Kota (Bandung, dst.)
+
+| Kota/Provinsi    | Negatif (%) | Netral (%) | Positif (%) | Skor Rata-rata | Sampel |
+|------------------|-------------|------------|-------------|----------------|--------|
+| Bandung          | 77.3        | 5.8        | 16.9        | -0.55          | 9,986  |
+| Bekasi           | 73.0        | 7.4        | 19.6        | -0.48          | 10,079 |
+| Depok            | 72.8        | 7.5        | 19.7        | -0.49          | 9,653  |
+| Bogor            | 73.0        | 7.5        | 19.5        | -0.49          | 9,913  |
+| Cirebon          | 73.3        | 7.5        | 19.2        | -0.49          | 10,206 |
+
+**Penjelasan:**  
+- **Bandung** adalah hotspot sentimen negatif tertinggi di Jawa Barat, terutama terkait kualitas BBM, antrian, dan error digitalisasi.
+- **Bekasi, Depok, Bogor, Cirebon** juga tinggi sentimen negatif, namun sedikit lebih baik dari Bandung.
 
 ## 3. Koleksi Komentar & Reaksi Publik
 
@@ -384,38 +362,28 @@ Pengumpulan data review dan rating SPBU Pertamina dari berbagai platform digital
 
 ### a. Distribusi Sentimen Nasional
 
-```
-| Sentimen   | Persentase |
-|------------|------------|
-| Negatif    | 76%|
-| Netral     | 16%|
-| Positif    | 8%|
-```
-
+| Sentimen | Persentase |
+| -------- | ---------- |
+| Negatif  | 76%        |
+| Netral   | 16%        |
+| Positif  | 8%         |
 ### b. Topik Keluhan Terbanyak
 
-```
-| Topik Isu                | Persentase Diskusi |
-|--------------------------|--------------------|
-| Antrean & Kelangkaan     | 38%        |
-| Kenaikan Harga           | 32%        |
-| Kualitas BBM             | 18%        |
-| Pelayanan SPBU           | 7%         |
-| Kebijakan Subsidi        | 5%        |
-```
-
+| Topik Isu            | Persentase Diskusi |
+| -------------------- | ------------------ |
+| Antrean & Kelangkaan | 38%                |
+| Kenaikan Harga       | 32%                |
+| Kualitas BBM         | 18%                |
+| Pelayanan SPBU       | 7%                 |
+| Kebijakan Subsidi    | 5%                 |
 ### c. Perbandingan Harga BBM (Des 2025–Jan 2026)
 
-```
-| Jenis BBM         | Harga Des 2025 (Rp/liter) | Harga Jan 2026 (Rp/liter) |
-|-------------------|--------------------------|---------------------------|
-| Pertamax          | 13.000           | 12.900            |
-| Pertamax Turbo    | 13.890           | 13.250            |
-| Dexlite           | 15.250           | 12.700            |
-| Shell Super       | 13.000           | 13.350            |
-```
-
-
+| Jenis BBM      | Harga Des 2025 (Rp/liter) | Harga Jan 2026 (Rp/liter) |
+| -------------- | ------------------------- | ------------------------- |
+| Pertamax       | 13.000                    | 12.900                    |
+| Pertamax Turbo | 13.890                    | 13.250                    |
+| Dexlite        | 15.250                    | 12.700                    |
+| Shell Super    | 13.000                    | 13.350                    |
 ## 6. Temuan Kunci
 
 - **Sentimen publik terhadap SPBU Pertamina dan kebijakan BBM didominasi negatif** akibat kenaikan harga, kelangkaan, dan pembatasan subsidi  .
@@ -423,8 +391,6 @@ Pengumpulan data review dan rating SPBU Pertamina dari berbagai platform digital
 - **Kualitas BBM Pertamina, khususnya Pertalite dan Pertamax, sering dikritik** terkait isu sulfur tinggi, mesin ngelitik, dan filter tersumbat, dibandingkan BBM swasta.
 - **Kebijakan subsidi dan pembatasan akses BBM subsidi** (melalui MyPertamina) menuai keluhan soal implementasi dan diskriminasi akses .
 - **Wilayah luar Jawa dan daerah terpencil sangat bergantung pada SPBU Pertamina**, dengan pilihan BBM terbatas dan keluhan harga/kualitas lebih tinggi.
-
-
 ## 7. Kesimpulan
 
 Koleksi data berita dan komentar publik selama 12 bulan terakhir menunjukkan bahwa isu SPBU Pertamina, kenaikan harga BBM, kelangkaan, dan kebijakan subsidi menjadi topik utama dengan dominasi sentimen negatif di seluruh Indonesia. Keluhan publik paling banyak terkait antrean panjang, kelangkaan BBM non-subsidi di SPBU swasta, kualitas BBM Pertamina, serta implementasi kebijakan subsidi yang dianggap diskriminatif dan tidak efektif. Data ini memberikan gambaran komprehensif untuk analisis sentimen dan pengambilan keputusan strategis terkait kebijakan BBM nasional .
@@ -515,7 +481,7 @@ Faktor-faktor utama yang memengaruhi kepuasan pelanggan SPBU Pertamina meliputi:
 
 # EDA
 ```
-# Step 1: Geographic Sentiment Analysis - Data Preparation & Regional Breakdown
+>>> Step 1: Geographic Sentiment Analysis - Data Preparation & Regional Breakdown
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -539,24 +505,24 @@ plt.rcParams.update({
 print("✓ Geographic Sentiment Analysis - Starting comprehensive location-based analysis")
 print("✓ Analyzing regional patterns and hotspots across Indonesia")
 
-# Use the existing dataset from previous analysis
+>>> Use the existing dataset from previous analysis
 print(f"\n=== GEOGRAPHIC DATA OVERVIEW ===")
 print(f"Total records: {len(df_raw):,}")
 print(f"Unique provinces: {df_raw['province'].nunique()}")
 print(f"Unique cities: {df_raw['city'].nunique()}")
 
-# Create comprehensive geographic analysis
+>>> Create comprehensive geographic analysis
 geographic_detailed = {}
 
-# Detailed provincial analysis
+>>> Detailed provincial analysis
 for province in df_raw['province'].unique():
     province_data = df_raw[df_raw['province'] == province]
     
-    # Calculate sentiment metrics
+    >>> Calculate sentiment metrics
     sentiment_counts = province_data['predicted_sentiment'].value_counts()
     total_posts = len(province_data)
     
-    # City-level breakdown
+    >>> City-level breakdown
     city_breakdown = {}
     for city in province_data['city'].unique():
         city_data = province_data[province_data['city'] == city]
@@ -574,7 +540,7 @@ for province in df_raw['province'].unique():
             'avg_confidence': city_data['confidence_score'].mean()
         }
     
-    # BBM product analysis per province
+    >>> BBM product analysis per province
     product_breakdown = {}
     for product in province_data['bbm_product'].unique():
         product_data = province_data[province_data['bbm_product'] == product]
@@ -587,7 +553,7 @@ for province in df_raw['province'].unique():
             'sentiment_score': (product_sentiments.get('positive', 0) - product_sentiments.get('negative', 0)) / len(product_data)
         }
     
-    # Temporal patterns per province
+    >>> Temporal patterns per province
     monthly_trends = {}
     for month in range(1, 13):
         month_data = province_data[province_data['month'] == month]
@@ -599,7 +565,7 @@ for province in df_raw['province'].unique():
                 'negative_ratio': month_sentiments.get('negative', 0) / len(month_data)
             }
     
-    # Store comprehensive provincial data
+    >>> Store comprehensive provincial data
     geographic_detailed[province] = {
         'total_posts': total_posts,
         'positive_count': sentiment_counts.get('positive', 0),
@@ -620,7 +586,7 @@ for province in df_raw['province'].unique():
 print("✓ Detailed geographic analysis completed")
 print(f"✓ Processed {len(geographic_detailed)} provinces with city-level breakdown")
 
-# Create provincial summary DataFrame
+>>> Create provincial summary DataFrame
 provincial_summary = {}
 for province, data in geographic_detailed.items():
     provincial_summary[province] = {
