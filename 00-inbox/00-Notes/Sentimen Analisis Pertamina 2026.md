@@ -1,144 +1,3 @@
-# EDA
-```
-# Step 1: Geographic Sentiment Analysis - Data Preparation & Regional Breakdown
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import scienceplots
-from datetime import datetime
-import warnings
-warnings.filterwarnings('ignore')
-
-# Apply consistent plotting style
-plt.style.use(["science", "grid", "high-vis", "no-latex"])
-sns.set_context("paper", font_scale=1.15)
-plt.rcParams.update({
-    "font.family": "DejaVu Sans",
-    "figure.dpi": 300, "savefig.dpi": 300,
-    "axes.spines.top": False, "axes.spines.right": False,
-    "legend.frameon": False, "legend.loc": "best",
-    "grid.alpha": 0.4, "grid.linewidth": 0.6
-})
-
-print("✓ Geographic Sentiment Analysis - Starting comprehensive location-based analysis")
-print("✓ Analyzing regional patterns and hotspots across Indonesia")
-
-# Use the existing dataset from previous analysis
-print(f"\n=== GEOGRAPHIC DATA OVERVIEW ===")
-print(f"Total records: {len(df_raw):,}")
-print(f"Unique provinces: {df_raw['province'].nunique()}")
-print(f"Unique cities: {df_raw['city'].nunique()}")
-
-# Create comprehensive geographic analysis
-geographic_detailed = {}
-
-# Detailed provincial analysis
-for province in df_raw['province'].unique():
-    province_data = df_raw[df_raw['province'] == province]
-    
-    # Calculate sentiment metrics
-    sentiment_counts = province_data['predicted_sentiment'].value_counts()
-    total_posts = len(province_data)
-    
-    # City-level breakdown
-    city_breakdown = {}
-    for city in province_data['city'].unique():
-        city_data = province_data[province_data['city'] == city]
-        city_sentiments = city_data['predicted_sentiment'].value_counts()
-        
-        city_breakdown[city] = {
-            'total_posts': len(city_data),
-            'positive_count': city_sentiments.get('positive', 0),
-            'negative_count': city_sentiments.get('negative', 0), 
-            'neutral_count': city_sentiments.get('neutral', 0),
-            'positive_ratio': city_sentiments.get('positive', 0) / len(city_data),
-            'negative_ratio': city_sentiments.get('negative', 0) / len(city_data),
-            'neutral_ratio': city_sentiments.get('neutral', 0) / len(city_data),
-            'sentiment_score': (city_sentiments.get('positive', 0) - city_sentiments.get('negative', 0)) / len(city_data),
-            'avg_confidence': city_data['confidence_score'].mean()
-        }
-    
-    # BBM product analysis per province
-    product_breakdown = {}
-    for product in province_data['bbm_product'].unique():
-        product_data = province_data[province_data['bbm_product'] == product]
-        product_sentiments = product_data['predicted_sentiment'].value_counts()
-        
-        product_breakdown[product] = {
-            'total_mentions': len(product_data),
-            'positive_ratio': product_sentiments.get('positive', 0) / len(product_data),
-            'negative_ratio': product_sentiments.get('negative', 0) / len(product_data),
-            'sentiment_score': (product_sentiments.get('positive', 0) - product_sentiments.get('negative', 0)) / len(product_data)
-        }
-    
-    # Temporal patterns per province
-    monthly_trends = {}
-    for month in range(1, 13):
-        month_data = province_data[province_data['month'] == month]
-        if len(month_data) > 0:
-            month_sentiments = month_data['predicted_sentiment'].value_counts()
-            monthly_trends[month] = {
-                'total_posts': len(month_data),
-                'sentiment_score': (month_sentiments.get('positive', 0) - month_sentiments.get('negative', 0)) / len(month_data),
-                'negative_ratio': month_sentiments.get('negative', 0) / len(month_data)
-            }
-    
-    # Store comprehensive provincial data
-    geographic_detailed[province] = {
-        'total_posts': total_posts,
-        'positive_count': sentiment_counts.get('positive', 0),
-        'negative_count': sentiment_counts.get('negative', 0),
-        'neutral_count': sentiment_counts.get('neutral', 0),
-        'positive_ratio': sentiment_counts.get('positive', 0) / total_posts,
-        'negative_ratio': sentiment_counts.get('negative', 0) / total_posts,
-        'neutral_ratio': sentiment_counts.get('neutral', 0) / total_posts,
-        'sentiment_score': (sentiment_counts.get('positive', 0) - sentiment_counts.get('negative', 0)) / total_posts,
-        'avg_confidence': province_data['confidence_score'].mean(),
-        'cities': city_breakdown,
-        'products': product_breakdown,
-        'monthly_trends': monthly_trends,
-        'unique_cities': province_data['city'].nunique(),
-        'avg_posts_per_city': total_posts / province_data['city'].nunique()
-    }
-
-print("✓ Detailed geographic analysis completed")
-print(f"✓ Processed {len(geographic_detailed)} provinces with city-level breakdown")
-
-# Create provincial summary DataFrame
-provincial_summary = {}
-for province, data in geographic_detailed.items():
-    provincial_summary[province] = {
-        'total_posts': data['total_posts'],
-        'positive_ratio': data['positive_ratio'],
-        'negative_ratio': data['negative_ratio'],
-        'neutral_ratio': data['neutral_ratio'],
-        'sentiment_score': data['sentiment_score'],
-        'avg_confidence': data['avg_confidence'],
-        'unique_cities': data['unique_cities'],
-        'posts_per_city': data['avg_posts_per_city']
-    }
-
-geo_summary_df = pd.DataFrame(provincial_summary).T
-geo_summary_df = geo_summary_df.round(3)
-
-print(f"\n=== PROVINCIAL SENTIMENT SUMMARY ===")
-pd.set_option('display.max_columns', None)
-print(geo_summary_df.sort_values('sentiment_score', ascending=False))
-
-# Identify sentiment hotspots
-most_positive_provinces = geo_summary_df.nlargest(3, 'sentiment_score')
-most_negative_provinces = geo_summary_df.nsmallest(3, 'sentiment_score')
-
-print(f"\n=== SENTIMENT HOTSPOTS ===")
-print("TOP 3 MOST POSITIVE PROVINCES:")
-print(most_positive_provinces[['sentiment_score', 'positive_ratio', 'total_posts']])
-
-print("\nTOP 3 MOST NEGATIVE PROVINCES:")  
-print(most_negative_provinces[['sentiment_score', 'negative_ratio', 'total_posts']])
-
-```
-
 #### Teliti profil lengkap PT. Pertamina dan SPBU Pertamina saat ini, termasuk jumlah SPBU nasional, distribusi geografis, dan semua varian bahan bakar yang masih aktif (Pertalite, Pertamax, dan varian lainnya). Fokus pada status terkini produk yang sudah dihentikan seperti Premium dan Pertamina Green. Gunakan sumber resmi seperti website Pertamina, laporan tahunan, dan database pemerintah. Expected output: Ringkasan komprehensif tentang infrastruktur SPBU Pertamina dan portofolio produk bahan bakar terkini. Context: Sebagai baseline untuk memahami scope analisis sentimen yang akan dilakukan oleh Raymaizing terhadap PT. Pertamina.
 # Profil Lengkap PT. Pertamina & SPBU Pertamina (2026)
 
@@ -473,15 +332,15 @@ Pengumpulan data review dan rating SPBU Pertamina dari berbagai platform digital
 
 ## 2. Koleksi Berita & Artikel Utama
 
-| Tanggal      | Judul/Topik Utama                                                                 | Ringkasan Isu                                                                                 |
-|--------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Jan 2026     | Harga BBM Pertamina Turun di Awal Tahun                                    | Penyesuaian harga BBM non-subsidi, Pertalite dan Solar subsidi tetap, Dexlite dan Pertamax turun. |
-| Des 2025     | Harga BBM Shell Naik, Kelangkaan di SPBU Swasta                           | Kenaikan harga BBM Shell, kelangkaan stok di SPBU swasta, konsumen beralih ke Pertamina.      |
-| Nov 2025     | Polemik Kelangkaan BBM di SPBU Swasta                               | Kelangkaan BBM di SPBU swasta, sentimen negatif publik, antrean panjang di SPBU Pertamina.    |
-| Okt 2025     | Aturan Baru Pembelian BBM Subsidi                                          | Pembatasan pembelian BBM subsidi, wajib daftar di MyPertamina, keluhan proses lambat.         |
-| Jul 2025     | Harga BBM Naik Serentak di Semua Operator                    | Kenaikan harga BBM non-subsidi di Pertamina, Shell, BP, Vivo, reaksi publik negatif.          |
-| Mei–Agu 2025 | Kelangkaan BBM, Antrean Panjang, Kritik Kebijakan                  | Lonjakan permintaan, distribusi terganggu, antrean panjang, kritik ke pemerintah dan Pertamina.|
-| Mar–Apr 2025 | SPBU Swasta Wajib Beli BBM dari Pertamina                          | SPBU swasta harus beli BBM dari Pertamina, sentimen negatif soal monopoli dan persaingan.     |
+| Tanggal      | Judul/Topik Utama                                 | Ringkasan Isu                                                                                     |
+| ------------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Jan 2026     | Harga BBM Pertamina Turun di Awal Tahun           | Penyesuaian harga BBM non-subsidi, Pertalite dan Solar subsidi tetap, Dexlite dan Pertamax turun. |
+| Des 2025     | Harga BBM Shell Naik, Kelangkaan di SPBU Swasta   | Kenaikan harga BBM Shell, kelangkaan stok di SPBU swasta, konsumen beralih ke Pertamina.          |
+| Nov 2025     | Polemik Kelangkaan BBM di SPBU Swasta             | Kelangkaan BBM di SPBU swasta, sentimen negatif publik, antrean panjang di SPBU Pertamina.        |
+| Okt 2025     | Aturan Baru Pembelian BBM Subsidi                 | Pembatasan pembelian BBM subsidi, wajib daftar di MyPertamina, keluhan proses lambat.             |
+| Jul 2025     | Harga BBM Naik Serentak di Semua Operator         | Kenaikan harga BBM non-subsidi di Pertamina, Shell, BP, Vivo, reaksi publik negatif.              |
+| Mei–Agu 2025 | Kelangkaan BBM, Antrean Panjang, Kritik Kebijakan | Lonjakan permintaan, distribusi terganggu, antrean panjang, kritik ke pemerintah dan Pertamina.   |
+| Mar–Apr 2025 | SPBU Swasta Wajib Beli BBM dari Pertamina         | SPBU swasta harus beli BBM dari Pertamina, sentimen negatif soal monopoli dan persaingan.         |
 
 
 ## 3. Koleksi Komentar & Reaksi Publik
@@ -652,3 +511,208 @@ Faktor-faktor utama yang memengaruhi kepuasan pelanggan SPBU Pertamina meliputi:
 
 
 **Laporan ini memberikan perspektif formal dan terstruktur untuk melengkapi analisis sentimen informal dari media sosial, serta dapat dijadikan acuan dalam pengambilan keputusan strategis terkait peningkatan layanan SPBU Pertamina di Indonesia.**
+
+
+# EDA
+```
+# Step 1: Geographic Sentiment Analysis - Data Preparation & Regional Breakdown
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import scienceplots
+from datetime import datetime
+import warnings
+warnings.filterwarnings('ignore')
+
+# Apply consistent plotting style
+plt.style.use(["science", "grid", "high-vis", "no-latex"])
+sns.set_context("paper", font_scale=1.15)
+plt.rcParams.update({
+    "font.family": "DejaVu Sans",
+    "figure.dpi": 300, "savefig.dpi": 300,
+    "axes.spines.top": False, "axes.spines.right": False,
+    "legend.frameon": False, "legend.loc": "best",
+    "grid.alpha": 0.4, "grid.linewidth": 0.6
+})
+
+print("✓ Geographic Sentiment Analysis - Starting comprehensive location-based analysis")
+print("✓ Analyzing regional patterns and hotspots across Indonesia")
+
+# Use the existing dataset from previous analysis
+print(f"\n=== GEOGRAPHIC DATA OVERVIEW ===")
+print(f"Total records: {len(df_raw):,}")
+print(f"Unique provinces: {df_raw['province'].nunique()}")
+print(f"Unique cities: {df_raw['city'].nunique()}")
+
+# Create comprehensive geographic analysis
+geographic_detailed = {}
+
+# Detailed provincial analysis
+for province in df_raw['province'].unique():
+    province_data = df_raw[df_raw['province'] == province]
+    
+    # Calculate sentiment metrics
+    sentiment_counts = province_data['predicted_sentiment'].value_counts()
+    total_posts = len(province_data)
+    
+    # City-level breakdown
+    city_breakdown = {}
+    for city in province_data['city'].unique():
+        city_data = province_data[province_data['city'] == city]
+        city_sentiments = city_data['predicted_sentiment'].value_counts()
+        
+        city_breakdown[city] = {
+            'total_posts': len(city_data),
+            'positive_count': city_sentiments.get('positive', 0),
+            'negative_count': city_sentiments.get('negative', 0), 
+            'neutral_count': city_sentiments.get('neutral', 0),
+            'positive_ratio': city_sentiments.get('positive', 0) / len(city_data),
+            'negative_ratio': city_sentiments.get('negative', 0) / len(city_data),
+            'neutral_ratio': city_sentiments.get('neutral', 0) / len(city_data),
+            'sentiment_score': (city_sentiments.get('positive', 0) - city_sentiments.get('negative', 0)) / len(city_data),
+            'avg_confidence': city_data['confidence_score'].mean()
+        }
+    
+    # BBM product analysis per province
+    product_breakdown = {}
+    for product in province_data['bbm_product'].unique():
+        product_data = province_data[province_data['bbm_product'] == product]
+        product_sentiments = product_data['predicted_sentiment'].value_counts()
+        
+        product_breakdown[product] = {
+            'total_mentions': len(product_data),
+            'positive_ratio': product_sentiments.get('positive', 0) / len(product_data),
+            'negative_ratio': product_sentiments.get('negative', 0) / len(product_data),
+            'sentiment_score': (product_sentiments.get('positive', 0) - product_sentiments.get('negative', 0)) / len(product_data)
+        }
+    
+    # Temporal patterns per province
+    monthly_trends = {}
+    for month in range(1, 13):
+        month_data = province_data[province_data['month'] == month]
+        if len(month_data) > 0:
+            month_sentiments = month_data['predicted_sentiment'].value_counts()
+            monthly_trends[month] = {
+                'total_posts': len(month_data),
+                'sentiment_score': (month_sentiments.get('positive', 0) - month_sentiments.get('negative', 0)) / len(month_data),
+                'negative_ratio': month_sentiments.get('negative', 0) / len(month_data)
+            }
+    
+    # Store comprehensive provincial data
+    geographic_detailed[province] = {
+        'total_posts': total_posts,
+        'positive_count': sentiment_counts.get('positive', 0),
+        'negative_count': sentiment_counts.get('negative', 0),
+        'neutral_count': sentiment_counts.get('neutral', 0),
+        'positive_ratio': sentiment_counts.get('positive', 0) / total_posts,
+        'negative_ratio': sentiment_counts.get('negative', 0) / total_posts,
+        'neutral_ratio': sentiment_counts.get('neutral', 0) / total_posts,
+        'sentiment_score': (sentiment_counts.get('positive', 0) - sentiment_counts.get('negative', 0)) / total_posts,
+        'avg_confidence': province_data['confidence_score'].mean(),
+        'cities': city_breakdown,
+        'products': product_breakdown,
+        'monthly_trends': monthly_trends,
+        'unique_cities': province_data['city'].nunique(),
+        'avg_posts_per_city': total_posts / province_data['city'].nunique()
+    }
+
+print("✓ Detailed geographic analysis completed")
+print(f"✓ Processed {len(geographic_detailed)} provinces with city-level breakdown")
+
+# Create provincial summary DataFrame
+provincial_summary = {}
+for province, data in geographic_detailed.items():
+    provincial_summary[province] = {
+        'total_posts': data['total_posts'],
+        'positive_ratio': data['positive_ratio'],
+        'negative_ratio': data['negative_ratio'],
+        'neutral_ratio': data['neutral_ratio'],
+        'sentiment_score': data['sentiment_score'],
+        'avg_confidence': data['avg_confidence'],
+        'unique_cities': data['unique_cities'],
+        'posts_per_city': data['avg_posts_per_city']
+    }
+
+geo_summary_df = pd.DataFrame(provincial_summary).T
+geo_summary_df = geo_summary_df.round(3)
+
+print(f"\n=== PROVINCIAL SENTIMENT SUMMARY ===")
+pd.set_option('display.max_columns', None)
+print(geo_summary_df.sort_values('sentiment_score', ascending=False))
+
+# Identify sentiment hotspots
+most_positive_provinces = geo_summary_df.nlargest(3, 'sentiment_score')
+most_negative_provinces = geo_summary_df.nsmallest(3, 'sentiment_score')
+
+print(f"\n=== SENTIMENT HOTSPOTS ===")
+print("TOP 3 MOST POSITIVE PROVINCES:")
+print(most_positive_provinces[['sentiment_score', 'positive_ratio', 'total_posts']])
+
+print("\nTOP 3 MOST NEGATIVE PROVINCES:")  
+print(most_negative_provinces[['sentiment_score', 'negative_ratio', 'total_posts']])
+
+```
+```
+✓ Geographic Sentiment Analysis - Starting comprehensive location-based analysis
+✓ Analyzing regional patterns and hotspots across Indonesia
+
+=== GEOGRAPHIC DATA OVERVIEW ===
+Total records: 15,000
+Unique provinces: 10
+Unique cities: 39
+✓ Detailed geographic analysis completed
+✓ Processed 10 provinces with city-level breakdown
+
+=== PROVINCIAL SENTIMENT SUMMARY ===
+                  total_posts  positive_ratio  negative_ratio  neutral_ratio  \
+Kalimantan Timur       1482.0           0.298           0.422          0.280   
+Jawa Tengah            1499.0           0.294           0.426          0.280   
+Jawa Timur             1455.0           0.297           0.438          0.265   
+Sulawesi Selatan       1556.0           0.293           0.440          0.267   
+DKI Jakarta            1566.0           0.295           0.446          0.259   
+Jawa Barat             1496.0           0.289           0.443          0.268   
+Papua                  1486.0           0.279           0.437          0.284   
+Sumatera Utara         1497.0           0.285           0.445          0.270   
+Sumatera Barat         1455.0           0.283           0.448          0.269   
+Bali                   1508.0           0.288           0.466          0.247   
+
+                  sentiment_score  avg_confidence  unique_cities  \
+Kalimantan Timur           -0.125           0.739            3.0   
+Jawa Tengah                -0.133           0.741            5.0   
+Jawa Timur                 -0.141           0.747            5.0   
+Sulawesi Selatan           -0.147           0.751            3.0   
+DKI Jakarta                -0.151           0.757            5.0   
+Jawa Barat                 -0.153           0.744            5.0   
+Papua                      -0.159           0.742            3.0   
+Sumatera Utara             -0.160           0.751            4.0   
+Sumatera Barat             -0.165           0.748            3.0   
+Bali                       -0.178           0.757            3.0   
+
+                  posts_per_city  
+Kalimantan Timur         494.000  
+Jawa Tengah              299.800  
+Jawa Timur               291.000  
+Sulawesi Selatan         518.667  
+DKI Jakarta              313.200  
+Jawa Barat               299.200  
+Papua                    495.333  
+Sumatera Utara           374.250  
+Sumatera Barat           485.000  
+Bali                     502.667  
+
+=== SENTIMENT HOTSPOTS ===
+TOP 3 MOST POSITIVE PROVINCES:
+                  sentiment_score  positive_ratio  total_posts
+Kalimantan Timur           -0.125           0.298       1482.0
+Jawa Tengah                -0.133           0.294       1499.0
+Jawa Timur                 -0.141           0.297       1455.0
+
+TOP 3 MOST NEGATIVE PROVINCES:
+                sentiment_score  negative_ratio  total_posts
+Bali                     -0.178           0.466       1508.0
+Sumatera Barat           -0.165           0.448       1455.0
+Sumatera Utara           -0.160           0.445       1497.0
+
+
+```
