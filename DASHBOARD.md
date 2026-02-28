@@ -327,18 +327,15 @@ SORT length(rows) DESC
 ## 🔗 Quick Links
 
 ### 📖 Documentation
-- [[01-knowledge-base/perusahaan/MASTER-STRUKTUR-RAYCORP|🏢 Master Struktur RayCorp]]
-- [[01-knowledge-base/perusahaan/ECOSYSTEM-GUIDE|📖 Ecosystem Guide]]
-- [[01-knowledge-base/perusahaan/QUICK-REFERENCE|⚡ Quick Reference]]
-- [[00-system/docs/QUICK-START|🚀 Quick Start (5 min)]]
-- [[00-system/docs/OBSIDIAN-OPTIMIZATION-GUIDE|⚙️ Obsidian Optimization]]
+- [[00-system/docs/KNOWLEDGE-BASE-AS-AI-BRAIN|🧠 Knowledge Base as AI Brain]]
+- [[00-system/docs/ECOSYSTEM-USER-GUIDE|📖 Ecosystem User Guide]]
+- [[00-system/docs/QUICK-START-AI-BRAIN|🚀 Quick Start (5 min)]]
 
 ### 🏢 Company Structure
-- [[01-knowledge-base/perusahaan/lunaranger/|🌙 Lunaranger]] (PT Lunaray Cahya Abadi)
-- [[01-knowledge-base/perusahaan/dianranger/|🏭 Dianranger]] (CV Dian Indah Abadi)
-- [[01-knowledge-base/perusahaan/raycademy/|🎓 Raycademy]] (Ray Academy)
-- [[01-knowledge-base/perusahaan/agroranger/|🌾 AgroRanger]] (RayAgro)
-- [[01-knowledge-base/perusahaan/cosranger/|🔬 CosRanger]] (LabCos)
+- [[01-knowledge-base/01-holding/rayandra-corporation/|🏢 Rayandra Corporation]] (Office Holding)
+- [[01-knowledge-base/01-holding/lunaray-beauty-factory/|🏭 Lunaray Beauty Factory]] (Manufacturing)
+- [[01-knowledge-base/04-unit-bisnis/ray-academy/|🎓 Ray Academy]]
+- [[01-knowledge-base/04-unit-bisnis/labcos/|🔬 LabCos]]
 
 ### 🤖 AI & Automation
 - [[02-ai-bots/|🤖 AI Bots Hub]]

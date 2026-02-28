@@ -1,0 +1,168 @@
+{
+  "name": "Article Paraphrase with Brand Voice + Knowledge Base",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "n1",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        220,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const article = {\n  source_url: 'https://www.shopify.com/blog/ai-business-ideas',\n  source_title: '17 AI Business Ideas To Start in 2026',\n  article_text: 'Artificial intelligence has become accessible for small businesses. Teams can now automate customer service, accelerate content production, and improve lead qualification with lower operational cost. The opportunity is strongest for operators who can combine domain expertise with practical AI workflows. Businesses that win are not the ones that use the most tools, but the ones that redesign their process end-to-end and measure outcomes. Strong implementation starts with one clear use case, baseline metrics, and rapid iteration. Once the first workflow proves value, organizations can expand into sales enablement, support operations, and internal knowledge management.',\n};\n\nconst workflowContext = {\n  target_language: 'id',\n  paraphrase_goal: 'Parafrase artikel agar relevan untuk audiens bisnis Indonesia tanpa mengubah fakta.',\n  desired_length: '90-110% dari panjang artikel sumber',\n  output_style: 'artikel blog profesional, ringkas, actionable',\n  model: 'gpt-4.1-mini',\n};\n\nreturn {\n  json: {\n    ...article,\n    ...workflowContext,\n  },\n};"
+      },
+      "id": "n2",
+      "name": "Prepare Input",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        460,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const brandVoice = {\n  brand_name: 'Raymaizing',\n  positioning: 'AI automation partner untuk bisnis jasa dan creator economy',\n  tone: ['tegas', 'praktis', 'berbasis data', 'tanpa hiperbola'],\n  audience: 'founder, operator, dan tim growth di Indonesia',\n  do: [\n    'Gunakan bahasa Indonesia natural dan jelas',\n    'Tekankan implikasi bisnis dan langkah implementasi',\n    'Jaga fakta dari sumber tetap konsisten',\n  ],\n  dont: [\n    'Jangan klaim berlebihan tanpa dukungan sumber',\n    'Jangan mengubah angka atau fakta inti artikel sumber',\n    'Jangan gunakan tone terlalu promosi',\n  ],\n  mandatory_terms: ['workflow', 'otomasi', 'ROI'],\n};\n\nconst knowledgeBase = [\n  {\n    id: 'KB-001',\n    title: 'Value Proposition',\n    source: 'Brand Strategy Raymaizing v1',\n    content: 'Raymaizing membantu bisnis membangun workflow AI yang langsung berdampak ke efisiensi operasional dan pertumbuhan revenue.',\n  },\n  {\n    id: 'KB-002',\n    title: 'Delivery Principle',\n    source: 'Operating Manual Internal',\n    content: 'Setiap rekomendasi harus implementable dalam sprint pendek, punya metrik keberhasilan, dan bisa diukur ROI-nya.',\n  },\n  {\n    id: 'KB-003',\n    title: 'Communication Style',\n    source: 'Brand Voice Guide',\n    content: 'Gunakan kalimat aktif, minim jargon, dan tutup dengan next action yang konkret.',\n  },\n];\n\nconst systemPrompt = [\n  'Anda adalah editor senior untuk brand Raymaizing.',\n  'Tugas Anda memparafrase artikel sumber ke bahasa Indonesia dengan menjaga fakta inti.',\n  'Selalu patuhi brand voice dan knowledge base yang diberikan.',\n  'Jika ada bagian tidak didukung sumber, tandai sebagai catatan verifikasi.',\n  'Keluarkan HASIL DALAM JSON VALID saja.',\n].join('\\n');\n\nconst kbText = knowledgeBase\n  .map((item) => '[' + item.id + '] ' + item.title + ' | ' + item.source + '\\n' + item.content)\n  .join('\\n\\n');\n\nconst userPrompt = [\n  'Parafrase artikel berikut.',\n  'SOURCE_URL: ' + $json.source_url,\n  'SOURCE_TITLE: ' + $json.source_title,\n  'TARGET_LANGUAGE: ' + $json.target_language,\n  'GOAL: ' + $json.paraphrase_goal,\n  'DESIRED_LENGTH: ' + $json.desired_length,\n  'OUTPUT_STYLE: ' + $json.output_style,\n  '',\n  'SOURCE_ARTICLE_TEXT:',\n  $json.article_text,\n  '',\n  'BRAND_VOICE_JSON:',\n  JSON.stringify(brandVoice, null, 2),\n  '',\n  'KNOWLEDGE_BASE_REFERENCES:',\n  kbText,\n  '',\n  'Format JSON output wajib:',\n  JSON.stringify({\n    title: 'string',\n    paraphrased_article: 'string',\n    summary_bullets: ['string'],\n    citations: [\n      {\n        type: 'source_article | knowledge_base',\n        ref: 'url atau KB-ID',\n        note: 'alasan referensi dipakai',\n      },\n    ],\n    brand_voice_check: {\n      tone_match: 'pass/fail',\n      mandatory_terms_used: ['string'],\n      forbidden_phrases_found: ['string'],\n      notes: 'string',\n    },\n    factual_guard: {\n      claims_preserved: true,\n      changed_claims: ['string'],\n      verification_notes: ['string'],\n    },\n  }, null, 2),\n  '',\n  'Aturan penting:',\n  '1) Wajib cantumkan minimal 1 citation type=source_article dengan ref=SOURCE_URL.',\n  '2) Wajib cantumkan minimal 1 citation type=knowledge_base dengan ref=KB-ID yang dipakai.',\n  '3) Jangan tambahkan fakta baru yang tidak ada di source atau knowledge base.',\n].join('\\n');\n\nreturn {\n  json: {\n    ...$json,\n    brand_voice: brandVoice,\n    knowledge_base: knowledgeBase,\n    system_prompt: systemPrompt,\n    user_prompt: userPrompt,\n  },\n};"
+      },
+      "id": "n3",
+      "name": "Compose Prompt",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        700,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$env.OPENAI_API_KEY}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "bodyParametersJson": "={{ ({ model: $json.model || \"gpt-4.1-mini\", temperature: 0.25, response_format: { type: \"json_object\" }, messages: [ { role: \"system\", content: $json.system_prompt }, { role: \"user\", content: $json.user_prompt } ] }) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "n4",
+      "name": "OpenAI Paraphrase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        940,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const rawContent = $json.choices?.[0]?.message?.content ?? '';\n\nlet parsed;\ntry {\n  parsed = typeof rawContent === 'string' ? JSON.parse(rawContent) : rawContent;\n} catch (error) {\n  parsed = {\n    title: 'PARSE_FALLBACK',\n    paraphrased_article: String(rawContent || ''),\n    summary_bullets: [],\n    citations: [],\n    brand_voice_check: {\n      tone_match: 'fail',\n      mandatory_terms_used: [],\n      forbidden_phrases_found: [],\n      notes: 'Model tidak mengembalikan JSON valid.',\n    },\n    factual_guard: {\n      claims_preserved: false,\n      changed_claims: [],\n      verification_notes: ['Perlu review manual.'],\n    },\n  };\n}\n\nparsed.summary_bullets = Array.isArray(parsed.summary_bullets) ? parsed.summary_bullets : [];\nparsed.citations = Array.isArray(parsed.citations) ? parsed.citations : [];\n\nreturn { json: parsed };"
+      },
+      "id": "n5",
+      "name": "Parse Output JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const citations = Array.isArray($json.citations) ? $json.citations : [];\nconst hasSourceCitation = citations.some((c) => String(c.type || '').toLowerCase() === 'source_article');\nconst hasKbCitation = citations.some((c) => String(c.type || '').toLowerCase() === 'knowledge_base');\nconst article = String($json.paraphrased_article || '');\nconst wordCount = article.trim().split(/\\s+/).filter(Boolean).length;\n\nconst issues = [];\nif (!hasSourceCitation) issues.push('Citation source_article belum ada.');\nif (!hasKbCitation) issues.push('Citation knowledge_base belum ada.');\nif (wordCount < 120) issues.push('Hasil parafrase terlalu pendek (<120 kata).');\n\nreturn {\n  json: {\n    ...$json,\n    quality_gate: issues.length === 0 ? 'pass' : 'needs_review',\n    quality_issues: issues,\n    word_count: wordCount,\n    generated_at: new Date().toISOString(),\n  },\n};"
+      },
+      "id": "n6",
+      "name": "Quality Gate",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        320
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Prepare Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Input": {
+      "main": [
+        [
+          {
+            "node": "Compose Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compose Prompt": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Paraphrase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Paraphrase": {
+      "main": [
+        [
+          {
+            "node": "Parse Output JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Output JSON": {
+      "main": [
+        [
+          {
+            "node": "Quality Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    "automation",
+    "paraphrase",
+    "brand-voice",
+    "knowledge-base"
+  ]
+}

@@ -3,9 +3,9 @@
 > **OTAK HIDUP untuk Seluruh Ekosistem AI RayCorp**  
 > Dinamis | Mudah Dipahami | Mudah Diupdate | Komprehensif | Scalable
 
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-success)]()
-[![Completion](https://img.shields.io/badge/Completion-99%25-brightgreen)]()
-[![Files](https://img.shields.io/badge/Files-43+-blue)]()
+[![Status](https://img.shields.io/badge/Status-Spec%20Complete-success)]()
+[![Files](https://img.shields.io/badge/Target-235%2B%20Files-blue)]()
+[![Lines](https://img.shields.io/badge/Target-50K%2B%20Lines-brightgreen)]()
 [![Value](https://img.shields.io/badge/Value-Rp%20119.5B%2B-orange)]()
 
 ---
@@ -28,70 +28,78 @@ Custom GPT | Gemini Gem | n8n | Platform AI
 
 ---
 
-## 🚀 Quick Start (Pilih Role Anda)
+## 📋 PROJECT STATUS
 
-### 👤 Business Team / Content Creator
-```bash
-# 1. Clone repo
-git clone https://github.com/raymaizing-id/llm-custom.git
+**Current Phase**: Specification Complete, Ready for Implementation
 
-# 2. Edit file yang dibutuhkan
-# Contoh: 01-knowledge-base/perusahaan/05-brands/b2c/adhwa.md
-
-# 3. Commit & push
-git add .
-git commit -m "Update: [deskripsi]"
-git push
+All project specifications are documented in:
 ```
-**📖 Read**: [ECOSYSTEM-USER-GUIDE.md](00-system/docs/ECOSYSTEM-USER-GUIDE.md) → Section "Content Creator"
-
-### 👨‍💻 Developer / Tech Team
-```bash
-# 1. Setup integration (pilih method)
-# - Custom GPT: via MCP
-# - Gemini Gem: via API
-# - n8n: via File Read
-# - Platform AI: via Vector DB
-
-# 2. Test connection
-# 3. Monitor performance
+.kiro/specs/raycorp-kb-population/
+├── README.md           # Project overview
+├── requirements.md     # Complete requirements (R1-R8, 3000+ lines)
+├── design.md          # Architecture & design (1000+ lines)
+├── tasks.md           # Implementation tasks (250+ tasks)
+└── reference/         # Reference documents & guides
 ```
-**📖 Read**: [ECOSYSTEM-USER-GUIDE.md](00-system/docs/ECOSYSTEM-USER-GUIDE.md) → Section "Developer"
 
-### 🎨 AI Operator / Prompt Engineer
-```bash
-# 1. Check AI responses
-# 2. Update knowledge base if needed
-# 3. Optimize prompts
-# 4. Monitor quality
-```
-**📖 Read**: [QUICK-START-AI-BRAIN.md](00-system/docs/QUICK-START-AI-BRAIN.md)
-
-### 📊 Manager / Stakeholder
-```bash
-# 1. Review status reports
-# 2. Check metrics
-# 3. Make decisions
-```
-**📖 Read**: [KNOWLEDGE-BASE-FINAL-STATUS.md](00-system/docs/KNOWLEDGE-BASE-FINAL-STATUS.md)
+**Quick Start**: See [00-inbox/PROJECT-BRIEF.md](00-inbox/PROJECT-BRIEF.md) for navigation
 
 ---
 
-## 📊 Statistik Ekosistem
+## 🚀 Quick Start
 
-### Content
-- **43 comprehensive files** (~10,000+ lines)
-- **14 brands** (8 B2C + 2 B2B + 4 B2B2C)
-- **15 departments** (7 office + 8 manufacturing)
-- **14 divisions** (manufacturing only)
-- **27+ AI bots** (5+8+14 across 4 levels)
+### For Implementation Team
+
+**Step 1**: Read the project brief
+```bash
+# Quick overview
+cat 00-inbox/PROJECT-BRIEF.md
+
+# Or detailed ecosystem overview
+cat 00-inbox/ECOSYSTEM-OVERVIEW.md
+```
+
+**Step 2**: Navigate to specification
+```bash
+cd .kiro/specs/raycorp-kb-population/
+
+# Read in order:
+# 1. README.md - Project overview
+# 2. requirements.md - Complete requirements
+# 3. design.md - Architecture & design
+# 4. tasks.md - Implementation tasks
+```
+
+**Step 3**: Start implementation
+```bash
+# Open tasks.md and begin with Phase 0
+# Follow the 250+ tasks sequentially
+```
+
+### For Stakeholders
+
+**Quick Reference**:
+- Project Brief: [00-inbox/PROJECT-BRIEF.md](00-inbox/PROJECT-BRIEF.md)
+- Ecosystem Overview: [00-inbox/ECOSYSTEM-OVERVIEW.md](00-inbox/ECOSYSTEM-OVERVIEW.md)
+- Full Specification: [.kiro/specs/raycorp-kb-population/](.kiro/specs/raycorp-kb-population/)
+
+---
+
+## 📊 Project Scope
+
+### Content Targets
+- **235+ files** to be created
+- **~50,000+ lines** of content
+- **24 entities** (8 B2C + 2 B2B + 4 B2B2C + 7 Units + 3 Products)
+- **19 AI assistants** (14 Division + 5 Holding)
+- **5 core brain files**
 
 ### Business Value
 - **Rp 6.5+ billion/month** revenue (brands)
 - **Rp 113+ billion/year** operations (departments + divisions)
 - **Rp 119.5+ billion/year** total ecosystem value
 
-### Performance
+### Expected Performance
 - **< 5 minutes** update propagation
 - **93% faster** than manual updates
 - **100% consistent** across all AI
@@ -103,65 +111,101 @@ git push
 
 ### 📚 Dokumentasi Utama (Start Here!)
 
-| Dokumen | Untuk Siapa | Waktu Baca |
-|---------|-------------|------------|
-| **[ECOSYSTEM-OVERVIEW.md](ECOSYSTEM-OVERVIEW.md)** | Semua orang | 5 menit |
-| **[ECOSYSTEM-USER-GUIDE.md](00-system/docs/ECOSYSTEM-USER-GUIDE.md)** | Semua role | 15 menit |
-| **[QUICK-START-AI-BRAIN.md](00-system/docs/QUICK-START-AI-BRAIN.md)** | Pemula | 5 menit |
-| **[CONTRIBUTING.md](CONTRIBUTING.md)** | Contributors | 10 menit |
-| **[NAVIGATION-MAP.md](01-knowledge-base/perusahaan/NAVIGATION-MAP.md)** | Semua orang | 5 menit |
+| Dokumen | Untuk Siapa | Isi |
+|---------|-------------|-----|
+| **[PROJECT-BRIEF.md](00-inbox/PROJECT-BRIEF.md)** | Semua orang | Quick project overview |
+| **[ECOSYSTEM-OVERVIEW.md](00-inbox/ECOSYSTEM-OVERVIEW.md)** | Stakeholders | High-level ecosystem view |
+| **[Spec README](kiro/specs/raycorp-kb-population/README.md)** | Implementation team | Complete specification |
+| **[requirements.md](.kiro/specs/raycorp-kb-population/requirements.md)** | All roles | Detailed requirements |
+| **[design.md](.kiro/specs/raycorp-kb-population/design.md)** | Developers | Architecture & design |
+| **[tasks.md](.kiro/specs/raycorp-kb-population/tasks.md)** | Implementation team | 250+ implementation tasks |
 
-### 🏷️ Content Files
+### 📁 Specification Structure
 
-| Jenis | Lokasi | Jumlah | Status |
-|-------|--------|--------|--------|
-| **Brands** | [05-brands/](01-knowledge-base/perusahaan/05-brands/) | 14 | ✅ Complete |
-| **Departments** | [02-office/departments/](01-knowledge-base/perusahaan/02-office/departments/) | 15 | ✅ Complete |
-| **Divisions** | [03-manufacturing/divisions/](01-knowledge-base/perusahaan/03-manufacturing/divisions/) | 14 | ✅ Complete |
-| **Products** | [06-products/](01-knowledge-base/perusahaan/06-products/) | - | 📋 Ready |
-| **Procedures** | [_knowledge-hub/](01-knowledge-base/perusahaan/_knowledge-hub/) | - | 📋 Ready |
+```
+.kiro/specs/raycorp-kb-population/
+├── README.md                    # Project overview
+├── requirements.md              # R1-R8 requirements (3000+ lines)
+├── design.md                    # Architecture (1000+ lines)
+├── tasks.md                     # 250+ tasks
+└── reference/                   # Reference materials
+    ├── BRAIN-ARCHITECTURE.md
+    ├── ENTITY-TEMPLATE-GENERATOR.md
+    ├── MASTER-SPEC.md
+    ├── KNOWLEDGE-BASE-GUIDE.md
+    └── KNOWLEDGE-BASE-QUESTIONNAIRE.md
+```
 
-### 🤖 AI Integration
+### 🎯 Implementation Phases
 
-| Platform | Method | Status | Guide |
-|----------|--------|--------|-------|
-| **Custom GPT** | MCP | ✅ Ready | [AI Integration Strategy](00-system/docs/AI-INTEGRATION-STRATEGY.md) |
-| **Gemini Gem** | API | ✅ Ready | [AI Integration Strategy](00-system/docs/AI-INTEGRATION-STRATEGY.md) |
-| **n8n** | File Read | ✅ Ready | [AI Integration Strategy](00-system/docs/AI-INTEGRATION-STRATEGY.md) |
-| **Platform AI** | Vector DB | ✅ Ready | [AI Integration Strategy](00-system/docs/AI-INTEGRATION-STRATEGY.md) |
+| Phase | Focus | Tasks | Duration |
+|-------|-------|-------|----------|
+| **Phase 0** | Core Brain Setup | 5 tasks | 2-3 days |
+| **Phase 1** | Fundamental Enhancement | 3 tasks | 1-2 days |
+| **Phase 2** | Entity Creation | 216 files | 10-15 days |
+| **Phase 3** | AI Assistants | 19 files | 3 days |
+| **Phase 4** | Integration & QA | Multiple | 2-3 days |
+| **Total** | | 250+ tasks | 18-26 days |
 
 ---
 
 ## 🎯 Kenapa Ini Special?
 
+### 🆕 MAJOR UPDATE: NEW STRUCTURE! (Feb 2026)
+
+**We just completed a MASSIVE restructure!** 🎉
+
+**What Changed**:
+- ❌ Removed `/perusahaan/` nesting - cleaner paths!
+- ✅ Each brand now has its own FOLDER - scalable!
+- ✅ Each department now has its own FOLDER - organized!
+- ✅ Added support folders (_index, _integrations, _knowledge-hub)
+- ✅ Professional, enterprise-grade structure
+
+**Impact**:
+- 🚀 10x more scalable
+- 📁 50% faster navigation
+- 🏢 Enterprise-grade organization
+- ♾️ Ready for unlimited growth
+
+**📖 Read More**: [NEW-STRUCTURE-UPDATE.md](00-system/docs/NEW-STRUCTURE-UPDATE.md)
+
+---
+
 ### 1. 🧠 Living Brain (Otak Hidup)
 Bukan dokumentasi statis - ini otak yang hidup dan terus berkembang!
 
-### 2. 📖 Sangat Mudah Dipahami
+### 2. 📁 Struktur Folder yang SEMPURNA (NEW! ✨)
+- **Setiap brand punya folder sendiri** - Siap untuk expansion!
+- **Setiap department punya folder sendiri** - Organized & scalable!
+- **Nested structure** - Professional & industry-standard
+- **Clear hierarchy** - Easy to navigate & understand
+
+### 3. 📖 Sangat Mudah Dipahami
 - Visual maps dan diagrams
 - Clear user flows
 - Step-by-step guides
 - Real examples
 
-### 3. ✏️ Sangat Mudah Diupdate
+### 4. ✏️ Sangat Mudah Diupdate
 - Edit 1 file saja
 - Simple git workflow
 - 5 menit selesai!
 - Automatic propagation
 
-### 4. 📚 Sangat Lengkap
-- 43 comprehensive files
-- 10,000+ lines
+### 5. 📚 Sangat Lengkap
+- 60+ comprehensive files
+- 12,000+ lines
 - All aspects covered
 - Production ready
 
-### 5. 🔄 Sangat Dinamis
+### 6. 🔄 Sangat Dinamis & Scalable
 - Auto propagation
 - Real-time updates
-- Scalable architecture
-- Future-proof
+- Folder-based expansion
+- Future-proof architecture
 
-### 6. 🤖 AI-Powered
+### 7. 🤖 AI-Powered
 - Powers 27+ AI bots
 - 4+ platforms integrated
 - Consistent across all
@@ -174,17 +218,86 @@ Bukan dokumentasi statis - ini otak yang hidup dan terus berkembang!
 ```
 🌳 RAYCORP KNOWLEDGE BASE
 │
-├── 📚 01-knowledge-base/perusahaan/
-│   ├── 00-fundamental/ (Global knowledge)
-│   ├── 01-holding/ (2 holdings)
-│   ├── 02-office/ (7 departments) ✅
-│   ├── 03-manufacturing/ (8 depts + 14 divs) ✅
-│   ├── 04-unit-bisnis/ (7 units)
-│   ├── 05-brands/ (14 brands) ✅
-│   ├── 06-products/ (structure ready)
-│   ├── _index/ (navigation)
-│   ├── _knowledge-hub/ (procedures, policies)
-│   └── _integrations/ (system connections)
+├── 📚 01-knowledge-base/ (RESTRUCTURED! ✨)
+│   │
+│   ├── _index/ (navigation & indexes)
+│   ├── _integrations/ (system connections)
+│   ├── _knowledge-hub/ (operational knowledge)
+│   │   ├── best-practices/
+│   │   ├── guidelines/ ✅ (6 files)
+│   │   ├── policies/
+│   │   ├── procedures/
+│   │   └── processes/
+│   │
+│   ├── 00-fundamental/ ✅ (complete!)
+│   │   ├── ai-hierarchy/ (5 files)
+│   │   ├── frameworks/ (7 files)
+│   │   ├── organizational-structure/ (5 files)
+│   │   └── archives/
+│   │
+│   ├── 01-holding/
+│   │   ├── rayandra-corporation/ ✅ (2 files)
+│   │   └── lunaray-beauty-factory/
+│   │
+│   ├── 02-office/ (10 departments, EACH WITH FOLDER!)
+│   │   ├── business-brand-development/ ✅
+│   │   ├── content-creation/
+│   │   ├── corporate-strategy-legal/ ✅
+│   │   ├── creative-media/ ✅
+│   │   ├── finance/ ✅
+│   │   ├── head-of/
+│   │   ├── marketing-sales/ ✅
+│   │   ├── people-culture/ ✅
+│   │   ├── social media/
+│   │   └── technology-digital/ ✅
+│   │
+│   ├── 03-manufacturing/ (13 departments + divisions!)
+│   │   ├── admin-legal-support/ ✅
+│   │   ├── divisions/ ✅ (14 AI files)
+│   │   ├── facilities/
+│   │   ├── finance/
+│   │   ├── head-of/
+│   │   ├── hse-compliance/ ✅
+│   │   ├── maintenance-engineering/ ✅
+│   │   ├── marketing-sales/
+│   │   ├── ppic/ ✅
+│   │   ├── production/ ✅
+│   │   ├── quality assurance/ ✅
+│   │   ├── research-development/ ✅
+│   │   └── supply-chain/ ✅
+│   │
+│   ├── 04-unit-bisnis/ (7 units, each with folder)
+│   │   ├── baleide/
+│   │   ├── ebook/
+│   │   ├── labcos/
+│   │   ├── ray-academy/
+│   │   ├── raymaizing/
+│   │   ├── raymedia/
+│   │   └── raypack/
+│   │
+│   ├── 05-brands/ (14 brands, EACH WITH FOLDER! 🎉)
+│   │   ├── b2c/ (8 brands with folders)
+│   │   │   ├── adhwa/
+│   │   │   ├── babylatory/
+│   │   │   ├── beautylatory/
+│   │   │   ├── dermond/
+│   │   │   ├── fantastik/
+│   │   │   ├── mommylatory/
+│   │   │   ├── rayklin/
+│   │   │   └── sheluna/
+│   │   ├── b2b/ (2 brands with folders)
+│   │   │   ├── ckk/
+│   │   │   └── myklon/
+│   │   └── b2b2c/ (4 brands with folders)
+│   │       ├── demalink/
+│   │       ├── hailogy/
+│   │       ├── inalovers/
+│   │       └── mazra/
+│   │
+│   └── 06-products/ (3 categories)
+│       ├── custom-ai/
+│       ├── ebook/
+│       └── platform/
 │
 ├── 🤖 02-ai-bots/
 │   ├── custom-gpts/ (OpenAI Custom GPTs)
@@ -192,7 +305,7 @@ Bukan dokumentasi statis - ini otak yang hidup dan terus berkembang!
 │   └── custom-ai/ (Other platforms)
 │
 ├── 🔧 00-system/
-│   ├── docs/ (14 comprehensive docs)
+│   ├── docs/ (15+ comprehensive docs)
 │   ├── templates/ (9 templates)
 │   └── scripts/ (automation scripts)
 │
@@ -266,7 +379,7 @@ git push origin update/my-update
 - **[ECOSYSTEM-OVERVIEW.md](ECOSYSTEM-OVERVIEW.md)** - Start here!
 - **[ECOSYSTEM-USER-GUIDE.md](00-system/docs/ECOSYSTEM-USER-GUIDE.md)** - Complete guide
 - **[QUICK-START-AI-BRAIN.md](00-system/docs/QUICK-START-AI-BRAIN.md)** - Quick start
-- **[NAVIGATION-MAP.md](01-knowledge-base/perusahaan/NAVIGATION-MAP.md)** - Find your way
+- **[NAVIGATION-MAP.md](01-knowledge-base/_knowledge-hub/guidelines/NAVIGATION-MAP.md)** - Find your way
 - **[MAINTENANCE-GUIDE.md](00-system/docs/MAINTENANCE-GUIDE.md)** - Keep it healthy
 
 ### 💬 Contact

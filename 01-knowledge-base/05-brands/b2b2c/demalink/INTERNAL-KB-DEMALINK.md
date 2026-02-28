@@ -1,0 +1,3 @@
+﻿# DEMALINK - Internal KB
+
+> Created: 2026-02-21

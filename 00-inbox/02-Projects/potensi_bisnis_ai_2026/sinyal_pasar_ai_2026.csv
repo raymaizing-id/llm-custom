@@ -1,0 +1,23 @@
+id,domain,metric,figure,period,source_url,verification_note
+1,global,Worldwide GenAI spending forecast,USD 644B (+76.4% YoY),2025,https://www.gartner.com/en/newsroom/press-releases/2025-03-31-gartner-forecasts-worldwide-generative-ai-spending-to-total-644-billion-in-2025,From Gartner newsroom press release
+2,global,Worldwide GenAI spending projection,USD 1T+,2028,https://www.gartner.com/en/newsroom/press-releases/2025-03-31-gartner-forecasts-worldwide-generative-ai-spending-to-total-644-billion-in-2025,From Gartner newsroom press release
+3,freelance_market,Upwork demand growth for Generative AI Modeling,+220% YoY,2025,https://www.upwork.com/press/releases/in-demand-ai-skills-in-2025,From Upwork press release
+4,freelance_market,Upwork demand growth for AI Apps and Integrations,+200% YoY,2025,https://www.upwork.com/press/releases/in-demand-ai-skills-in-2025,From Upwork press release
+5,freelance_market,Upwork demand growth for AI Data Annotation and Labeling,+130% YoY,2025,https://www.upwork.com/press/releases/in-demand-ai-skills-in-2025,From Upwork press release
+6,freelance_market,Upwork demand growth for AI Data Extraction,+54% YoY,2025,https://www.upwork.com/press/releases/in-demand-ai-skills-in-2025,From Upwork press release
+7,pricing,AI Engineer freelance hourly rate,USD 40-80/hour,2025,https://www.upwork.com/resources/freelance-rates-by-country,From Upwork rates guide
+8,pricing,Prompt Engineer freelance hourly rate,USD 30-90/hour,2025,https://www.upwork.com/resources/freelance-rates-by-country,From Upwork rates guide
+9,pricing,Chatbot Developer freelance hourly rate,USD 30-60/hour,2025,https://www.upwork.com/resources/freelance-rates-by-country,From Upwork rates guide
+10,pricing,Machine Learning Engineer hourly rate,USD 35-60/hour,2025,https://www.upwork.com/resources/freelance-rates-by-country,From Upwork rates guide
+11,freelance_market,Fiverr demand growth for AI app development service,+18,347% YoY,2025,https://www.fiverr.com/newsroom/spring-2025-business-trends-index,From Fiverr Spring 2025 Business Trends Index
+12,freelance_market,Fiverr demand growth for personal branding package,+9,633% YoY,2025,https://www.fiverr.com/newsroom/spring-2025-business-trends-index,From Fiverr Spring 2025 Business Trends Index
+13,freelance_market,Fiverr demand growth for LinkedIn profile optimization,+5,208% YoY,2025,https://www.fiverr.com/newsroom/spring-2025-business-trends-index,From Fiverr Spring 2025 Business Trends Index
+14,freelance_market,Fiverr growth in transactions above USD 1,000,+22.8% YoY,2024-Q4,https://s29.q4cdn.com/149749901/files/doc_financials/2024/q4/Q4-2024-Shareholder-Letter_FINAL.pdf,From Fiverr shareholder letter Q4 2024
+15,workforce,Companies planning to upskill workforce,85% of employers,2025-2030,https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-job-disruption-from-geoeconomic-and-technological-trends/,From WEF Future of Jobs 2025 press release
+16,workforce,Companies planning to hire staff with new skills,70% of employers,2025-2030,https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-job-disruption-from-geoeconomic-and-technological-trends/,From WEF Future of Jobs 2025 press release
+17,indonesia,Indonesia digital economy GMV,USD 90B,2024,https://blog.google/intl/id-id/produk/ekonomi-sea-2024-indonesia/,From Google Indonesia e-Conomy SEA 2024 summary
+18,indonesia,Indonesia digital economy GMV projection,~USD 100B,2025,https://blog.google/intl/id-id/produk/ekonomi-sea-2024-indonesia/,From Google Indonesia e-Conomy SEA 2024 summary
+19,indonesia,Indonesia digital payment transaction value projection,Rp 1,747T (growth 11.21%-13.55%),2025,https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2612524.aspx,From Bank Indonesia news release
+20,indonesia,Indonesia e-commerce transaction value projection,Rp 742T (growth 8.36%-10.88%),2025,https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2612524.aspx,From Bank Indonesia news release
+21,pricing,Full-Stack Developer freelance hourly rate,USD 30-100/hour,2025,https://www.upwork.com/resources/freelance-rates-by-country,From Upwork rates guide
+22,pricing,Business Consultant freelance hourly rate,USD 28-98/hour,2025,https://www.upwork.com/resources/freelance-rates-by-country,From Upwork rates guide
