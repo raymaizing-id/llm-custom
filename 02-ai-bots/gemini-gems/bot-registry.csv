@@ -1,0 +1,8 @@
+bot_id,bot_name,entity_id,entity_name,entity_type,kb_files,status,platform,owner,created_date,last_updated
+bot-101,Raymaizing Bot,raymaizing,Raymaizing,unit,"raymaizing/INTERNAL-KB-RAYMAIZING.md,raymaizing/EXTERNAL-KB-RAYMAIZING.md,shared-knowledge/*",active,gemini-gem,Sales,2026-03-12,2026-03-12
+bot-102,Ray Academy Tutor,ray-academy,Ray Academy,unit,"ray-academy/INTERNAL-KB-RAY-ACADEMY.md,ray-academy/EXTERNAL-KB-RAY-ACADEMY.md,shared-knowledge/*",active,gemini-gem,Education,2026-03-12,2026-03-12
+bot-103,LabCos Analyzer,labcos,LabCos,unit,"labcos/INTERNAL-KB-LABCOS.md,labcos/EXTERNAL-KB-LABCOS.md,shared-knowledge/*",active,gemini-gem,Operations,2026-03-12,2026-03-12
+bot-104,Raymedia Producer,raymedia,Raymedia,unit,"raymedia/INTERNAL-KB-RAYMEDIA.md,raymedia/EXTERNAL-KB-RAYMEDIA.md,shared-knowledge/*",active,gemini-gem,Media,2026-03-12,2026-03-12
+bot-105,Baleide Events,baleide,Baleide,unit,"baleide/INTERNAL-KB-BALEIDE.md,baleide/EXTERNAL-KB-BALEIDE.md,shared-knowledge/*",active,gemini-gem,Events,2026-03-12,2026-03-12
+bot-106,Raypack Logistics,raypack,Raypack,unit,"raypack/INTERNAL-KB-RAYPACK.md,raypack/EXTERNAL-KB-RAYPACK.md,shared-knowledge/*",active,gemini-gem,Logistics,2026-03-12,2026-03-12
+bot-107,Ebook Publisher,ebook,Ebook Unit,unit,"ebook/INTERNAL-KB-EBOOK-UNIT.md,ebook/EXTERNAL-KB-EBOOK-UNIT.md,shared-knowledge/*",active,gemini-gem,Publishing,2026-03-12,2026-03-12

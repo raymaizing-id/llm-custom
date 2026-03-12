@@ -1,0 +1,15 @@
+bot_id,bot_name,entity_id,entity_name,entity_type,kb_files,status,platform,owner,created_date,last_updated
+bot-201,STRATO,strato,STRATO,division,"strato/AI-KB-STRATO.md,shared-knowledge/*",active,n8n,Strategy,2026-03-12,2026-03-12
+bot-202,FINNY,finny,FINNY,division,"finny/AI-KB-FINNY.md,shared-knowledge/*",active,n8n,Finance,2026-03-12,2026-03-12
+bot-203,NEXUS,nexus,NEXUS,division,"nexus/AI-KB-NEXUS.md,shared-knowledge/*",active,n8n,IT,2026-03-12,2026-03-12
+bot-204,HELIOS,helios,HELIOS,division,"helios/AI-KB-HELIOS.md,shared-knowledge/*",active,n8n,Sustainability,2026-03-12,2026-03-12
+bot-205,RINDU,rindu,RINDU,division,"rindu/AI-KB-RINDU.md,shared-knowledge/*",active,n8n,R&D,2026-03-12,2026-03-12
+bot-206,MARKSY,marksy,MARKSY,division,"marksy/AI-KB-MARKSY.md,shared-knowledge/*",active,n8n,Marketing,2026-03-12,2026-03-12
+bot-207,TEKO,teko,TEKO,division,"teko/AI-KB-TEKO.md,shared-knowledge/*",active,n8n,Operations,2026-03-12,2026-03-12
+bot-208,LUMINA,lumina,LUMINA,division,"lumina/AI-KB-LUMINA.md,shared-knowledge/*",active,n8n,Legal,2026-03-12,2026-03-12
+bot-209,AEGIS,aegis,AEGIS,division,"aegis/AI-KB-AEGIS.md,shared-knowledge/*",active,n8n,Risk,2026-03-12,2026-03-12
+bot-210,VERO,vero,VERO,division,"vero/AI-KB-VERO.md,shared-knowledge/*",active,n8n,Support,2026-03-12,2026-03-12
+bot-211,CELESTIA,celestia,CELESTIA,division,"celestia/AI-KB-CELESTIA.md,shared-knowledge/*",active,n8n,PR,2026-03-12,2026-03-12
+bot-212,PPIC,ppic,PPIC,division,"ppic/AI-KB-PPIC.md,shared-knowledge/*",active,n8n,Quality,2026-03-12,2026-03-12
+bot-213,ORBIS,orbis,ORBIS,division,"orbis/AI-KB-ORBIS.md,shared-knowledge/*",active,n8n,Logistics,2026-03-12,2026-03-12
+bot-214,QUANTA,quanta,QUANTA,division,"quanta/AI-KB-QUANTA.md,shared-knowledge/*",active,n8n,Analytics,2026-03-12,2026-03-12

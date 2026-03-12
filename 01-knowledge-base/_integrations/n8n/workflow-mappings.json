@@ -1,0 +1,144 @@
+{
+  "workflows": [
+    {
+      "workflow_id": "kb-sync-main",
+      "workflow_name": "KB Sync - Main Workflow",
+      "description": "Main workflow to sync KB updates to all platforms",
+      "trigger": "GitHub Webhook",
+      "trigger_events": ["push"],
+      "trigger_branch": "main",
+      "steps": [
+        {
+          "step_id": 1,
+          "step_name": "Parse KB File",
+          "action": "Read File from Git",
+          "config": {
+            "repo": "raymaizing-id/llm-custom",
+            "path": "01-knowledge-base/**/*.md"
+          }
+        },
+        {
+          "step_id": 2,
+          "step_name": "Extract Entities",
+          "action": "Parse Markdown",
+          "config": {
+            "extract_frontmatter": true,
+            "extract_headers": true,
+            "extract_links": true
+          }
+        },
+        {
+          "step_id": 3,
+          "step_name": "Generate Embeddings",
+          "action": "Call Vector DB API",
+          "config": {
+            "api_endpoint": "https://api.pinecone.io/v1/vectors/upsert",
+            "embedding_model": "text-embedding-3-large",
+            "namespace": "raycorp-kb"
+          }
+        },
+        {
+          "step_id": 4,
+          "step_name": "Update Bot Configs",
+          "action": "Update Bot Configuration",
+          "config": {
+            "bots": ["custom-gpt", "gemini-gem", "division-ai"],
+            "update_type": "kb-files"
+          }
+        },
+        {
+          "step_id": 5,
+          "step_name": "Notify Platforms",
+          "action": "Send Webhooks",
+          "config": {
+            "platforms": ["shopee", "tokopedia", "whatsapp", "slack"],
+            "notification_type": "kb-updated"
+          }
+        }
+      ],
+      "error_handling": {
+        "on_error": "send_alert",
+        "alert_channels": ["slack", "email"],
+        "retry_count": 3,
+        "retry_delay": 300
+      },
+      "schedule": "real-time",
+      "status": "active"
+    },
+    {
+      "workflow_id": "bot-sync-custom-gpt",
+      "workflow_name": "Bot Sync - Custom GPT",
+      "description": "Sync KB updates to Custom GPT bots",
+      "trigger": "n8n Webhook",
+      "trigger_source": "kb-sync-main",
+      "steps": [
+        {
+          "step_id": 1,
+          "step_name": "Get Bot List",
+          "action": "Query Bot Registry",
+          "config": {
+            "filter": "platform=custom-gpt AND status=active"
+          }
+        },
+        {
+          "step_id": 2,
+          "step_name": "Update Each Bot",
+          "action": "Call OpenAI API",
+          "config": {
+            "endpoint": "https://api.openai.com/v1/assistants",
+            "method": "POST",
+            "update_fields": ["instructions", "file_ids"]
+          }
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "workflow_id": "bot-sync-gemini",
+      "workflow_name": "Bot Sync - Gemini Gem",
+      "description": "Sync KB updates to Gemini Gem bots",
+      "trigger": "n8n Webhook",
+      "trigger_source": "kb-sync-main",
+      "steps": [
+        {
+          "step_id": 1,
+          "step_name": "Get Bot List",
+          "action": "Query Bot Registry",
+          "config": {
+            "filter": "platform=gemini-gem AND status=active"
+          }
+        },
+        {
+          "step_id": 2,
+          "step_name": "Update Each Bot",
+          "action": "Call Google API",
+          "config": {
+            "endpoint": "https://generativelanguage.googleapis.com/v1beta/projects/*/locations/*/publishers/google/models/gemini-pro",
+            "method": "PATCH",
+            "update_fields": ["system_prompt", "knowledge_base"]
+          }
+        }
+      ],
+      "status": "active"
+    }
+  ],
+  "triggers": {
+    "github_webhook": {
+      "url": "https://your-n8n-instance/webhook/kb-sync",
+      "events": ["push"],
+      "branches": ["main"],
+      "paths": ["01-knowledge-base/**"]
+    }
+  },
+  "error_handling": {
+    "retry_policy": "exponential_backoff",
+    "max_retries": 3,
+    "timeout": 300,
+    "alert_on_failure": true
+  },
+  "monitoring": {
+    "log_level": "info",
+    "metrics_enabled": true,
+    "performance_tracking": true
+  }
+}

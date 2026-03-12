@@ -1,0 +1,201 @@
+{
+  "routing_rules": [
+    {
+      "rule_id": "route-001",
+      "rule_name": "Brand KB to Custom GPT",
+      "description": "Route brand KB files to Custom GPT bots",
+      "source": "01-knowledge-base/05-brands/**/*.md",
+      "destination": "custom-gpt",
+      "conditions": {
+        "entity_type": "brand",
+        "kb_type": ["INTERNAL-KB", "EXTERNAL-KB"]
+      },
+      "mapping": {
+        "adhwa": "bot-001",
+        "babylatory": "bot-002",
+        "beautylatory": "bot-003",
+        "dermond": "bot-004",
+        "fantastik": "bot-005",
+        "mommylatory": "bot-006",
+        "rayklin": "bot-007",
+        "sheluna": "bot-008"
+      },
+      "update_frequency": "real-time",
+      "status": "active"
+    },
+    {
+      "rule_id": "route-002",
+      "rule_name": "Unit KB to Gemini Gem",
+      "description": "Route unit KB files to Gemini Gem bots",
+      "source": "01-knowledge-base/04-unit-bisnis/**/*.md",
+      "destination": "gemini-gem",
+      "conditions": {
+        "entity_type": "unit",
+        "kb_type": ["INTERNAL-KB", "EXTERNAL-KB"]
+      },
+      "mapping": {
+        "raymaizing": "bot-101",
+        "ray-academy": "bot-102",
+        "labcos": "bot-103",
+        "raymedia": "bot-104",
+        "baleide": "bot-105",
+        "raypack": "bot-106",
+        "ebook": "bot-107"
+      },
+      "update_frequency": "real-time",
+      "status": "active"
+    },
+    {
+      "rule_id": "route-003",
+      "rule_name": "Division AI KB to n8n",
+      "description": "Route division AI KB files to n8n workflows",
+      "source": "01-knowledge-base/03-manufacturing/divisions/**/*.md",
+      "destination": "n8n",
+      "conditions": {
+        "entity_type": "division",
+        "kb_type": "AI-KB"
+      },
+      "mapping": {
+        "strato": "bot-201",
+        "finny": "bot-202",
+        "nexus": "bot-203",
+        "helios": "bot-204",
+        "rindu": "bot-205",
+        "marksy": "bot-206",
+        "teko": "bot-207",
+        "lumina": "bot-208",
+        "aegis": "bot-209",
+        "vero": "bot-210",
+        "celestia": "bot-211",
+        "ppic": "bot-212",
+        "orbis": "bot-213",
+        "quanta": "bot-214"
+      },
+      "update_frequency": "real-time",
+      "status": "active"
+    },
+    {
+      "rule_id": "route-004",
+      "rule_name": "Shared Knowledge to Vector DB",
+      "description": "Route shared knowledge to Vector DB for semantic search",
+      "source": "01-knowledge-base/00-fundamental/shared-knowledge/**/*.md",
+      "destination": "vector-db",
+      "conditions": {
+        "entity_type": "shared-knowledge",
+        "kb_type": "framework"
+      },
+      "namespace": "shared-knowledge",
+      "update_frequency": "real-time",
+      "status": "active"
+    },
+    {
+      "rule_id": "route-005",
+      "rule_name": "Knowledge Hub to All Platforms",
+      "description": "Route knowledge hub files to all platforms",
+      "source": "01-knowledge-base/_knowledge-hub/**/*.md",
+      "destination": ["custom-gpt", "gemini-gem", "n8n", "vector-db"],
+      "conditions": {
+        "entity_type": "operational-knowledge",
+        "kb_type": ["best-practices", "guidelines", "policies", "procedures", "processes"]
+      },
+      "update_frequency": "real-time",
+      "status": "active"
+    },
+    {
+      "rule_id": "route-006",
+      "rule_name": "B2B KB to Custom GPT",
+      "description": "Route B2B brand KB to Custom GPT",
+      "source": "01-knowledge-base/05-brands/b2b/**/*.md",
+      "destination": "custom-gpt",
+      "conditions": {
+        "entity_type": "brand",
+        "brand_type": "b2b"
+      },
+      "mapping": {
+        "ckk": "bot-301",
+        "myklon": "bot-302"
+      },
+      "update_frequency": "real-time",
+      "status": "active"
+    },
+    {
+      "rule_id": "route-007",
+      "rule_name": "B2B2C KB to Custom GPT",
+      "description": "Route B2B2C brand KB to Custom GPT",
+      "source": "01-knowledge-base/05-brands/b2b2c/**/*.md",
+      "destination": "custom-gpt",
+      "conditions": {
+        "entity_type": "brand",
+        "brand_type": "b2b2c"
+      },
+      "mapping": {
+        "demalink": "bot-401",
+        "hailogy": "bot-402",
+        "inalovers": "bot-403",
+        "mazra": "bot-404"
+      },
+      "update_frequency": "real-time",
+      "status": "active"
+    },
+    {
+      "rule_id": "route-008",
+      "rule_name": "Product KB to Custom GPT",
+      "description": "Route product KB to Custom GPT",
+      "source": "01-knowledge-base/06-products/**/*.md",
+      "destination": "custom-gpt",
+      "conditions": {
+        "entity_type": "product",
+        "kb_type": ["INTERNAL-KB", "EXTERNAL-KB"]
+      },
+      "mapping": {
+        "custom-ai": "bot-501",
+        "platform": "bot-502",
+        "ebook": "bot-503"
+      },
+      "update_frequency": "real-time",
+      "status": "active"
+    }
+  ],
+  "platform_configs": {
+    "custom-gpt": {
+      "api_endpoint": "https://api.openai.com/v1/assistants",
+      "auth_type": "api_key",
+      "update_method": "POST",
+      "batch_size": 10,
+      "timeout": 300
+    },
+    "gemini-gem": {
+      "api_endpoint": "https://generativelanguage.googleapis.com/v1beta/projects",
+      "auth_type": "service_account",
+      "update_method": "PATCH",
+      "batch_size": 10,
+      "timeout": 300
+    },
+    "n8n": {
+      "api_endpoint": "https://your-n8n-instance/api/v1",
+      "auth_type": "api_key",
+      "update_method": "POST",
+      "batch_size": 5,
+      "timeout": 600
+    },
+    "vector-db": {
+      "api_endpoint": "https://api.pinecone.io/v1",
+      "auth_type": "api_key",
+      "update_method": "POST",
+      "batch_size": 100,
+      "timeout": 300
+    }
+  },
+  "error_handling": {
+    "retry_policy": "exponential_backoff",
+    "max_retries": 3,
+    "fallback_routing": "manual_review",
+    "alert_on_failure": true
+  },
+  "monitoring": {
+    "track_routing_success": true,
+    "track_update_time": true,
+    "track_error_rate": true,
+    "alert_threshold": 0.05
+  }
+}

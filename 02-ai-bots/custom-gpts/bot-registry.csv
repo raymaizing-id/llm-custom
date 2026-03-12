@@ -1,0 +1,18 @@
+bot_id,bot_name,entity_id,entity_name,entity_type,kb_files,status,platform,owner,created_date,last_updated
+bot-001,Adhwa Assistant,adhwa,Adhwa,brand,"adhwa/INTERNAL-KB-ADHWA.md,adhwa/EXTERNAL-KB-ADHWA-COMPLETE.md,shared-knowledge/*",active,custom-gpt,Marketing,2026-03-12,2026-03-12
+bot-002,Babylatory Helper,babylatory,Babylatory,brand,"babylatory/INTERNAL-KB-BABYLATORY.md,babylatory/EXTERNAL-KB-BABYLATORY.md,shared-knowledge/*",active,custom-gpt,Marketing,2026-03-12,2026-03-12
+bot-003,Beautylatory Expert,beautylatory,Beautylatory,brand,"beautylatory/INTERNAL-KB-BEAUTYLATORY.md,beautylatory/EXTERNAL-KB-BEAUTYLATORY.md,shared-knowledge/*",active,custom-gpt,Marketing,2026-03-12,2026-03-12
+bot-004,Dermond Specialist,dermond,Dermond,brand,"dermond/INTERNAL-KB-DERMOND.md,dermond/EXTERNAL-KB-DERMOND.md,shared-knowledge/*",active,custom-gpt,Marketing,2026-03-12,2026-03-12
+bot-005,Fantastik Fun,fantastik,Fantastik,brand,"fantastik/INTERNAL-KB-FANTASTIK.md,fantastik/EXTERNAL-KB-FANTASTIK.md,shared-knowledge/*",active,custom-gpt,Marketing,2026-03-12,2026-03-12
+bot-006,Mommylatory Care,mommylatory,Mommylatory,brand,"mommylatory/INTERNAL-KB-MOMMYLATORY.md,mommylatory/EXTERNAL-KB-MOMMYLATORY.md,shared-knowledge/*",active,custom-gpt,Marketing,2026-03-12,2026-03-12
+bot-007,Rayklin Premium,rayklin,Rayklin,brand,"rayklin/INTERNAL-KB-RAYKLIN.md,rayklin/EXTERNAL-KB-RAYKLIN.md,shared-knowledge/*",active,custom-gpt,Marketing,2026-03-12,2026-03-12
+bot-008,Sheluna Night,sheluna,Sheluna,brand,"sheluna/INTERNAL-KB-SHELUNA.md,sheluna/EXTERNAL-KB-SHELUNA.md,shared-knowledge/*",active,custom-gpt,Marketing,2026-03-12,2026-03-12
+bot-301,CKK Solutions,ckk,CKK,brand,"ckk/INTERNAL-KB-CKK.md,ckk/EXTERNAL-KB-CKK.md,shared-knowledge/*",active,custom-gpt,B2B Sales,2026-03-12,2026-03-12
+bot-302,Myklon Industrial,myklon,Myklon,brand,"myklon/INTERNAL-KB-MYKLON.md,myklon/EXTERNAL-KB-MYKLON.md,shared-knowledge/*",active,custom-gpt,B2B Sales,2026-03-12,2026-03-12
+bot-401,Demalink Platform,demalink,Demalink,brand,"demalink/INTERNAL-KB-DEMALINK.md,demalink/EXTERNAL-KB-DEMALINK.md,shared-knowledge/*",active,custom-gpt,Platform,2026-03-12,2026-03-12
+bot-402,Hailogy Solutions,hailogy,Hailogy,brand,"hailogy/INTERNAL-KB-HAILOGY.md,hailogy/EXTERNAL-KB-HAILOGY.md,shared-knowledge/*",active,custom-gpt,Platform,2026-03-12,2026-03-12
+bot-403,Inalovers Marketplace,inalovers,Inalovers,brand,"inalovers/INTERNAL-KB-INALOVERS.md,inalovers/EXTERNAL-KB-INALOVERS.md,shared-knowledge/*",active,custom-gpt,Platform,2026-03-12,2026-03-12
+bot-404,Mazra Creative,mazra,Mazra,brand,"mazra/INTERNAL-KB-MAZRA.md,mazra/EXTERNAL-KB-MAZRA.md,shared-knowledge/*",active,custom-gpt,Platform,2026-03-12,2026-03-12
+bot-501,Custom AI Builder,custom-ai,Custom AI,product,"custom-ai/INTERNAL-KB-CUSTOM-AI.md,custom-ai/EXTERNAL-KB-CUSTOM-AI.md,shared-knowledge/*",active,custom-gpt,Product,2026-03-12,2026-03-12
+bot-502,Platform Assistant,platform,Platform,product,"platform/INTERNAL-KB-PLATFORM.md,platform/EXTERNAL-KB-PLATFORM.md,shared-knowledge/*",active,custom-gpt,Product,2026-03-12,2026-03-12
+bot-503,Ebook Publisher,ebook,Ebook Product,product,"ebook/INTERNAL-KB-EBOOK-PRODUCT.md,ebook/EXTERNAL-KB-EBOOK-PRODUCT.md,shared-knowledge/*",active,custom-gpt,Product,2026-03-12,2026-03-12

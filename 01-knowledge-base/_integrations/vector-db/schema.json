@@ -1,0 +1,210 @@
+{
+  "vector_db_config": {
+    "provider": "pinecone",
+    "index_name": "raycorp-kb",
+    "dimension": 3072,
+    "metric": "cosine",
+    "pod_type": "s1.x1",
+    "pods": 1,
+    "replicas": 1,
+    "shards": 1
+  },
+  "namespaces": [
+    {
+      "namespace_id": "ns-001",
+      "namespace_name": "brands",
+      "description": "Brand knowledge base vectors",
+      "entities": [
+        "adhwa",
+        "babylatory",
+        "beautylatory",
+        "dermond",
+        "fantastik",
+        "mommylatory",
+        "rayklin",
+        "sheluna",
+        "ckk",
+        "myklon",
+        "demalink",
+        "hailogy",
+        "inalovers",
+        "mazra"
+      ],
+      "metadata_fields": [
+        "entity_type",
+        "entity_name",
+        "kb_type",
+        "brand_type",
+        "category",
+        "source_file"
+      ]
+    },
+    {
+      "namespace_id": "ns-002",
+      "namespace_name": "units",
+      "description": "Unit business knowledge base vectors",
+      "entities": [
+        "raymaizing",
+        "ray-academy",
+        "labcos",
+        "raymedia",
+        "baleide",
+        "raypack",
+        "ebook"
+      ],
+      "metadata_fields": [
+        "entity_type",
+        "entity_name",
+        "kb_type",
+        "unit_function",
+        "source_file"
+      ]
+    },
+    {
+      "namespace_id": "ns-003",
+      "namespace_name": "divisions",
+      "description": "Division AI knowledge base vectors",
+      "entities": [
+        "strato",
+        "finny",
+        "nexus",
+        "helios",
+        "rindu",
+        "marksy",
+        "teko",
+        "lumina",
+        "aegis",
+        "vero",
+        "celestia",
+        "ppic",
+        "orbis",
+        "quanta"
+      ],
+      "metadata_fields": [
+        "entity_type",
+        "entity_name",
+        "division_function",
+        "capabilities",
+        "source_file"
+      ]
+    },
+    {
+      "namespace_id": "ns-004",
+      "namespace_name": "products",
+      "description": "Product knowledge base vectors",
+      "entities": [
+        "custom-ai",
+        "platform",
+        "ebook"
+      ],
+      "metadata_fields": [
+        "entity_type",
+        "entity_name",
+        "kb_type",
+        "product_category",
+        "source_file"
+      ]
+    },
+    {
+      "namespace_id": "ns-005",
+      "namespace_name": "shared-knowledge",
+      "description": "Shared knowledge frameworks",
+      "entities": [
+        "digital-marketing",
+        "social-media",
+        "sales-operations",
+        "customer-service",
+        "content-creation",
+        "analytics-reporting"
+      ],
+      "metadata_fields": [
+        "entity_type",
+        "framework_name",
+        "category",
+        "applicable_to",
+        "source_file"
+      ]
+    },
+    {
+      "namespace_id": "ns-006",
+      "namespace_name": "operational-knowledge",
+      "description": "Operational knowledge hub",
+      "entities": [
+        "best-practices",
+        "guidelines",
+        "policies",
+        "procedures",
+        "processes"
+      ],
+      "metadata_fields": [
+        "entity_type",
+        "knowledge_type",
+        "department",
+        "applicable_to",
+        "source_file"
+      ]
+    }
+  ],
+  "embedding_config": {
+    "model": "text-embedding-3-large",
+    "provider": "openai",
+    "dimension": 3072,
+    "batch_size": 100,
+    "timeout": 300
+  },
+  "indexing_strategy": {
+    "chunking": {
+      "method": "semantic",
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "separator": "\\n\\n"
+    },
+    "metadata_extraction": {
+      "extract_headers": true,
+      "extract_links": true,
+      "extract_entities": true,
+      "extract_dates": true
+    },
+    "update_frequency": "real-time",
+    "batch_updates": true
+  },
+  "search_config": {
+    "search_type": "semantic",
+    "top_k": 5,
+    "similarity_threshold": 0.7,
+    "filters": {
+      "by_namespace": true,
+      "by_entity": true,
+      "by_kb_type": true,
+      "by_date": true
+    }
+  },
+  "performance_optimization": {
+    "caching": {
+      "enabled": true,
+      "ttl": 3600,
+      "max_size": 1000
+    },
+    "indexing": {
+      "batch_size": 100,
+      "parallel_workers": 4
+    },
+    "query": {
+      "timeout": 5,
+      "max_results": 100
+    }
+  },
+  "monitoring": {
+    "track_indexing_time": true,
+    "track_search_latency": true,
+    "track_index_size": true,
+    "alert_on_degradation": true,
+    "metrics_interval": 300
+  },
+  "backup_recovery": {
+    "backup_frequency": "daily",
+    "backup_retention": 30,
+    "recovery_point_objective": 1,
+    "recovery_time_objective": 3600
+  }
+}
