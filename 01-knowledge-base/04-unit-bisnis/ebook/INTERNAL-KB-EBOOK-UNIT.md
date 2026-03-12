@@ -1,42 +1,64 @@
-# ebook-unit - Internal Knowledge Base
+# 📖 - Internal Knowledge Base (Employee)
 
-> **Entity**: ebook-unit  
-> **Type**: Business Unit - E-books  
-> **Focus**: E-book creation and distribution  
+> **Unit**: EBOOK-UNIT  
+> **Type**: Business Unit - Digital Publishing  
 > **Scope**: INTERNAL ONLY  
-> **Last Updated**: 2026-02-21
+> **AI Assistant**: EBOOK-UNIT Bot Internal  
+> **Access Level**: Employee, Manager, Owner
 
 ---
 
 ## 🎯 INTERNAL OVERVIEW
 
-[To be populated with complete internal knowledge]
+**EBOOK-UNIT Internal KB** adalah knowledge base untuk internal team yang mengelola unit bisnis EBOOK-UNIT.
+
+**Unit Positioning**: Digital Publishing
+**Target Market**: [Target market]
+**Unique Value**: [Unique value]
 
 ---
 
-## 👥 TEAM STRUCTURE
+## 👥 INTERNAL TEAM STRUCTURE
 
-[To be populated]
-
----
-
-## 📋 OPERATIONS
-
-[To be populated]
+### Leadership Team
+- Unit Head: Overall unit strategy
+- Operations Manager: Daily operations
+- Finance Manager: Financial management
+- HR Manager: Human resources
 
 ---
 
-## 💬 AI INTERACTIONS
+## 📋 INTERNAL OPERATIONS
 
-[To be populated with multiple choice examples]
+### 1. Business Operations
+
+**Reference**: See SALES-OPERATIONS for universal framework
+
+**Customization for EBOOK-UNIT**:
+- [Customization points]
 
 ---
 
-## 📊 KPIs & METRICS
+### 2. Marketing Operations
 
-[To be populated]
+**Reference**: See DIGITAL-MARKETING-FRAMEWORK for universal framework
+
+**Customization for EBOOK-UNIT**:
+- [Customization points]
 
 ---
 
-**Document Owner**: Brand/Unit Manager  
-**Classification**: Internal Use Only
+## 📊 INTERNAL KPIs & METRICS
+
+### Business Performance
+- Monthly Revenue: [Target]
+- Growth Rate: [Target]
+- Profit Margin: [Target]
+- Customer Satisfaction: [Target]
+
+---
+
+**Document Created**: 2026-03-12  
+**Classification**: INTERNAL ONLY  
+**Owner**: Unit Head EBOOK-UNIT
+
